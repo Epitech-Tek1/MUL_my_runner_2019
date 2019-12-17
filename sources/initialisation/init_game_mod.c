@@ -9,12 +9,12 @@
 
 _Bool sfInitMenu(window *window, _Bool *game_mod, _menu *_menu)
 {
+    printf("Init_menu > ");
     sfSpriteMenuCreate(window, _menu);
     return (*game_mod = 0);
 }
 
 _Bool sfInitGame(window *window, _Bool *game_mod, _menu *_menu)
 {
-    printf("coucou\n");
     return (*game_mod = 1);
 }

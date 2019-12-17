@@ -11,6 +11,38 @@ ATTENTION			= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[31m $1\x1b[0m"
 ERROR				= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[31m $1\x1b[0m"
 DONE				= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[34m $1\x1b[0m"
 
+## ========================================================================== ##
+PATH_EVENT		=	./sources/event/
+EVENT			=	menu/hover_button.c
+
+
+## ========================================================================== ##
+PATH_INIT		=	./sources/initialisation/
+INIT			=	create_menu.c									\
+					destroy.c										\
+					game_loop.c										\
+					init_game_mod.c									\
+					main.c
+
+
+## ========================================================================== ##
+PATH_SCENE		=	./sources/scene/
+SCENE			=	menu/display_menu.c
+
+
+## ========================================================================== ##
+PATH_TRANS		=	./sources/transformation/
+TRANS			=	menu/init_transform.c								\
+					menu/do_transform.c
+
+
+## ========================================================================== ##
+SRC				=	$(addprefix $(PATH_EVENT), $(EVENT))				\
+					$(addprefix $(PATH_INIT), $(INIT))					\
+					$(addprefix $(PATH_SCENE), $(SCENE))				\
+					$(addprefix $(PATH_TRANS), $(TRANS))
+
+
 .PHONY:			 all, fclean, clean, re, library, tests_run
 
 BIN				= 	my_runner
@@ -19,9 +51,11 @@ CC				= 	gcc
 
 INCLUDE_DIR		=	./include
 
-CFLAGS			=	-Wall -g
+CFLAGS			=	-g -I./include/ -D_GNU_SOURCE -W -Wall -Wextra -pedantic -O3 -O2
 
-FLAGS			=	$(CFLAGS) -I$(INCLUDE_DIR) -lm -L./lib -lmy -L./lib -lrunner -lcsfml-window -lcsfml-graphics -lcsfml-system
+LDFLAGS 		= 	-lm -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
+
+FLAGS			=	$(CFLAGS) -I$(INCLUDE_DIR) -lm -L./lib -lmy
 
 UT_SRC			=	$(SRC)
 
@@ -29,18 +63,13 @@ UT_OBJ			=	$(UT_SRC:.c=.o)
 
 UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 
-## ========================================================================== ##
-PATH_LIB		=	./lib/runner/
-SETTING			=	setting.c								\
-
 all:			library $(BIN)
 
 library:
-				$(MAKE) -C ./lib/my/
-				$(MAKE) -C ./lib/runner/
+				$(MAKE) -C ./lib/my
 
-$(BIN):			$(SRC);
-				$(CC) -o $(BIN) $(SRC) $(FLAGS)
+$(BIN):			$(SRC)
+				$(CC) -o $(BIN) $(SRC) $(FLAGS) $(LDFLAGS) $(CFLAGS)
 				@$(call SUCCESS, "The binary has been created correctly.")
 
 clean:			clean_lib_obj
@@ -50,11 +79,9 @@ clean:			clean_lib_obj
 
 clean_lib:
 				$(MAKE) clean_lib -C ./lib/my/
-				$(MAKE) clean_lib -C ./lib/runner
 
 clean_lib_obj:
 				$(MAKE) clean -C ./lib/my/
-				$(MAKE) clean -C ./lib/runner
 
 fclean:			clean clean_lib
 				$(RM) $(BIN)
@@ -63,10 +90,10 @@ fclean:			clean clean_lib
 re:				fclean all
 
 run:
-				./$(BIN) my_map/map_test
+				./$(BIN)
 
 valgrind:
-				valgrind ./$(BIN) my_map/map_test
+				valgrind ./$(BIN)
 
 tests_run:
 				gcc -o $(UT_FLAGS) $(UT_OBJ)

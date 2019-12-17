@@ -21,5 +21,5 @@ int main(void)
     window *window = malloc(sizeof(window));
 
     init_window(window);
-    event_window(window);
+    game_loop(window);
 }

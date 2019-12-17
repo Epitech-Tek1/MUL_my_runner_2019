@@ -48,10 +48,12 @@ static void sfSpriteCreate(window *window, _menu *_menu)
     _menu->sprite.new = sfSprite_create();
     _menu->sprite.gen = sfSprite_create();
     _menu->sprite.op = sfSprite_create();
+    printf("SPrite_create > ");
     sfTextureCreate(window, _menu);
 }
 
 void sfSpriteMenuCreate(window *window, _menu *_menu)
 {
+    printf("Create_menu > ");
     sfSpriteCreate(window, _menu);
 }

@@ -15,15 +15,18 @@
 //     event_option
 // };
 
-static void manage_event(window *window, mario *mario)
+static void manage_event(window *window)
 {
-    while (sfRenderWindow_pollEvent(window->window, &window->event))
+    sfEvent event;
+
+    while (sfRenderWindow_pollEvent(window->window, &event)) {
         // if (mario->event_start.mouseButton.type == sfEvtMouseButtonPressed) {
         //     mario->event_start.mouse_press = 1;
         //     printf("You pressed\n");
         // }
-        if (window->event.type == sfEvtClosed)
+        if (event.type == sfEvtClosed)
             sfRenderWindow_close(window->window);
+    }
 }
 
 // static int (* scene_fct[])(marion *mario) = {
@@ -44,12 +47,14 @@ _Bool game_loop(window *window)
     (sfInitGame(window, &game_mod, _menu));
     while (sfRenderWindow_isOpen(window->window)) {
         // event_fct[mario->scene](mario);
-        manage_event(window, mario);
+        manage_event(window);
         sfRenderWindow_setFramerateLimit(window->window, 60);
         sfRenderWindow_clear(window->window, sfBlack);
         sfSpriteTransform(window, _menu);
+        sfDisplayMenuSprite(window, _menu);
         sfRenderWindow_display(window->window);
     }
+    sfRenderWindow_destroy(window->window);
     // destroy(_menu);
     return (true);
 }
