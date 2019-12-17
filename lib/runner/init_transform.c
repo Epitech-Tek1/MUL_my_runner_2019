@@ -5,9 +5,7 @@
 ** init_transform
 */
 
-#include "../../include/main.h"
-#include "../../include/runner.h"
-#include "transform.h"
+#include "runner.h"
 
 static void sfScale(transform *transform, _menu *_menu)
 {

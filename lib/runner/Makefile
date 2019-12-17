@@ -28,17 +28,13 @@ CP 					= cp
 
 RM 					= rm -f
 
-INCLUDE 			= ./include
-
 REMOTE_INCLUDE 		= ../../include/
-
-INCLUDE_FILE		= runner.h
 
 LIB_OBJ 			= $(SRC:.c=.o)
 
 all:				$(LIB)
 					$(MV) $(LIB) ../$(LIB)
-					$(CP) $(INCLUDE)/$(INCLUDE_FILE) $(REMOTE_INCLUDE)
+					$(CP) $(wildcard include/*.h) $(REMOTE_INCLUDE)
 					$(RM) $(LIB_OBJ)
 					@$(call SUCCESS, "[ OK ] librunner library has been copied.")
 					@$(call DONE, "[ DONE 100% ]")

@@ -5,10 +5,7 @@
 ** sfSpriteTransform
 */
 
-#include <SFML/Graphics.h>
-#include <stdlib.h>
 #include "runner.h"
-#include "transform.h"
 
 static void sfSpriteSetRotate(transform *transform, _menu *_menu)
 {

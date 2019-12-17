@@ -5,10 +5,7 @@
 ** game_mod
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "runner.h"
-#include "../../include/main.h"
 
 _Bool sfInitMenu(window *window, _Bool *game_mod, _menu *_menu)
 {

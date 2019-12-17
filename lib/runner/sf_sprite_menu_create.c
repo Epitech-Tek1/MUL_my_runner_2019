@@ -25,15 +25,15 @@ static void sfAssembly(window *window, _menu *_menu)
 
 static void sfTextureCreate(window *window, _menu *_menu)
 {
-    _menu->texture.menu = sfTexture_createFromFile("image/menu.png", NULL);
-    _menu->texture.pipe_game = sfTexture_createFromFile("image/pipe.png", NULL);
-    _menu->texture.pipe_new = sfTexture_createFromFile("image/pipe.png", NULL);
-    _menu->texture.pipe_gen = sfTexture_createFromFile("image/pipe.png", NULL);
-    _menu->texture.pipe_op = sfTexture_createFromFile("image/pipe.png", NULL);
-    _menu->texture.game = sfTexture_createFromFile("image/game.png", NULL);
-    _menu->texture.new = sfTexture_createFromFile("image/new.png", NULL);
-    _menu->texture.gen = sfTexture_createFromFile("image/gen.png", NULL);
-    _menu->texture.op = sfTexture_createFromFile("image/op.png", NULL);
+    _menu->texture.menu = sfTexture_createFromFile(MINIATURE, NULL);
+    _menu->texture.pipe_game = sfTexture_createFromFile(PIPE, NULL);
+    _menu->texture.pipe_new = sfTexture_createFromFile(PIPE, NULL);
+    _menu->texture.pipe_gen = sfTexture_createFromFile(PIPE, NULL);
+    _menu->texture.pipe_op = sfTexture_createFromFile(PIPE, NULL);
+    _menu->texture.game = sfTexture_createFromFile(GAME_BTN, NULL);
+    _menu->texture.new = sfTexture_createFromFile(NEW_BTN, NULL);
+    _menu->texture.gen = sfTexture_createFromFile(GEN_BTN, NULL);
+    _menu->texture.op = sfTexture_createFromFile(OP_BTN, NULL);
     sfAssembly(window, _menu);
 }
 

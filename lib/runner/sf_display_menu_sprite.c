@@ -5,7 +5,6 @@
 ** init_display
 */
 
-#include <SFML/Graphics.h>
 #include "runner.h"
 
 void sfDisplayMenuSprite(window *window, _menu *_menu)

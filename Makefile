@@ -29,7 +29,9 @@ UT_OBJ			=	$(UT_SRC:.c=.o)
 
 UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 
-SRC				=	$(wildcard src/*.c)
+## ========================================================================== ##
+PATH_LIB		=	./lib/runner/
+SETTING			=	setting.c								\
 
 all:			library $(BIN)
 

@@ -5,24 +5,12 @@
 ** sf_event_hover
 */
 
-#include "../../include/main.h"
 #include "runner.h"
-#include "transform.h"
-#include "runner_define.h"
 
 static void start_game(GAME_PARAMS, _Bool *start_game)
 {
-    sfEvent event;
-
     transform->scale.pipe_game.x = 1.4;
     transform->scale.pipe_game.y = .4;
-    while (sfRenderWindow_pollEvent(window->window, &event))
-        if (event.mouseButton.type == sfEvtMouseButtonPressed) {
-            // free (_menu);
-            printf("coucou\n");
-            // return (*start_game = true);
-        }
-    return (*start_game = false);
 }
 
 static void new_game(GAME_PARAMS)
