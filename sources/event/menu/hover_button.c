@@ -35,10 +35,8 @@ static _Bool option(mario *mario)
     return (true);
 }
 
-_Bool sfMouseHover(mario *mario)
+void mouse_hover(mario *mario)
 {
-    _Bool game = false;
-
     if (MOUSE_HOVER_PIPE_START)
         (start_game(mario));
     if (MOUSE_HOVER_PIPE_NEW)
@@ -47,5 +45,4 @@ _Bool sfMouseHover(mario *mario)
         (generic(mario));
     if (MOUSE_HOVER_PIPE_OP)
         (option(mario));
-    return (game == true) ? (true) : (false);
 }

@@ -71,7 +71,7 @@
 
 #define OP_BTN "assets/menu/op.png"
 
-#define INTRO_VID "assets/intro/intro1.png"
+#define INTRO_VID1 "assets/intro/test.jpg"
 
 
                          //////////////////////////////

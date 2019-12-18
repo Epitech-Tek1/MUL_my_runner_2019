@@ -13,7 +13,7 @@ static void init_window(mario *mario)
     WINDOW.mode.height = 1080;
     WINDOW.mode.bitsPerPixel = 32;
     WINDOW.window = sfRenderWindow_create(mario->window.mode,
-    "Mario Runner", sfDefaultStyle, NULL);
+    "Mario Runner", sfFullscreen, NULL);
 }
 
 int main(void)

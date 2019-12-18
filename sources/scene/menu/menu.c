@@ -9,6 +9,6 @@
 
 void menu(mario *mario)
 {
-    sfSpriteTransform(mario);
+    menu_do_transform(mario);
     menu_display(mario);
 }

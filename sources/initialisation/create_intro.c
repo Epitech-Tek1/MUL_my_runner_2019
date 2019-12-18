@@ -21,7 +21,7 @@ static void intro_assembly(mario *mario)
 
 static void intro_texture_create(mario *mario)
 {
-    INTRO.texture.intro = sfTexture_createFromFile(INTRO_VID, NULL);
+    INTRO.texture.intro = sfTexture_createFromFile(INTRO_VID1, NULL);
     intro_assembly(mario);
 }
 

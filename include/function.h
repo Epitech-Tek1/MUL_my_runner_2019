@@ -62,9 +62,9 @@ _Bool sfInitMenu(mario *mario);
 ////////////////////////////////////////////////////////////
 _Bool sfInitGame(mario *mario);
 
-_Bool sfMouseHover(mario *mario);
+void mouse_hover(mario *mario);
 
-_Bool init_transform(mario *mario);
+void menu_init_transform(mario *mario);
 
 _Bool sfSpriteTransform(mario *mario);
 
