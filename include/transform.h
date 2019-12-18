@@ -27,6 +27,7 @@ typedef struct
     sfVector2f new;
     sfVector2f gen;
     sfVector2f op;
+    sfVector2f intro;
 } scale;
 
 typedef struct
@@ -39,6 +40,7 @@ typedef struct
     sfVector2f new;
     sfVector2f gen;
     sfVector2f op;
+    sfVector2f intro;
 } position;
 
 typedef struct

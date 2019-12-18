@@ -12,6 +12,10 @@ static void init_window(mario *mario)
     WINDOW.mode.width = 1920;
     WINDOW.mode.height = 1080;
     WINDOW.mode.bitsPerPixel = 32;
+    WINDOW.color.a = 255;
+    WINDOW.color.r = 235;
+    WINDOW.color.g = 235;
+    WINDOW.color.b = 235;
     WINDOW.window = sfRenderWindow_create(mario->window.mode,
     "Mario Runner", sfFullscreen, NULL);
 }

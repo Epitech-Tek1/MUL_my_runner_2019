@@ -17,23 +17,9 @@ typedef struct
     sfVideoMode mode;
     sfRenderWindow *window;
     sfEvent event;
-    sfSprite *sprite;
-    sfTexture *texture;
+    sfColor color;
 } window;
 
-
-////////////////////////////////////////////////////////////
-/// \brief 2-component SFML window variables
-///
-////////////////////////////////////////////////////////////
-// typedef struct
-// {
-//     sfEvent event_intro;
-//     sfEvent event_start;
-//     sfEvent event_new_game;
-//     sfEvent event_generic;
-//     sfEvent event_option;
-// } evt;
 
 ////////////////////////////////////////////////////////////
 /// \brief Struct contains all menu sprite

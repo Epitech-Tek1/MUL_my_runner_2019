@@ -20,6 +20,5 @@ _Bool sfInitMenu(mario *mario)
 
 _Bool sfInitGame(mario *mario)
 {
-    printf("In game\n");
     return (true);
 }

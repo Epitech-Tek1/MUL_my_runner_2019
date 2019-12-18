@@ -38,7 +38,9 @@ SCENE			=	intro/intro.c									\
 
 ## ========================================================================== ##
 PATH_TRANS		=	./sources/transformation/
-TRANS			=	menu/menu_init_transform.c							\
+TRANS			=	intro/intro_init_transform.c						\
+					intro/intro_do_transform.c							\
+					menu/menu_init_transform.c							\
 					menu/menu_do_transform.c
 
 

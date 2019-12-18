@@ -66,6 +66,8 @@ void mouse_hover(mario *mario);
 
 void menu_init_transform(mario *mario);
 
+void menu_do_transform(mario *mario);
+
 _Bool sfSpriteTransform(mario *mario);
 
 _Bool destroy_menu(mario *mario);
@@ -81,5 +83,9 @@ void intro_create(mario *mario);
 void intro_display(mario *mario);
 
 void intro_init(mario *mario);
+
+void intro_do_transform(mario *mario);
+
+void intro_init_transform(mario *mario);
 
 #endif /* !FUNCTION_H_ */

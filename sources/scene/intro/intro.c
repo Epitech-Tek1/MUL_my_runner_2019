@@ -9,5 +9,6 @@
 
 void intro(mario *mario)
 {
+    intro_do_transform(mario);
     intro_display(mario);
 }

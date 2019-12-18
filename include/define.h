@@ -42,22 +42,22 @@
 
 #define MOUSE_POS_Y sfMouse_getPositionRenderWindow(WINDOW.window).y
 
-#define MOUSE_HOVER_PIPE_START 1200 <= MOUSE_POS_X && 180 <= MOUSE_POS_Y &&\
+#define MOUSE_HOVER_PIPE_START 1200 <= MOUSE_POS_X && 180 <= MOUSE_POS_Y && \
     350 >= MOUSE_POS_Y
 
-#define MOUSE_HOVER_PIPE_NEW 1200 <= MOUSE_POS_X && 380 <= MOUSE_POS_Y &&\
+#define MOUSE_HOVER_PIPE_NEW 1200 <= MOUSE_POS_X && 380 <= MOUSE_POS_Y && \
     550 >= MOUSE_POS_Y
 
-#define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 580 <= MOUSE_POS_Y &&\
+#define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 580 <= MOUSE_POS_Y && \
     750 >= MOUSE_POS_Y
 
-#define MOUSE_HOVER_PIPE_OP 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y &&\
+#define MOUSE_HOVER_PIPE_OP 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y && \
     950 >= MOUSE_POS_Y
 
 
-                         //////////////////////////////
-                        ///       Menu pictures      ///
-                         //////////////////////////////
+//////////////////////////////
+///      Menu pictures     ///
+//////////////////////////////
 
 #define MINIATURE "assets/menu/menu.png"
 
@@ -71,12 +71,12 @@
 
 #define OP_BTN "assets/menu/op.png"
 
-#define INTRO_VID1 "assets/intro/test.jpg"
+#define INTRO_VID1 "assets/intro/intro1.jpg"
 
 
-                         //////////////////////////////
-                        ///          Struct         ///
-                         //////////////////////////////
+//////////////////////////////
+///         Struct         ///
+//////////////////////////////
 
 #define MENU mario->_menu
 

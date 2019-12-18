@@ -7,14 +7,6 @@
 
 #include "runner.h"
 
-// static int(* event_fct[])(mario *mario) = {
-//     event_intro,
-//     event_start,
-//     event_new_game,
-//     event_generic,
-//     event_option
-// };
-
 static void manage_event(mario *mario)
 {
     sfEvent event;
@@ -37,11 +29,10 @@ _Bool game_loop(mario *mario)
     while (sfRenderWindow_isOpen(WINDOW.window)) {
         manage_event(mario);
         sfRenderWindow_setFramerateLimit(WINDOW.window, 60);
-        sfRenderWindow_clear(WINDOW.window, sfBlack);
+        sfRenderWindow_clear(WINDOW.window, WINDOW.color);
         display_fct[mario->scene](mario);
         sfRenderWindow_display(WINDOW.window);
     }
     sfRenderWindow_destroy(WINDOW.window);
-    // destroy(_menu);
     return (true);
 }
