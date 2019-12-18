@@ -9,5 +9,5 @@
 
 void game(mario *mario)
 {
-    printf("Your are in game\n");
+
 }

@@ -27,7 +27,7 @@ void menu(mario *mario);
 ////////////////////////////////////////////////////////////
 void game(mario *mario);
 
-void display_menu(mario *mario);
+void menu_display(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -73,5 +73,13 @@ _Bool destroy_menu(mario *mario);
 void event_start(mario *mario);
 
 _Bool game_loop(mario *mario);
+
+void intro(mario *mario);
+
+void intro_create(mario *mario);
+
+void intro_display(mario *mario);
+
+void intro_init(mario *mario);
 
 #endif /* !FUNCTION_H_ */

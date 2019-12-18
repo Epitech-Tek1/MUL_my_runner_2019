@@ -71,6 +71,8 @@
 
 #define OP_BTN "assets/menu/op.png"
 
+#define INTRO_VID "assets/intro/intro1.png"
+
 
                          //////////////////////////////
                         ///          Struct         ///
@@ -81,5 +83,7 @@
 #define WINDOW mario->window
 
 #define TRANS mario->transform
+
+#define INTRO mario->_intro
 
 #endif /* !RUNNER_DEFINE_H_ */

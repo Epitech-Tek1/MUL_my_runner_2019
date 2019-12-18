@@ -10,5 +10,5 @@
 void menu(mario *mario)
 {
     sfSpriteTransform(mario);
-    display_menu(mario);
+    menu_display(mario);
 }

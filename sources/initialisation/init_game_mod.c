@@ -7,6 +7,11 @@
 
 #include "runner.h"
 
+void intro_init(mario *mario)
+{
+    intro_create(mario);
+}
+
 _Bool sfInitMenu(mario *mario)
 {
     sfSpriteMenuCreate(mario);

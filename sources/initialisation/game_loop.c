@@ -18,20 +18,16 @@
 static void manage_event(mario *mario)
 {
     sfEvent event;
-    _menu *_menu;
 
     while (sfRenderWindow_pollEvent(WINDOW.window, &event)) {
         event_start(mario);
-        // if (mario->event_start.mouseButton.type == sfEvtMouseButtonPressed) {
-        //     mario->event_start.mouse_press = 1;
-        //     printf("You pressed\n");
-        // }
         if (event.type == sfEvtClosed)
             sfRenderWindow_close(WINDOW.window);
     }
 }
 
 static void (* display_fct[])(mario *mario) = {
+    intro,
     menu,
     game
 };
@@ -42,7 +38,6 @@ _Bool game_loop(mario *mario)
         manage_event(mario);
         sfRenderWindow_setFramerateLimit(WINDOW.window, 60);
         sfRenderWindow_clear(WINDOW.window, sfBlack);
-        // (!mario->_menu.evt.is_menu) && (sfSpriteTransform(mario) && sfDisplayMenuSprite(mario));
         display_fct[mario->scene](mario);
         sfRenderWindow_display(WINDOW.window);
     }

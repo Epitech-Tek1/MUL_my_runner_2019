@@ -19,7 +19,8 @@ EVENT			=	menu/hover_button.c								\
 
 ## ========================================================================== ##
 PATH_INIT		=	./sources/initialisation/
-INIT			=	create_menu.c									\
+INIT			=	create_intro.c									\
+					create_menu.c									\
 					destroy.c										\
 					game_loop.c										\
 					init_game_mod.c									\
@@ -28,8 +29,10 @@ INIT			=	create_menu.c									\
 
 ## ========================================================================== ##
 PATH_SCENE		=	./sources/scene/
-SCENE			=	menu/menu.c										\
-					menu/display.c									\
+SCENE			=	intro/intro.c									\
+					intro/display_intro.c							\
+					menu/menu.c										\
+					menu/display_menu.c									\
 					game/game.c
 
 

@@ -22,6 +22,7 @@ int main(void)
 
     mario->scene = 0;
     sfInitMenu(mario);
+    intro_init(mario);
     init_window(mario);
     game_loop(mario);
     return (true);
