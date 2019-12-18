@@ -1,0 +1,13 @@
+/*
+** EPITECH PROJECT, 2019
+** MUL_my_runner_2019
+** File description:
+** game
+*/
+
+#include "runner.h"
+
+void game(mario *mario)
+{
+    printf("Your are in game\n");
+}

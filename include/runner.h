@@ -30,8 +30,8 @@
 #include <fcntl.h>
 #include <string.h>
 #include <math.h>
-#include "struct.h"
 #include "transform.h"
+#include "struct.h"
 #include "function.h"
 #include "define.h"
 

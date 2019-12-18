@@ -7,19 +7,22 @@
 
 #include "runner.h"
 
-static void init_window(window *window)
+static void init_window(mario *mario)
 {
-    window->mode.width = 1920;
-    window->mode.height = 1080;
-    window->mode.bitsPerPixel = 32;
-    window->window = sfRenderWindow_create(window->mode, "Mario Runner",
-    sfDefaultStyle, NULL);
+    WINDOW.mode.width = 1920;
+    WINDOW.mode.height = 1080;
+    WINDOW.mode.bitsPerPixel = 32;
+    WINDOW.window = sfRenderWindow_create(mario->window.mode,
+    "Mario Runner", sfDefaultStyle, NULL);
 }
 
 int main(void)
 {
-    window *window = malloc(sizeof(window));
+    mario *mario = malloc(sizeof(mario) * 1000000);
 
-    init_window(window);
-    game_loop(window);
+    mario->scene = 0;
+    sfInitMenu(mario);
+    init_window(mario);
+    game_loop(mario);
+    return (true);
 }

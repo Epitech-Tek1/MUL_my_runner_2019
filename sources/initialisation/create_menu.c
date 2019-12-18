@@ -7,53 +7,51 @@
 
 #include "runner.h"
 
-static void sfAssembly(window *window, _menu *_menu)
+static void sfAssembly(mario *mario)
 {
-    sfSprite_setTexture(_menu->sprite.menu, _menu->texture.menu, sfTrue);
-    sfSprite_setTexture(_menu->sprite.pipe_game, _menu->texture.pipe_game,
+    sfSprite_setTexture(MENU.sprite.menu, MENU.texture.menu, sfTrue);
+    sfSprite_setTexture(MENU.sprite.pipe_game, MENU.texture.pipe_game,
     sfTrue);
-    sfSprite_setTexture(_menu->sprite.pipe_new, _menu->texture.pipe_new,
+    sfSprite_setTexture(MENU.sprite.pipe_new, MENU.texture.pipe_new,
     sfTrue);
-    sfSprite_setTexture(_menu->sprite.pipe_gen, _menu->texture.pipe_gen,
+    sfSprite_setTexture(MENU.sprite.pipe_gen, MENU.texture.pipe_gen,
     sfTrue);
-    sfSprite_setTexture(_menu->sprite.pipe_op, _menu->texture.pipe_op, sfTrue);
-    sfSprite_setTexture(_menu->sprite.game, _menu->texture.game, sfTrue);
-    sfSprite_setTexture(_menu->sprite.new, _menu->texture.new, sfTrue);
-    sfSprite_setTexture(_menu->sprite.gen, _menu->texture.gen, sfTrue);
-    sfSprite_setTexture(_menu->sprite.op, _menu->texture.op, sfTrue);
+    sfSprite_setTexture(MENU.sprite.pipe_op, MENU.texture.pipe_op, sfTrue);
+    sfSprite_setTexture(MENU.sprite.game, MENU.texture.game, sfTrue);
+    sfSprite_setTexture(MENU.sprite.new, MENU.texture.new, sfTrue);
+    sfSprite_setTexture(MENU.sprite.gen, MENU.texture.gen, sfTrue);
+    sfSprite_setTexture(MENU.sprite.op, MENU.texture.op, sfTrue);
 }
 
-static void sfTextureCreate(window *window, _menu *_menu)
+static void sfTextureCreate(mario *mario)
 {
-    _menu->texture.menu = sfTexture_createFromFile(MINIATURE, NULL);
-    _menu->texture.pipe_game = sfTexture_createFromFile(PIPE, NULL);
-    _menu->texture.pipe_new = sfTexture_createFromFile(PIPE, NULL);
-    _menu->texture.pipe_gen = sfTexture_createFromFile(PIPE, NULL);
-    _menu->texture.pipe_op = sfTexture_createFromFile(PIPE, NULL);
-    _menu->texture.game = sfTexture_createFromFile(GAME_BTN, NULL);
-    _menu->texture.new = sfTexture_createFromFile(NEW_BTN, NULL);
-    _menu->texture.gen = sfTexture_createFromFile(GEN_BTN, NULL);
-    _menu->texture.op = sfTexture_createFromFile(OP_BTN, NULL);
-    sfAssembly(window, _menu);
+    MENU.texture.menu = sfTexture_createFromFile(MINIATURE, NULL);
+    MENU.texture.pipe_game = sfTexture_createFromFile(PIPE, NULL);
+    MENU.texture.pipe_new = sfTexture_createFromFile(PIPE, NULL);
+    MENU.texture.pipe_gen = sfTexture_createFromFile(PIPE, NULL);
+    MENU.texture.pipe_op = sfTexture_createFromFile(PIPE, NULL);
+    MENU.texture.game = sfTexture_createFromFile(GAME_BTN, NULL);
+    MENU.texture.new = sfTexture_createFromFile(NEW_BTN, NULL);
+    MENU.texture.gen = sfTexture_createFromFile(GEN_BTN, NULL);
+    MENU.texture.op = sfTexture_createFromFile(OP_BTN, NULL);
+    sfAssembly(mario);
 }
 
-static void sfSpriteCreate(window *window, _menu *_menu)
+static void sfSpriteCreate(mario *mario)
 {
-    _menu->sprite.menu = sfSprite_create();
-    _menu->sprite.pipe_game = sfSprite_create();
-    _menu->sprite.pipe_new = sfSprite_create();
-    _menu->sprite.pipe_gen = sfSprite_create();
-    _menu->sprite.pipe_op = sfSprite_create();
-    _menu->sprite.game = sfSprite_create();
-    _menu->sprite.new = sfSprite_create();
-    _menu->sprite.gen = sfSprite_create();
-    _menu->sprite.op = sfSprite_create();
-    printf("SPrite_create > ");
-    sfTextureCreate(window, _menu);
+    MENU.sprite.menu = sfSprite_create();
+    MENU.sprite.pipe_game = sfSprite_create();
+    MENU.sprite.pipe_new = sfSprite_create();
+    MENU.sprite.pipe_gen = sfSprite_create();
+    MENU.sprite.pipe_op = sfSprite_create();
+    MENU.sprite.game = sfSprite_create();
+    MENU.sprite.new = sfSprite_create();
+    MENU.sprite.gen = sfSprite_create();
+    MENU.sprite.op = sfSprite_create();
+    sfTextureCreate(mario);
 }
 
-void sfSpriteMenuCreate(window *window, _menu *_menu)
+void sfSpriteMenuCreate(mario *mario)
 {
-    printf("Create_menu > ");
-    sfSpriteCreate(window, _menu);
+    sfSpriteCreate(mario);
 }

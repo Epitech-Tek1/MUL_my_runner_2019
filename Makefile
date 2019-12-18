@@ -13,7 +13,8 @@ DONE				= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[34m $1\x1b[0m"
 
 ## ========================================================================== ##
 PATH_EVENT		=	./sources/event/
-EVENT			=	menu/hover_button.c
+EVENT			=	menu/hover_button.c								\
+					menu/event_start.c
 
 
 ## ========================================================================== ##
@@ -27,19 +28,21 @@ INIT			=	create_menu.c									\
 
 ## ========================================================================== ##
 PATH_SCENE		=	./sources/scene/
-SCENE			=	menu/display_menu.c
+SCENE			=	menu/menu.c										\
+					menu/display.c									\
+					game/game.c
 
 
 ## ========================================================================== ##
 PATH_TRANS		=	./sources/transformation/
-TRANS			=	menu/init_transform.c								\
+TRANS			=	menu/init_transform.c							\
 					menu/do_transform.c
 
 
 ## ========================================================================== ##
-SRC				=	$(addprefix $(PATH_EVENT), $(EVENT))				\
-					$(addprefix $(PATH_INIT), $(INIT))					\
-					$(addprefix $(PATH_SCENE), $(SCENE))				\
+SRC				=	$(addprefix $(PATH_EVENT), $(EVENT))			\
+					$(addprefix $(PATH_INIT), $(INIT))				\
+					$(addprefix $(PATH_SCENE), $(SCENE))			\
 					$(addprefix $(PATH_TRANS), $(TRANS))
 
 

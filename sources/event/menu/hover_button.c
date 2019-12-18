@@ -7,41 +7,45 @@
 
 #include "runner.h"
 
-static _Bool start_game(GAME_PARAMS, _Bool *start_game)
+static _Bool start_game(mario *mario)
 {
-    transform->scale.pipe_game.x = 1.4;
-    transform->scale.pipe_game.y = .4;
+    TRANS.scale.pipe_game.x = 1.4;
+    TRANS.scale.pipe_game.y = .4;
     return (true);
 }
 
-static _Bool new_game(GAME_PARAMS)
+static _Bool new_game(mario *mario)
 {
-    transform->scale.pipe_new.x = 1.4;
-    transform->scale.pipe_new.y = .4;
+    TRANS.scale.pipe_new.x = 1.4;
+    TRANS.scale.pipe_new.y = .4;
     return (true);
 }
 
-static _Bool generic(GAME_PARAMS)
+static _Bool generic(mario *mario)
 {
-    transform->scale.pipe_gen.x = 1.4;
-    transform->scale.pipe_gen.y = .4;
+    TRANS.scale.pipe_gen.x = 1.4;
+    TRANS.scale.pipe_gen.y = .4;
     return (true);
 }
 
-static _Bool option(GAME_PARAMS)
+static _Bool option(mario *mario)
 {
-    transform->scale.pipe_op.x = 1.4;
-    transform->scale.pipe_op.y = .4;
+    TRANS.scale.pipe_op.x = 1.4;
+    TRANS.scale.pipe_op.y = .4;
     return (true);
 }
 
-_Bool sfMouseHover(GAME_PARAMS)
+_Bool sfMouseHover(mario *mario)
 {
     _Bool game = false;
 
-    (MOUSE_HOVER_PIPE_START) AND (start_game(window, _menu, transform, &game));
-    (MOUSE_HOVER_PIPE_NEW) AND (new_game(window, _menu, transform));
-    (MOUSE_HOVER_PIPE_GEN) AND (generic(window, _menu, transform));
-    (MOUSE_HOVER_PIPE_OP) AND (option(window, _menu, transform));
-    return (start_game == true) ? (true) : (false);
+    if (MOUSE_HOVER_PIPE_START)
+        (start_game(mario));
+    if (MOUSE_HOVER_PIPE_NEW)
+        (new_game(mario));
+    if (MOUSE_HOVER_PIPE_GEN)
+        (generic(mario));
+    if (MOUSE_HOVER_PIPE_OP)
+        (option(mario));
+    return (game == true) ? (true) : (false);
 }

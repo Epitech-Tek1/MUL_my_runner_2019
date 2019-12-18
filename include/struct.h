@@ -26,14 +26,14 @@ typedef struct
 /// \brief 2-component SFML window variables
 ///
 ////////////////////////////////////////////////////////////
-typedef struct
-{
-    sfEvent event_intro;
-    sfEvent event_start;
-    sfEvent event_new_game;
-    sfEvent event_generic;
-    sfEvent event_option;
-} mario;
+// typedef struct
+// {
+//     sfEvent event_intro;
+//     sfEvent event_start;
+//     sfEvent event_new_game;
+//     sfEvent event_generic;
+//     sfEvent event_option;
+// } evt;
 
 ////////////////////////////////////////////////////////////
 /// \brief Struct contains all menu sprite
@@ -71,6 +71,12 @@ typedef struct
 } texture;
 
 
+typedef struct
+{
+    _Bool is_menu;
+} evt;
+
+
 ////////////////////////////////////////////////////////////
 /// \brief Struct contains all menu's elements
 ///
@@ -81,6 +87,16 @@ typedef struct
 {
     sprite sprite;
     texture texture;
+    evt evt;
 } _menu;
+
+typedef struct
+{
+    window window;
+    _menu _menu;
+    transform transform;
+    int scene;
+} mario;
+
 
 #endif /* !STRUCT_H_ */

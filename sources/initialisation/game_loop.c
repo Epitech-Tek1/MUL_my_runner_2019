@@ -15,46 +15,38 @@
 //     event_option
 // };
 
-static void manage_event(window *window)
+static void manage_event(mario *mario)
 {
     sfEvent event;
+    _menu *_menu;
 
-    while (sfRenderWindow_pollEvent(window->window, &event)) {
+    while (sfRenderWindow_pollEvent(WINDOW.window, &event)) {
+        event_start(mario);
         // if (mario->event_start.mouseButton.type == sfEvtMouseButtonPressed) {
         //     mario->event_start.mouse_press = 1;
         //     printf("You pressed\n");
         // }
         if (event.type == sfEvtClosed)
-            sfRenderWindow_close(window->window);
+            sfRenderWindow_close(WINDOW.window);
     }
 }
 
-// static int (* scene_fct[])(marion *mario) = {
-//     intro,
-//     start,
-//     new_game,
-//     generic,
-//     option
-// };
+static void (* display_fct[])(mario *mario) = {
+    menu,
+    game
+};
 
-_Bool game_loop(window *window)
+_Bool game_loop(mario *mario)
 {
-    _menu *_menu = malloc(sizeof(_menu) * 10000);
-    mario *mario = malloc(sizeof(mario));
-    static _Bool game_mod = true;
-
-    (!game_mod) ? (sfInitMenu(window, &game_mod, _menu)) :
-    (sfInitGame(window, &game_mod, _menu));
-    while (sfRenderWindow_isOpen(window->window)) {
-        // event_fct[mario->scene](mario);
-        manage_event(window);
-        sfRenderWindow_setFramerateLimit(window->window, 60);
-        sfRenderWindow_clear(window->window, sfBlack);
-        sfSpriteTransform(window, _menu);
-        sfDisplayMenuSprite(window, _menu);
-        sfRenderWindow_display(window->window);
+    while (sfRenderWindow_isOpen(WINDOW.window)) {
+        manage_event(mario);
+        sfRenderWindow_setFramerateLimit(WINDOW.window, 60);
+        sfRenderWindow_clear(WINDOW.window, sfBlack);
+        // (!mario->_menu.evt.is_menu) && (sfSpriteTransform(mario) && sfDisplayMenuSprite(mario));
+        display_fct[mario->scene](mario);
+        sfRenderWindow_display(WINDOW.window);
     }
-    sfRenderWindow_destroy(window->window);
+    sfRenderWindow_destroy(WINDOW.window);
     // destroy(_menu);
     return (true);
 }

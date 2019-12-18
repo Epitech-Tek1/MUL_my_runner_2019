@@ -15,7 +15,19 @@
 ///
 /// \return void
 ////////////////////////////////////////////////////////////
-void sfDisplayMenuSprite(window *window, _menu *_menu);
+void menu(mario *mario);
+
+
+////////////////////////////////////////////////////////////
+/// \brief Call function to parameter and draw sprite
+///
+/// \param _menu Struct contains all menu's elements
+///
+/// \return void
+////////////////////////////////////////////////////////////
+void game(mario *mario);
+
+void display_menu(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -26,7 +38,7 @@ void sfDisplayMenuSprite(window *window, _menu *_menu);
 ///
 /// \return void
 ////////////////////////////////////////////////////////////
-void sfSpriteMenuCreate(window *window, _menu *_menu);
+void sfSpriteMenuCreate(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -37,7 +49,7 @@ void sfSpriteMenuCreate(window *window, _menu *_menu);
 ///
 /// \return boolean
 ////////////////////////////////////////////////////////////
-_Bool sfInitMenu(window *window, _Bool *game_mod, _menu *_menu);
+_Bool sfInitMenu(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -48,12 +60,18 @@ _Bool sfInitMenu(window *window, _Bool *game_mod, _menu *_menu);
 ///
 /// \return boolean
 ////////////////////////////////////////////////////////////
-_Bool sfInitGame(window *window, _Bool *game_mod, _menu *_menu);
+_Bool sfInitGame(mario *mario);
 
-_Bool sfMouseHover(window *window, _menu *_menu, transform *transform);
+_Bool sfMouseHover(mario *mario);
 
-_Bool init_transform(window *window, _menu *_menu, transform *transform);
+_Bool init_transform(mario *mario);
 
-_Bool sfSpriteTransform(window *window, _menu *_menu);
+_Bool sfSpriteTransform(mario *mario);
+
+_Bool destroy_menu(mario *mario);
+
+void event_start(mario *mario);
+
+_Bool game_loop(mario *mario);
 
 #endif /* !FUNCTION_H_ */

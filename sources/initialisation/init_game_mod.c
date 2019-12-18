@@ -7,14 +7,14 @@
 
 #include "runner.h"
 
-_Bool sfInitMenu(window *window, _Bool *game_mod, _menu *_menu)
+_Bool sfInitMenu(mario *mario)
 {
-    printf("Init_menu > ");
-    sfSpriteMenuCreate(window, _menu);
-    return (*game_mod = 0);
+    sfSpriteMenuCreate(mario);
+    return (true);
 }
 
-_Bool sfInitGame(window *window, _Bool *game_mod, _menu *_menu)
+_Bool sfInitGame(mario *mario)
 {
-    return (*game_mod = 1);
+    printf("In game\n");
+    return (true);
 }
