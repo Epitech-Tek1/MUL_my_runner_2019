@@ -9,8 +9,8 @@
 
 void initialisation_scene(mario *mario)
 {
-    mario->scene = 0;
-    mario->const_event = 0;
+    mario->scene = 2;
+    mario->const_event = 1;
     INTRO.evt.clock = sfClock_create();
 }
 
@@ -29,7 +29,9 @@ int initialisation(mario *mario)
         return (EXIT_ERROR);
     initialisation_scene(mario);
     menu_init(mario);
+    game_init(mario);
     menu_init_transform(mario);
     intro_init(mario);
+    sfRenderWindow_setVerticalSyncEnabled(WINDOW.window, sfTrue);
     return (EXIT_SUCCESS);
 }

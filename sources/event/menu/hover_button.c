@@ -36,25 +36,25 @@ void mouse_hover(mario *mario)
     if (MOUSE_HOVER_PIPE_START)
         (start_game(mario));
     else {
-        TRANS.scale.pipe_game.x = 1;
+        TRANS.scale.pipe_game.x = 1.1;
         TRANS.scale.pipe_game.y = .4;
     }
     if (MOUSE_HOVER_PIPE_NEW)
         (new_game(mario));
     else {
-        TRANS.scale.pipe_new.x = 1;
+        TRANS.scale.pipe_new.x = 1.1;
         TRANS.scale.pipe_new.y = .4;
     }
     if (MOUSE_HOVER_PIPE_GEN)
         (generic(mario));
     else {
-        TRANS.scale.pipe_gen.x = 1;
+        TRANS.scale.pipe_gen.x = 1.1;
         TRANS.scale.pipe_gen.y = .4;
     }
     if (MOUSE_HOVER_PIPE_OP)
         (option(mario));
     else {
-        TRANS.scale.pipe_op.x = 1;
+        TRANS.scale.pipe_op.x = 1.1;
         TRANS.scale.pipe_op.y = .4;
     }
 }

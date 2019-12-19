@@ -37,6 +37,7 @@ typedef struct
     sfSprite *new;
     sfSprite *gen;
     sfSprite *op;
+    sfSprite *mg;
 } sprite;
 
 
@@ -58,6 +59,7 @@ typedef struct
     sfTexture *new;
     sfTexture *gen;
     sfTexture *op;
+    sfTexture *mg;
     sfIntRect rect;
 } texture;
 
@@ -98,12 +100,27 @@ typedef struct
 } _intro;
 
 
+////////////////////////////////////////////////////////////
+/// \brief Struct contains all intro's elements
+///
+/// \e Sprite
+/// \e Texture
+////////////////////////////////////////////////////////////
+typedef struct
+{
+    sprite sprite;
+    texture texture;
+    evt evt;
+} _game;
+
+
 typedef struct
 {
     window window;
     _menu _menu;
     transform transform;
     _intro _intro;
+    _game _game;
     int scene;
     int const_event;
 } mario;

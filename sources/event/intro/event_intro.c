@@ -21,6 +21,9 @@ void event_intro(mario *mario)
         sfSprite_setTextureRect(INTRO.sprite.intro, INTRO.texture.rect);
         sfClock_restart(INTRO.evt.clock);
 
-    } else if (INTRO.texture.rect.left >= 6720 && INTRO.texture.rect.top == 2700)
+    } else if (INTRO.texture.rect.left >= 6720 &&
+    INTRO.texture.rect.top == 2700) {
         mario->scene = 1;
+        mario->const_event = 1;
+    }
 }

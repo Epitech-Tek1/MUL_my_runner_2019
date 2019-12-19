@@ -79,6 +79,8 @@
 
 #define INTRO_VID "assets/intro/intro.jpg"
 
+#define MID_GROUND "assets/game/middle_ground.jpg"
+
 
 //////////////////////////////
 ///         Struct         ///
@@ -91,5 +93,7 @@
 #define TRANS mario->transform
 
 #define INTRO mario->_intro
+
+#define GAME mario->_game
 
 #endif /* !RUNNER_DEFINE_H_ */

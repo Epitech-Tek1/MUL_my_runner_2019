@@ -92,4 +92,12 @@ void event_intro(mario *mario);
 
 int initialisation(mario *mario);
 
+void game_display(mario *mario);
+
+void game(mario *mario);
+
+void game_create(mario *mario);
+
+void event_game(mario *mario);
+
 #endif /* !FUNCTION_H_ */

@@ -19,5 +19,5 @@ void menu_init(mario *mario)
 
 void game_init(mario *mario)
 {
-    return;
+    game_create(mario);
 }

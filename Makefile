@@ -15,7 +15,8 @@ DONE				= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[34m $1\x1b[0m"
 PATH_EVENT		=	./sources/event/
 EVENT			=	intro/event_intro.c								\
 					menu/hover_button.c								\
-					menu/event_start.c
+					menu/event_start.c								\
+					game/event_game.c
 
 
 ## ========================================================================== ##
@@ -23,6 +24,7 @@ PATH_INIT		=	./sources/initialisation/
 INIT			=	basics.c										\
 					create_intro.c									\
 					create_menu.c									\
+					create_game.c									\
 					destroy.c										\
 					game_loop.c										\
 					init_game_mod.c									\
@@ -34,8 +36,9 @@ PATH_SCENE		=	./sources/scene/
 SCENE			=	intro/intro.c									\
 					intro/display_intro.c							\
 					menu/menu.c										\
-					menu/display_menu.c									\
-					game/game.c
+					menu/display_menu.c								\
+					game/game.c										\
+					game/display_game.c								\
 
 
 ## ========================================================================== ##

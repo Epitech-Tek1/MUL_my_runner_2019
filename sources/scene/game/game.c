@@ -9,5 +9,5 @@
 
 void game(mario *mario)
 {
-
+    game_display(mario);
 }
