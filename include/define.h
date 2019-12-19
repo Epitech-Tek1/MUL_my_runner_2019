@@ -79,7 +79,7 @@
 
 #define INTRO_VID "assets/intro/intro.jpg"
 
-#define MID_GROUND "assets/game/middle_ground.jpg"
+#define MID_GROUND "assets/game/middle_ground.png"
 
 
 //////////////////////////////

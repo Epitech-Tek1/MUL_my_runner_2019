@@ -41,6 +41,9 @@ typedef struct
     sfVector2f gen;
     sfVector2f op;
     sfVector2f intro;
+    sfVector2f mg_global;
+    sfVector2f mg;
+    sfVector2f mg2;
 } position;
 
 typedef struct

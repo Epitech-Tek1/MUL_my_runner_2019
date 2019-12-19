@@ -18,7 +18,7 @@ SRC 				=	$(wildcard *.c)
 
 CFLAGS 				= -Wall -I./include
 
-CC					= gcc
+CC					= @gcc
 
 AR 					= @ar rc
 
@@ -35,27 +35,28 @@ INCLUDE_FILE		= my.h
 LIB_OBJ 			= $(SRC:.c=.o)
 
 all:				$(LIB)
-					$(CP) $(LIB) ../$(LIB)
-					$(CP) $(INCLUDE)/$(INCLUDE_FILE) $(REMOTE_INCLUDE)
+					@$(CP) $(LIB) ../$(LIB)
+					@$(CP) $(INCLUDE)/$(INCLUDE_FILE) $(REMOTE_INCLUDE)
+					@$(RM) $(LIB_OBJ)
 					@$(call SUCCESS, "[ OK ] Libmy library has been copied.")
 					@$(call DONE, "[ DONE 100% ]")
 
 $(LIB):			$(LIB_OBJ)
-					$(AR) $(LIB) $(LIB_OBJ)
+					@$(AR) $(LIB) $(LIB_OBJ)
 					@$(call SUCCESS, "[ OK ] Libmy library successfully compiled.")
 
 clean_lib:
-					$(RM) $(LIB)
-					$(RM) ../$(LIB)
+					@$(RM) $(LIB)
+					@$(RM) ../$(LIB)
 
 clean:
 					@$(RM) $(LIB_OBJ)
 					@$(call SUCCESS, "[ OK ] *.o are removed in libmy")
 
 fclean: 			clean
-					$(RM) ../$(LIB)
-					$(RM) $(LIB)
-					$(RM) $(REMOTE_INCLUDE)$(INCLUDE_FILE)
+					@$(RM) ../$(LIB)
+					@$(RM) $(LIB)
+					@$(RM) $(REMOTE_INCLUDE)$(INCLUDE_FILE)
 					@$(call SUCCESS, "[ OK ] Libmy library fully cleaned.")
 
 re: 				fclean all

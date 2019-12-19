@@ -31,6 +31,7 @@ int initialisation(mario *mario)
     menu_init(mario);
     game_init(mario);
     menu_init_transform(mario);
+    game_init_transform(mario);
     intro_init(mario);
     sfRenderWindow_setVerticalSyncEnabled(WINDOW.window, sfTrue);
     return (EXIT_SUCCESS);

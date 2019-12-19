@@ -46,7 +46,8 @@ PATH_TRANS		=	./sources/transformation/
 TRANS			=	intro/intro_init_transform.c						\
 					intro/intro_do_transform.c							\
 					menu/menu_init_transform.c							\
-					menu/menu_do_transform.c
+					menu/menu_do_transform.c							\
+					game/game_init_transform.c							\
 
 
 ## ========================================================================== ##
@@ -60,7 +61,7 @@ SRC				=	$(addprefix $(PATH_EVENT), $(EVENT))			\
 
 BIN				= 	my_runner
 
-CC				= 	gcc
+CC				= 	@gcc
 
 INCLUDE_DIR		=	./include
 
@@ -79,10 +80,10 @@ UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 all:			library $(BIN)
 
 library:
-				$(MAKE) -C ./lib/my
+				@$(MAKE) -C ./lib/my
 
 $(BIN):			$(SRC)
-				$(CC) -o $(BIN) $(SRC) $(FLAGS) $(LDFLAGS) $(CFLAGS)
+				@$(CC) -o $(BIN) $(SRC) $(FLAGS) $(LDFLAGS) $(CFLAGS)
 				@$(call SUCCESS, "The binary has been created correctly.")
 
 clean:			clean_lib_obj
@@ -91,13 +92,13 @@ clean:			clean_lib_obj
 				@$(call DONE, "[ DONE 100% ]")
 
 clean_lib:
-				$(MAKE) clean_lib -C ./lib/my/
+				@$(MAKE) clean_lib -C ./lib/my/
 
 clean_lib_obj:
-				$(MAKE) clean -C ./lib/my/
+				@$(MAKE) clean -C ./lib/my/
 
 fclean:			clean clean_lib
-				$(RM) $(BIN)
+				@$(RM) $(BIN)
 				@$(call SUCCESS, "[ DONE ] All library cleaned.")
 
 re:				fclean all

@@ -38,6 +38,7 @@ typedef struct
     sfSprite *gen;
     sfSprite *op;
     sfSprite *mg;
+    sfSprite *mg2;
 } sprite;
 
 
@@ -60,6 +61,7 @@ typedef struct
     sfTexture *gen;
     sfTexture *op;
     sfTexture *mg;
+    sfTexture *mg2;
     sfIntRect rect;
 } texture;
 

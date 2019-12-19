@@ -100,4 +100,10 @@ void game_create(mario *mario);
 
 void event_game(mario *mario);
 
+void game_display(mario *mario);
+
+void game_init_transform(mario *mario);
+
+void game_do_transform(mario *mario);
+
 #endif /* !FUNCTION_H_ */

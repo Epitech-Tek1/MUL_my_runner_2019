@@ -10,6 +10,6 @@
 void game_display(mario *mario)
 {
     event_game(mario);
-    // printf("%d\n", TRANS.position.game.);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg2, NULL);
 }
