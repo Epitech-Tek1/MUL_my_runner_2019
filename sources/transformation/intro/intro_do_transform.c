@@ -9,6 +9,7 @@
 
 static void sprite_set_rotate(mario *mario)
 {
+    sfSprite_setScale(INTRO.sprite.intro, TRANS.scale.intro);
 }
 
 static void sprite_set_position(mario *mario)

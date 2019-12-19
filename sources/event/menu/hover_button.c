@@ -7,42 +7,54 @@
 
 #include "runner.h"
 
-static _Bool start_game(mario *mario)
+static void start_game(mario *mario)
 {
     TRANS.scale.pipe_game.x = 1.4;
     TRANS.scale.pipe_game.y = .4;
-    return (true);
 }
 
-static _Bool new_game(mario *mario)
+static void new_game(mario *mario)
 {
     TRANS.scale.pipe_new.x = 1.4;
     TRANS.scale.pipe_new.y = .4;
-    return (true);
 }
 
-static _Bool generic(mario *mario)
+static void generic(mario *mario)
 {
     TRANS.scale.pipe_gen.x = 1.4;
     TRANS.scale.pipe_gen.y = .4;
-    return (true);
 }
 
-static _Bool option(mario *mario)
+static void option(mario *mario)
 {
     TRANS.scale.pipe_op.x = 1.4;
     TRANS.scale.pipe_op.y = .4;
-    return (true);
 }
 
 void mouse_hover(mario *mario)
 {
     if (MOUSE_HOVER_PIPE_START)
         (start_game(mario));
+    else {
+        TRANS.scale.pipe_game.x = 1;
+        TRANS.scale.pipe_game.y = .4;
+    }
     if (MOUSE_HOVER_PIPE_NEW)
         (new_game(mario));
+    else {
+        TRANS.scale.pipe_new.x = 1;
+        TRANS.scale.pipe_new.y = .4;
+    }
     if (MOUSE_HOVER_PIPE_GEN)
         (generic(mario));
+    else {
+        TRANS.scale.pipe_gen.x = 1;
+        TRANS.scale.pipe_gen.y = .4;
+    }
     if (MOUSE_HOVER_PIPE_OP)
         (option(mario));
+    else {
+        TRANS.scale.pipe_op.x = 1;
+        TRANS.scale.pipe_op.y = .4;
+    }
 }

@@ -49,7 +49,7 @@ void sfSpriteMenuCreate(mario *mario);
 ///
 /// \return boolean
 ////////////////////////////////////////////////////////////
-_Bool sfInitMenu(mario *mario);
+void menu_init(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ _Bool sfInitMenu(mario *mario);
 ///
 /// \return boolean
 ////////////////////////////////////////////////////////////
-_Bool sfInitGame(mario *mario);
+void game_init(mario *mario);
 
 void mouse_hover(mario *mario);
 
@@ -74,7 +74,7 @@ _Bool destroy_menu(mario *mario);
 
 void event_start(mario *mario);
 
-_Bool game_loop(mario *mario);
+int game_loop(mario *mario);
 
 void intro(mario *mario);
 
@@ -87,5 +87,9 @@ void intro_init(mario *mario);
 void intro_do_transform(mario *mario);
 
 void intro_init_transform(mario *mario);
+
+void event_intro(mario *mario);
+
+int initialisation(mario *mario);
 
 #endif /* !FUNCTION_H_ */

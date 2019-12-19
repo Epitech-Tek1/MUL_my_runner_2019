@@ -35,6 +35,12 @@
 ////////////////////////////////////////////////////////////
 #define false 1
 
+////////////////////////////////////////////////////////////
+/// \brief 2-Define returned 84 if an error occured
+///
+////////////////////////////////////////////////////////////
+#define EXIT_ERROR 84
+
 
 #define GAME_PARAMS window *window, _menu *_menu, transform *transform
 
@@ -71,7 +77,7 @@
 
 #define OP_BTN "assets/menu/op.png"
 
-#define INTRO_VID1 "assets/intro/intro1.jpg"
+#define INTRO_VID "assets/intro/intro.jpg"
 
 
 //////////////////////////////

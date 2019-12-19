@@ -13,13 +13,15 @@ DONE				= /bin/echo -e "\x1b[1m\x1b[33m\#\#\x1b[34m $1\x1b[0m"
 
 ## ========================================================================== ##
 PATH_EVENT		=	./sources/event/
-EVENT			=	menu/hover_button.c								\
+EVENT			=	intro/event_intro.c								\
+					menu/hover_button.c								\
 					menu/event_start.c
 
 
 ## ========================================================================== ##
 PATH_INIT		=	./sources/initialisation/
-INIT			=	create_intro.c									\
+INIT			=	basics.c										\
+					create_intro.c									\
 					create_menu.c									\
 					destroy.c										\
 					game_loop.c										\

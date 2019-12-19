@@ -9,5 +9,6 @@
 
 void intro_display(mario *mario)
 {
+    event_intro(mario);
     sfRenderWindow_drawSprite(WINDOW.window, INTRO.sprite.intro, NULL);
 }

@@ -12,13 +12,12 @@ void intro_init(mario *mario)
     intro_create(mario);
 }
 
-_Bool sfInitMenu(mario *mario)
+void menu_init(mario *mario)
 {
     sfSpriteMenuCreate(mario);
-    return (true);
 }
 
-_Bool sfInitGame(mario *mario)
+void game_init(mario *mario)
 {
-    return (true);
+    return;
 }

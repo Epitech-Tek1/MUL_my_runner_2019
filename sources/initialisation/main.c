@@ -7,27 +7,14 @@
 
 #include "runner.h"
 
-static void init_window(mario *mario)
-{
-    WINDOW.mode.width = 1920;
-    WINDOW.mode.height = 1080;
-    WINDOW.mode.bitsPerPixel = 32;
-    WINDOW.color.a = 255;
-    WINDOW.color.r = 235;
-    WINDOW.color.g = 235;
-    WINDOW.color.b = 235;
-    WINDOW.window = sfRenderWindow_create(mario->window.mode,
-    "Mario Runner", sfFullscreen, NULL);
-}
-
 int main(void)
 {
     mario *mario = malloc(sizeof(mario) * 1000000);
 
-    mario->scene = 0;
-    sfInitMenu(mario);
-    intro_init(mario);
-    init_window(mario);
+    if (!mario)
+        return (EXIT_ERROR);
+    if (initialisation(mario) == 84)
+        return (EXIT_ERROR);
     game_loop(mario);
-    return (true);
+    return (EXIT_SUCCESS);
 }

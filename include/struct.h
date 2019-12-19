@@ -47,6 +47,8 @@ typedef struct
 typedef struct
 {
     sfTexture *intro;
+    sfTexture *intro2;
+    sfTexture *intro3;
     sfTexture *menu;
     sfTexture *pipe_game;
     sfTexture *pipe_new;
@@ -56,12 +58,15 @@ typedef struct
     sfTexture *new;
     sfTexture *gen;
     sfTexture *op;
+    sfIntRect rect;
 } texture;
 
 
 typedef struct
 {
-    _Bool is_menu;
+    sfTime time;
+    double seconds;
+    sfClock *clock;
 } evt;
 
 
@@ -89,7 +94,9 @@ typedef struct
 {
     sprite sprite;
     texture texture;
+    evt evt;
 } _intro;
+
 
 typedef struct
 {
@@ -98,6 +105,7 @@ typedef struct
     transform transform;
     _intro _intro;
     int scene;
+    int const_event;
 } mario;
 
 

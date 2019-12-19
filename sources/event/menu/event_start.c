@@ -12,5 +12,5 @@ void event_start(mario *mario)
     sfEvent event;
 
     if (event.type == sfEvtMouseButtonPressed && MOUSE_HOVER_PIPE_START)
-        mario->scene = 1;
+        mario->scene = 2;
 }

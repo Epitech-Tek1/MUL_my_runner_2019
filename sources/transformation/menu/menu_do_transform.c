@@ -41,7 +41,6 @@ static void sprite_set_scale(mario *mario)
 
 void menu_do_transform(mario *mario)
 {
-    menu_init_transform(mario);
     sprite_set_scale(mario);
     sprite_set_position(mario);
     sprite_set_rotate(mario);
