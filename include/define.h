@@ -84,7 +84,7 @@
 
 #define MARIO "assets/game/mario.png"
 
-#define BLOCK_INT "assets/game/objets/block_interrogation.png"
+#define QUEST "assets/game/objets/quest.png"
 
 #define COIN "assets/game/objets/coin.png"
 

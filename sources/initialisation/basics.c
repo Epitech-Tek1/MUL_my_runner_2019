@@ -7,12 +7,18 @@
 
 #include "runner.h"
 
+static void initialisation_clock(mario *mario)
+{
+    GAME._clock.quest = sfClock_create();
+    INTRO.evt.clock = sfClock_create();
+    GAME.evt.clock = sfClock_create();
+}
+
 void initialisation_scene(mario *mario)
 {
     mario->scene = 2;
     mario->const_event = 2;
-    INTRO.evt.clock = sfClock_create();
-    GAME.evt.clock = sfClock_create();
+    initialisation_clock(mario);
 }
 
 int initialisation(mario *mario, char *filepath)

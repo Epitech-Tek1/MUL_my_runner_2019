@@ -42,6 +42,8 @@ typedef struct
     sfSprite *back;
     sfSprite *ground;
     sfSprite *mario;
+    sfSprite *quest;
+    sfSprite *quest2;
 } sprite;
 
 
@@ -68,8 +70,14 @@ typedef struct
     sfTexture *back;
     sfTexture *ground;
     sfTexture *mario;
+    sfTexture *quest;
     sfIntRect rect;
 } texture;
+
+typedef struct
+{
+    sfIntRect quest;
+} rect;
 
 
 typedef struct
@@ -78,6 +86,16 @@ typedef struct
     double seconds;
     sfClock *clock;
 } evt;
+
+
+typedef struct
+{
+    sfClock *quest;
+    sfTime quest_time;
+    double quest_seconds;
+    sfClock *goomba;
+} _clock;
+
 
 
 ////////////////////////////////////////////////////////////
@@ -119,6 +137,7 @@ typedef struct
     sprite sprite;
     texture texture;
     evt evt;
+    _clock _clock;
 } _game;
 
 

@@ -41,6 +41,7 @@ SCENE			=	intro/intro.c									\
 					menu/display_menu.c								\
 					game/game.c										\
 					game/display_game.c								\
+					game/gif_elements/quest.c
 
 
 ## ========================================================================== ##

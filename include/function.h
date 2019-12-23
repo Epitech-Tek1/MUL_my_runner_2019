@@ -110,5 +110,6 @@ void event_key(mario *mario);
 
 void event_map(mario *mario);
 
+void quest(mario *mario, sfSprite *sprite);
 
 #endif /* !FUNCTION_H_ */

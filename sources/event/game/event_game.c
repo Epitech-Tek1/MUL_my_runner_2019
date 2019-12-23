@@ -25,14 +25,14 @@ static void event_mario(mario *mario)
 void event_game(mario *mario)
 {
     event_map(mario);
-    sfVector2f init_pos = {1920, 0};
+    sfVector2f init_pos = {6000, 60};
     sfVector2f ground_move = {-6, 0};
     sfVector2f mg_move = {-2.5, 0};
     sfVector2f back_move = {-1, 0};
 
     event_mario(mario);
     sfSprite_move(GAME.sprite.ground, ground_move);
-    sfSprite_move(GAME.sprite.mg, mg_move);
+    // sfSprite_move(GAME.sprite.mg, mg_move);
     sfSprite_move(GAME.sprite.mg2, mg_move);
     sfSprite_move(GAME.sprite.back, back_move);
     if (sfSprite_getPosition(GAME.sprite.mg).x == 0)

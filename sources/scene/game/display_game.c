@@ -14,4 +14,8 @@ void game_display(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest2, NULL);
+    quest(mario, GAME.sprite.quest);
+    quest(mario, GAME.sprite.quest2);
 }

@@ -32,6 +32,9 @@ typedef struct
     sfVector2f ground;
     sfVector2f mario;
     sfVector2f mg;
+    sfVector2f mg2;
+    sfVector2f quest;
+    sfVector2f quest2;
 } scale;
 
 typedef struct
@@ -51,6 +54,8 @@ typedef struct
     sfVector2f back;
     sfVector2f ground;
     sfVector2f mario;
+    sfVector2f quest;
+    sfVector2f quest2;
 } position;
 
 typedef struct
