@@ -90,7 +90,7 @@ void intro_init_transform(mario *mario);
 
 void event_intro(mario *mario);
 
-int initialisation(mario *mario);
+int initialisation(mario *mario, char *filepath);
 
 void game_display(mario *mario);
 
@@ -105,5 +105,10 @@ void game_display(mario *mario);
 void game_init_transform(mario *mario);
 
 void game_do_transform(mario *mario);
+
+void event_key(mario *mario);
+
+void event_map(mario *mario);
+
 
 #endif /* !FUNCTION_H_ */

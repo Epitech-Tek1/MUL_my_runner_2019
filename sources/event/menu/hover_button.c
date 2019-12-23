@@ -25,12 +25,6 @@ static void generic(mario *mario)
     TRANS.scale.pipe_gen.y = .4;
 }
 
-static void option(mario *mario)
-{
-    TRANS.scale.pipe_op.x = 1.4;
-    TRANS.scale.pipe_op.y = .4;
-}
-
 void mouse_hover(mario *mario)
 {
     if (MOUSE_HOVER_PIPE_START)
@@ -50,11 +44,5 @@ void mouse_hover(mario *mario)
     else {
         TRANS.scale.pipe_gen.x = 1.1;
         TRANS.scale.pipe_gen.y = .4;
-    }
-    if (MOUSE_HOVER_PIPE_OP)
-        (option(mario));
-    else {
-        TRANS.scale.pipe_op.x = 1.1;
-        TRANS.scale.pipe_op.y = .4;
     }
 }

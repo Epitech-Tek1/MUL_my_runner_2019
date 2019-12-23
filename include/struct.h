@@ -39,6 +39,9 @@ typedef struct
     sfSprite *op;
     sfSprite *mg;
     sfSprite *mg2;
+    sfSprite *back;
+    sfSprite *ground;
+    sfSprite *mario;
 } sprite;
 
 
@@ -62,6 +65,9 @@ typedef struct
     sfTexture *op;
     sfTexture *mg;
     sfTexture *mg2;
+    sfTexture *back;
+    sfTexture *ground;
+    sfTexture *mario;
     sfIntRect rect;
 } texture;
 
@@ -123,6 +129,7 @@ typedef struct
     transform transform;
     _intro _intro;
     _game _game;
+    char *map;
     int scene;
     int const_event;
 } mario;

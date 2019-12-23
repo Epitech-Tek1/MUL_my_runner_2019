@@ -30,6 +30,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <math.h>
+#include "my.h"
 #include "transform.h"
 #include "struct.h"
 #include "function.h"

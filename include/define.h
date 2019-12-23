@@ -51,13 +51,10 @@
 #define MOUSE_HOVER_PIPE_START 1200 <= MOUSE_POS_X && 180 <= MOUSE_POS_Y && \
     350 >= MOUSE_POS_Y
 
-#define MOUSE_HOVER_PIPE_NEW 1200 <= MOUSE_POS_X && 380 <= MOUSE_POS_Y && \
-    550 >= MOUSE_POS_Y
+#define MOUSE_HOVER_PIPE_NEW 1200 <= MOUSE_POS_X && 480 <= MOUSE_POS_Y && \
+    650 >= MOUSE_POS_Y
 
-#define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 580 <= MOUSE_POS_Y && \
-    750 >= MOUSE_POS_Y
-
-#define MOUSE_HOVER_PIPE_OP 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y && \
+#define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y && \
     950 >= MOUSE_POS_Y
 
 
@@ -65,7 +62,7 @@
 ///      Menu pictures     ///
 //////////////////////////////
 
-#define MINIATURE "assets/menu/menu.png"
+#define MINIATURE "assets/menu/menu.jpg"
 
 #define PIPE "assets/menu/pipe.png"
 
@@ -79,7 +76,19 @@
 
 #define INTRO_VID "assets/intro/intro.jpg"
 
-#define MID_GROUND "assets/game/middle_ground.png"
+#define MID_GROUND "assets/game/mario_map.png"
+
+#define BACK "assets/game/background.png"
+
+#define GROUND "assets/game/ground.png"
+
+#define MARIO "assets/game/mario.png"
+
+#define BLOCK_INT "assets/game/objets/block_interrogation.png"
+
+#define COIN "assets/game/objets/coin.png"
+
+#define TORTUE "assets/game/objets/tortue.png"
 
 
 //////////////////////////////

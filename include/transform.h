@@ -28,6 +28,10 @@ typedef struct
     sfVector2f gen;
     sfVector2f op;
     sfVector2f intro;
+    sfVector2f back;
+    sfVector2f ground;
+    sfVector2f mario;
+    sfVector2f mg;
 } scale;
 
 typedef struct
@@ -44,6 +48,9 @@ typedef struct
     sfVector2f mg_global;
     sfVector2f mg;
     sfVector2f mg2;
+    sfVector2f back;
+    sfVector2f ground;
+    sfVector2f mario;
 } position;
 
 typedef struct

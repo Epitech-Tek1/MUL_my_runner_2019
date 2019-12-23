@@ -16,7 +16,9 @@ PATH_EVENT		=	./sources/event/
 EVENT			=	intro/event_intro.c								\
 					menu/hover_button.c								\
 					menu/event_start.c								\
-					game/event_game.c
+					game/event_game.c								\
+					game/event_key.c								\
+					game/event_map.c
 
 
 ## ========================================================================== ##
@@ -54,7 +56,8 @@ TRANS			=	intro/intro_init_transform.c						\
 SRC				=	$(addprefix $(PATH_EVENT), $(EVENT))			\
 					$(addprefix $(PATH_INIT), $(INIT))				\
 					$(addprefix $(PATH_SCENE), $(SCENE))			\
-					$(addprefix $(PATH_TRANS), $(TRANS))
+					$(addprefix $(PATH_TRANS), $(TRANS))			\
+					$(addprefix $(PATH_LIB), $(LIB))
 
 
 .PHONY:			 all, fclean, clean, re, library, tests_run
@@ -80,7 +83,7 @@ UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 all:			library $(BIN)
 
 library:
-				@$(MAKE) -C ./lib/my
+				@$(MAKE) -C ./lib/my/
 
 $(BIN):			$(SRC)
 				@$(CC) -o $(BIN) $(SRC) $(FLAGS) $(LDFLAGS) $(CFLAGS)
@@ -104,7 +107,7 @@ fclean:			clean clean_lib
 re:				fclean all
 
 run:
-				./$(BIN)
+				./$(BIN) game_map/game
 
 valgrind:
 				valgrind ./$(BIN)

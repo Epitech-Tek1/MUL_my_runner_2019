@@ -10,7 +10,7 @@
 static void set_scale(mario *mario)
 {
     TRANS.scale.intro.x = 2;
-    TRANS.scale.intro.y = 2.1;
+    TRANS.scale.intro.y = 2;
 }
 
 static void set_position(mario *mario)

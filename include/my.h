@@ -123,7 +123,7 @@ int             my_strlen(char *);
 /// Count length of a word
 ///
 ////////////////////////////////////////////////////////////
-int             my_strlen_word(char *str, int i);
+// int             my_strlen_word(char *str, int i);
 
 ////////////////////////////////////////////////////////////
 /// Put a string into a int
@@ -153,6 +153,6 @@ _Bool           my_putstrstr(char *tab[]);
 /// Put a char * into a char **
 ///
 ////////////////////////////////////////////////////////////
-_Bool           my_str_to_word_array(char *filepath, char *tab[], _Bool *error);
+char **my_str_to_word_array(char const *str);
 
 #endif /* !MY_H_ */

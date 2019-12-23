@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "runner.h": "c"
+        "runner.h": "c",
+        "struct.h": "c"
     }
 }

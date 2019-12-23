@@ -10,21 +10,23 @@
 void initialisation_scene(mario *mario)
 {
     mario->scene = 2;
-    mario->const_event = 1;
+    mario->const_event = 2;
     INTRO.evt.clock = sfClock_create();
+    GAME.evt.clock = sfClock_create();
 }
 
-int initialisation(mario *mario)
+int initialisation(mario *mario, char *filepath)
 {
     WINDOW.mode.width = 1920;
     WINDOW.mode.height = 1080;
     WINDOW.mode.bitsPerPixel = 32;
+    WINDOW.color.r = 100;
+    WINDOW.color.g = 199;
+    WINDOW.color.b = 254;
     WINDOW.color.a = 255;
-    WINDOW.color.r = 235;
-    WINDOW.color.g = 235;
-    WINDOW.color.b = 235;
+
     WINDOW.window = sfRenderWindow_create(mario->window.mode,
-    "Mario Runner", sfClose | sfFullscreen, NULL);
+    "Mario Runner", sfClose | sfDefaultStyle, NULL);
     if (!WINDOW.window)
         return (EXIT_ERROR);
     initialisation_scene(mario);
