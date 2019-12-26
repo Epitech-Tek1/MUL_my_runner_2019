@@ -99,7 +99,7 @@ int             my_nbr_line(char *tab, int i, int line);
 /// Open a file and read
 ///
 ////////////////////////////////////////////////////////////
-int             my_open_read(char *filepath, char *str, _Bool *error);
+int             my_open_read(char *filepath, char *str);
 
 ////////////////////////////////////////////////////////////
 /// Return opposite number
@@ -153,6 +153,6 @@ _Bool           my_putstrstr(char *tab[]);
 /// Put a char * into a char **
 ///
 ////////////////////////////////////////////////////////////
-char **my_str_to_word_array(char const *str);
+char **my_str_to_word_array(char *filepath);
 
 #endif /* !MY_H_ */

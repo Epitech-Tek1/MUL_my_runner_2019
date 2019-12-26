@@ -12,25 +12,15 @@
 #include <fcntl.h>
 #include "my.h"
 
-int my_getsize_file(char *file)
-{
-    struct stat stat_file;
-
-    if (stat(file, &stat_file) != 0)
-        return (0);
-    return (stat_file.st_size);
-}
-
-int my_open_read(char *filepath, char *str, _Bool *error)
+int my_open_read(char *filepath, char *str)
 {
     int fd = open(filepath, O_RDONLY);
     int size = 0;
     int i = 0;
 
-    printf("%i\n", fd);
     if (fd == -1) {
         my_putstr("[ ERROR ] An error occurred while reading the file");
-        return (*error = EXIT_FAILED);
+        return (EXIT_FAILED);
     }
     for (char c; read(fd, &c, 1) != _END_STR_; ++size) {
         if (c == _END_LINE_)

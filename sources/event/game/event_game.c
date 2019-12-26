@@ -7,24 +7,8 @@
 
 #include "runner.h"
 
-static void event_mario(mario *mario)
+void move(mario *mario)
 {
-    static sfIntRect rect;
-
-    rect.height = 650;
-    rect.width = 600;
-    sfSprite_setTextureRect(GAME.sprite.mario, rect);
-    GAME.evt.time = sfClock_getElapsedTime(GAME.evt.clock);
-    GAME.evt.seconds = GAME.evt.time.microseconds / 1000000.0;
-    if (GAME.evt.seconds > .07) {
-        rect.left += (rect.left <= 6000) ? 650 : -6500;
-        sfClock_restart(GAME.evt.clock);
-    }
-}
-
-void event_game(mario *mario)
-{
-    event_map(mario);
     sfVector2f init_pos = {6000, 60};
     sfVector2f ground_move = {-6, 0};
     sfVector2f mg_move = {-2.5, 0};
@@ -32,11 +16,23 @@ void event_game(mario *mario)
 
     event_mario(mario);
     sfSprite_move(GAME.sprite.ground, ground_move);
-    // sfSprite_move(GAME.sprite.mg, mg_move);
+    sfSprite_move(GAME.sprite.coin, ground_move);
+    sfSprite_move(GAME.sprite.coin2, ground_move);
+    sfSprite_move(GAME.sprite.coin3, ground_move);
+    sfSprite_move(GAME.sprite.coin4, ground_move);
+    sfSprite_move(GAME.sprite.coin5, ground_move);
+    sfSprite_move(GAME.sprite.coin6, ground_move);
+    sfSprite_move(GAME.sprite.quest, ground_move);
+    sfSprite_move(GAME.sprite.quest2, ground_move);
+    sfSprite_move(GAME.sprite.mg, mg_move);
     sfSprite_move(GAME.sprite.mg2, mg_move);
     sfSprite_move(GAME.sprite.back, back_move);
     if (sfSprite_getPosition(GAME.sprite.mg).x == 0)
         sfSprite_setPosition(GAME.sprite.mg2, init_pos);
     if (sfSprite_getPosition(GAME.sprite.mg2).x == 0)
         sfSprite_setPosition(GAME.sprite.mg, init_pos);
+}
+
+void event_game(mario *mario)
+{
 }

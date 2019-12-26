@@ -35,6 +35,7 @@ typedef struct
     sfVector2f mg2;
     sfVector2f quest;
     sfVector2f quest2;
+    sfVector2f coin;
 } scale;
 
 typedef struct
@@ -56,6 +57,12 @@ typedef struct
     sfVector2f mario;
     sfVector2f quest;
     sfVector2f quest2;
+    sfVector2f coin;
+    sfVector2f coin2;
+    sfVector2f coin3;
+    sfVector2f coin4;
+    sfVector2f coin5;
+    sfVector2f coin6;
 } position;
 
 typedef struct

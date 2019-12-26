@@ -44,6 +44,12 @@ typedef struct
     sfSprite *mario;
     sfSprite *quest;
     sfSprite *quest2;
+    sfSprite *coin;
+    sfSprite *coin2;
+    sfSprite *coin3;
+    sfSprite *coin4;
+    sfSprite *coin5;
+    sfSprite *coin6;
 } sprite;
 
 
@@ -71,6 +77,7 @@ typedef struct
     sfTexture *ground;
     sfTexture *mario;
     sfTexture *quest;
+    sfTexture *coin;
     sfIntRect rect;
 } texture;
 
@@ -79,12 +86,26 @@ typedef struct
     sfIntRect quest;
 } rect;
 
+typedef struct
+{
+    sfVector2f player_pos;
+} player;
+
+
+typedef struct
+{
+    sfClock *clock;
+    sfTime time;
+    double seconds;
+} _game_time;
+
 
 typedef struct
 {
     sfTime time;
     double seconds;
     sfClock *clock;
+    _game_time _game_time;
 } evt;
 
 
@@ -93,7 +114,9 @@ typedef struct
     sfClock *quest;
     sfTime quest_time;
     double quest_seconds;
-    sfClock *goomba;
+    sfClock *coin;
+    sfTime coin_time;
+    double coin_seconds;
 } _clock;
 
 
@@ -148,9 +171,15 @@ typedef struct
     transform transform;
     _intro _intro;
     _game _game;
-    char *map;
+    player player;
+    sfClock *game_time;
+    sfClock *clock;
+    sfTime time;
+    double seconds;
+    char **map;
     int scene;
     int const_event;
+    _Bool jump;
 } mario;
 
 

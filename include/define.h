@@ -76,7 +76,7 @@
 
 #define INTRO_VID "assets/intro/intro.jpg"
 
-#define MID_GROUND "assets/game/mario_map.png"
+#define MID_GROUND "assets/game/middleground.png"
 
 #define BACK "assets/game/background.png"
 

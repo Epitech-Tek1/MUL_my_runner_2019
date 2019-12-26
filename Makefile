@@ -17,8 +17,7 @@ EVENT			=	intro/event_intro.c								\
 					menu/hover_button.c								\
 					menu/event_start.c								\
 					game/event_game.c								\
-					game/event_key.c								\
-					game/event_map.c
+					game/event_key.c
 
 
 ## ========================================================================== ##
@@ -41,7 +40,9 @@ SCENE			=	intro/intro.c									\
 					menu/display_menu.c								\
 					game/game.c										\
 					game/display_game.c								\
-					game/gif_elements/quest.c
+					game/gif_elements/mario.c						\
+					game/gif_elements/quest.c						\
+					game/gif_elements/coin.c
 
 
 ## ========================================================================== ##
@@ -69,7 +70,7 @@ CC				= 	@gcc
 
 INCLUDE_DIR		=	./include
 
-CFLAGS			=	-g -I./include/ -D_GNU_SOURCE -W -Wall -Wextra -pedantic -O3 -O2
+CFLAGS			=	-g -I./include/ -D_GNU_SOURCE -Wall -Wextra -pedantic -O3 -O2 -Wunused
 
 LDFLAGS 		= 	-lm -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 

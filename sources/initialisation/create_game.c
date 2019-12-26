@@ -16,6 +16,12 @@ static void game_assembly(mario *mario)
     sfSprite_setTexture(GAME.sprite.mario, GAME.texture.mario, sfFalse);
     sfSprite_setTexture(GAME.sprite.quest, GAME.texture.quest, sfFalse);
     sfSprite_setTexture(GAME.sprite.quest2, GAME.texture.quest, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin, GAME.texture.coin, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin2, GAME.texture.coin, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin3, GAME.texture.coin, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin4, GAME.texture.coin, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin5, GAME.texture.coin, sfFalse);
+    sfSprite_setTexture(GAME.sprite.coin6, GAME.texture.coin, sfFalse);
 }
 
 static void game_texture_create(mario *mario)
@@ -26,6 +32,7 @@ static void game_texture_create(mario *mario)
     GAME.texture.ground = sfTexture_createFromFile(GROUND, NULL);
     GAME.texture.mario = sfTexture_createFromFile(MARIO, NULL);
     GAME.texture.quest = sfTexture_createFromFile(QUEST, NULL);
+    GAME.texture.coin = sfTexture_createFromFile(COIN, NULL);
     game_assembly(mario);
 }
 
@@ -38,6 +45,12 @@ static void game_sprite_create(mario *mario)
     GAME.sprite.mario = sfSprite_create();
     GAME.sprite.quest = sfSprite_create();
     GAME.sprite.quest2 = sfSprite_create();
+    GAME.sprite.coin = sfSprite_create();
+    GAME.sprite.coin2 = sfSprite_create();
+    GAME.sprite.coin3 = sfSprite_create();
+    GAME.sprite.coin4 = sfSprite_create();
+    GAME.sprite.coin5 = sfSprite_create();
+    GAME.sprite.coin6 = sfSprite_create();
     game_texture_create(mario);
 }
 

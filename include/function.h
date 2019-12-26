@@ -90,7 +90,7 @@ void intro_init_transform(mario *mario);
 
 void event_intro(mario *mario);
 
-int initialisation(mario *mario, char *filepath);
+int initialisation(mario *mario, int ac, char *filepath);
 
 void game_display(mario *mario);
 
@@ -111,5 +111,17 @@ void event_key(mario *mario);
 void event_map(mario *mario);
 
 void quest(mario *mario, sfSprite *sprite);
+
+void coin(mario *mario, sfSprite *sprite);
+
+_Bool intersection_wall(mario *mario);
+
+void event_mario(mario *mario);
+
+void static_mario(mario *mario);
+
+void event_jump(mario *mario);
+
+void move(mario *mario);
 
 #endif /* !FUNCTION_H_ */

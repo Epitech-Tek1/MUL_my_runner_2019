@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     if (!mario)
         return (EXIT_ERROR);
-    if (initialisation(mario, argv[1]) == 84)
+    if (initialisation(mario, argc, argv[1]) == 84)
         return (EXIT_ERROR);
     game_loop(mario);
     return (EXIT_SUCCESS);
