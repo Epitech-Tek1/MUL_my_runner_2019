@@ -14,9 +14,8 @@ static void initialisation_clock(mario *mario)
     INTRO.evt.clock = sfClock_create();
     GAME.evt.clock = sfClock_create();
     GAME.evt._game_time.clock = sfClock_create();
+    GAME._clock.colision = sfClock_create();
     mario->clock = sfClock_create();
-    GAME.evt._game_time.time = sfClock_getElapsedTime(GAME.evt._game_time.clock);
-    GAME.evt._game_time.seconds = GAME.evt._game_time.time.microseconds / 1000000.0;
 }
 
 static int error_handling(int ac) {

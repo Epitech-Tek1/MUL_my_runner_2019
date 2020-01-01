@@ -14,7 +14,7 @@ void intro_init(mario *mario)
 
 void menu_init(mario *mario)
 {
-    sfSpriteMenuCreate(mario);
+    sprite_menu_create(mario);
 }
 
 void game_init(mario *mario)

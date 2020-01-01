@@ -38,7 +38,7 @@ void menu_display(mario *mario);
 ///
 /// \return void
 ////////////////////////////////////////////////////////////
-void sfSpriteMenuCreate(mario *mario);
+void sprite_menu_create(mario *mario);
 
 
 ////////////////////////////////////////////////////////////
@@ -68,7 +68,7 @@ void menu_init_transform(mario *mario);
 
 void menu_do_transform(mario *mario);
 
-_Bool sfSpriteTransform(mario *mario);
+_Bool sprite_transform(mario *mario);
 
 _Bool destroy_menu(mario *mario);
 

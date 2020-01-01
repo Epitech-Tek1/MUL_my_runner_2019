@@ -40,7 +40,9 @@ typedef struct
     sfSprite *mg;
     sfSprite *mg2;
     sfSprite *back;
+    sfSprite *back2;
     sfSprite *ground;
+    sfSprite *ground2;
     sfSprite *mario;
     sfSprite *quest;
     sfSprite *quest2;
@@ -111,12 +113,9 @@ typedef struct
 
 typedef struct
 {
-    sfClock *quest;
-    sfTime quest_time;
-    double quest_seconds;
-    sfClock *coin;
-    sfTime coin_time;
-    double coin_seconds;
+    sfClock *quest; sfTime quest_time; double quest_seconds;
+    sfClock *coin; sfTime coin_time; double coin_seconds;
+    sfClock *colision; sfTime colision_time; double colision_seconds;
 } _clock;
 
 

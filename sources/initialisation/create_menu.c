@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void sfAssembly(mario *mario)
+static void assembly(mario *mario)
 {
     sfSprite_setTexture(MENU.sprite.menu, MENU.texture.menu, sfTrue);
     sfSprite_setTexture(MENU.sprite.pipe_game, MENU.texture.pipe_game,
@@ -23,7 +23,7 @@ static void sfAssembly(mario *mario)
     sfSprite_setTexture(MENU.sprite.op, MENU.texture.op, sfTrue);
 }
 
-static void sfTextureCreate(mario *mario)
+static void texture_create(mario *mario)
 {
     MENU.texture.menu = sfTexture_createFromFile(MINIATURE, NULL);
     MENU.texture.pipe_game = sfTexture_createFromFile(PIPE, NULL);
@@ -34,10 +34,10 @@ static void sfTextureCreate(mario *mario)
     MENU.texture.new = sfTexture_createFromFile(NEW_BTN, NULL);
     MENU.texture.gen = sfTexture_createFromFile(GEN_BTN, NULL);
     MENU.texture.op = sfTexture_createFromFile(OP_BTN, NULL);
-    sfAssembly(mario);
+    assembly(mario);
 }
 
-static void sfSpriteCreate(mario *mario)
+static void sprite_create(mario *mario)
 {
     MENU.sprite.menu = sfSprite_create();
     MENU.sprite.pipe_game = sfSprite_create();
@@ -48,10 +48,10 @@ static void sfSpriteCreate(mario *mario)
     MENU.sprite.new = sfSprite_create();
     MENU.sprite.gen = sfSprite_create();
     MENU.sprite.op = sfSprite_create();
-    sfTextureCreate(mario);
+    texture_create(mario);
 }
 
-void sfSpriteMenuCreate(mario *mario)
+void sprite_menu_create(mario *mario)
 {
-    sfSpriteCreate(mario);
+    sprite_create(mario);
 }

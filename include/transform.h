@@ -29,6 +29,7 @@ typedef struct
     sfVector2f op;
     sfVector2f intro;
     sfVector2f back;
+    sfVector2f back2;
     sfVector2f ground;
     sfVector2f mario;
     sfVector2f mg;
@@ -53,7 +54,9 @@ typedef struct
     sfVector2f mg;
     sfVector2f mg2;
     sfVector2f back;
+    sfVector2f back2;
     sfVector2f ground;
+    sfVector2f ground2;
     sfVector2f mario;
     sfVector2f quest;
     sfVector2f quest2;

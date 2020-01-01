@@ -48,7 +48,7 @@ int game_loop(mario *mario)
     while (sfRenderWindow_isOpen(WINDOW.window)) {
         manage_event(mario);
         event_key_fct[mario->jump](mario);
-        sfRenderWindow_setFramerateLimit(WINDOW.window, 1000);
+        sfRenderWindow_setFramerateLimit(WINDOW.window, 60);
         sfRenderWindow_clear(WINDOW.window, sfBlack);
         display_fct[mario->scene](mario);
         sfRenderWindow_display(WINDOW.window);
