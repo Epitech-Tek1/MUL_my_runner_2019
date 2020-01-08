@@ -5,10 +5,14 @@
 ** my_strlen
 */
 
-int my_strlen(char *str)
+#include "include/my.h"
+
+int my_strlen(const char *str)
 {
     int i;
 
+    if (str == NULL)
+        my_putstrc("[ ERROR ] String is NULL\n", RED, true);
     for (i = 0; str[i]; ++i);
     return (i);
 }

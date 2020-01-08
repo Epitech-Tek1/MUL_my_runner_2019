@@ -7,16 +7,14 @@
 
 #include "include/my.h"
 
-char *my_strcat(char *dest, char const *src)
+char *my_strcat(char *dest, const char *src)
 {
+	char *tmp = malloc(sizeof(char) * (my_strlen(dest) + my_strlen(src) + 1));
     int i = my_strlen(dest);
-    int j = 0;
 
-    while (src[j]) {
-        dest[i] = src[j];
-        ++i;
-        ++j;
-    }
-    dest[i] = '\0';
-    return (dest);
+    tmp = my_strcpy(tmp, dest);
+    for (int n = 0; src[n]; ++n)
+        tmp[i++] = src[n];
+    tmp[i] = '\0';
+    return (tmp);
 }

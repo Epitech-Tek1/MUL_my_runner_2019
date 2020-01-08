@@ -5,12 +5,9 @@
 ** my_putstr
 */
 
-#include <stdlib.h>
 #include "include/my.h"
 
-char *my_putstr(char *str)
+void my_putstr(char const *string)
 {
-    for (int i = 0; str[i]; ++i)
-        my_putchar(str[i]);
-    return (str);
+    write(1, string, my_strlen(string));
 }

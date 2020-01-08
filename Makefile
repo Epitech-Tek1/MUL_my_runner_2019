@@ -42,7 +42,8 @@ SCENE			=	intro/intro.c									\
 					game/display_game.c								\
 					game/gif_elements/mario.c						\
 					game/gif_elements/quest.c						\
-					game/gif_elements/coin.c
+					game/gif_elements/coin.c						\
+					game/gif_elements/goomba.c
 
 
 ## ========================================================================== ##
@@ -74,7 +75,7 @@ CFLAGS			=	-g -I./include/ -D_GNU_SOURCE -Wall -Wextra -pedantic -O3 -O2 -Wunuse
 
 LDFLAGS 		= 	-lm -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
-FLAGS			=	$(CFLAGS) -I$(INCLUDE_DIR) -lm -L./lib -lmy
+FLAGS			=	$(CFLAGS) -I$(INCLUDE_DIR) -lm -L./lib -lmy -Llib -lmy_printf
 
 UT_SRC			=	$(SRC)
 
@@ -86,6 +87,7 @@ all:			library $(BIN)
 
 library:
 				@$(MAKE) -C ./lib/my/
+				@$(MAKE) -C ./lib/my_printf/
 
 $(BIN):			$(SRC)
 				@$(CC) -o $(BIN) $(SRC) $(FLAGS) $(LDFLAGS) $(CFLAGS)
@@ -98,9 +100,11 @@ clean:			clean_lib_obj
 
 clean_lib:
 				@$(MAKE) clean_lib -C ./lib/my/
+				@$(MAKE) clean_lib -C ./lib/my_printf/
 
 clean_lib_obj:
 				@$(MAKE) clean -C ./lib/my/
+				@$(MAKE) clean -C ./lib/my_printf/
 
 fclean:			clean clean_lib
 				@$(RM) $(BIN)
@@ -112,7 +116,7 @@ run:
 				./$(BIN) game_map/game
 
 valgrind:
-				valgrind ./$(BIN)
+				valgrind ./$(BIN) game_map/game
 
 tests_run:
 				gcc -o $(UT_FLAGS) $(UT_OBJ)

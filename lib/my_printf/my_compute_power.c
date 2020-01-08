@@ -5,6 +5,8 @@
 ** my_compute_power
 */
 
+#include "my_printf.h"
+
 int my_compute_power_rec(int nb, int p)
 {
     int c = nb;

@@ -17,17 +17,20 @@ static void call_fct(mario *mario)
     coin(mario, GAME.sprite.coin4);
     coin(mario, GAME.sprite.coin5);
     coin(mario, GAME.sprite.coin6);
+    goomba(mario, GAME.sprite.goomba);
 }
 
 void game_display(mario *mario)
 {
     event_game(mario);
+    call_fct(mario);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground2, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest2, NULL);
@@ -37,5 +40,4 @@ void game_display(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin4, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin5, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin6, NULL);
-    call_fct(mario);
 }

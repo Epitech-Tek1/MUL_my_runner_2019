@@ -114,6 +114,8 @@ void quest(mario *mario, sfSprite *sprite);
 
 void coin(mario *mario, sfSprite *sprite);
 
+void goomba(mario *mario, sfSprite *sprite);
+
 _Bool intersection_wall(mario *mario);
 
 void event_mario(mario *mario);

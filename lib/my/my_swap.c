@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2019
-** my_swap
+** libmy
 ** File description:
-** c
+** Swap two elements
 */
 
 void my_swap(int *a, int *b)

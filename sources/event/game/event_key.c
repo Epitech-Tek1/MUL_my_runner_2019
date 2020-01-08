@@ -9,5 +9,14 @@
 
 void event_jump(mario *mario)
 {
-    return;
+    static int jump = -15;
+
+    if (jump < 14) {
+        jump += 1;
+        sfSprite_move(GAME.sprite.mario, (sfVector2f){0, jump});
+    }
+    if (jump == 14) {
+        jump = -15 ;
+        mario->jump = 0;
+    }
 }

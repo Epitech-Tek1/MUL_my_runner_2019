@@ -24,18 +24,6 @@
 
 
 ////////////////////////////////////////////////////////////
-/// \brief 2-Defined success returned from boolean evaluation
-///
-////////////////////////////////////////////////////////////
-#define true 0
-
-////////////////////////////////////////////////////////////
-/// \brief 2-Defined failed returned from boolean evaluation
-///
-////////////////////////////////////////////////////////////
-#define false 1
-
-////////////////////////////////////////////////////////////
 /// \brief 2-Define returned 84 if an error occured
 ///
 ////////////////////////////////////////////////////////////
@@ -57,6 +45,15 @@
 #define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y && \
     950 >= MOUSE_POS_Y
 
+#define MARIO_L sfSpriteGetGlobalBounds(GAME.sprite.mario).left
+
+#define MARIO_W sfSpriteGetGlobalBounds(GAME.sprite.mario).width + MARIO_L
+
+#define MARIO_T sfSpriteGetGlobalBounds(GAME.sprite.mario).top
+
+#define MARIO_H sfSpriteGetGlobalBounds(GAME.sprite.mario).height + + MARIO_T
+
+#define SCORE mario->score
 
 //////////////////////////////
 ///      Menu pictures     ///
@@ -89,6 +86,8 @@
 #define COIN "assets/game/objets/coin.png"
 
 #define TORTUE "assets/game/objets/tortue.png"
+
+#define GOOMBA "assets/game/objets/tortue.png"
 
 
 //////////////////////////////

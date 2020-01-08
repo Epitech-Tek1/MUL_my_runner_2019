@@ -5,21 +5,19 @@
 ** my_revstr
 */
 
-#include <stdlib.h>
+#include "include/my.h"
 
-char *my_revstr(char *str)
+char *my_revstr(unsigned char *string)
 {
-    int i = 0;
-    int n = 0;
-    char tmp;
+    int i;
+    int j;
+    unsigned char a;
+    unsigned len = my_strlen((const char *)string);
 
-    for (i = 0; str[i]; i++);
-    i--;
-    for (i = i; i > n; i--) {
-        tmp = str[i];
-        str[i] = str[n];
-        str[n] = tmp;
-        n++;
+    for (i = 0, j = len - 1; i < j; i++, j--) {
+        a = string[i];
+        string[i] = string[j];
+        string[j] = a;
     }
-    return (str);
+    return ((char *)string);
 }

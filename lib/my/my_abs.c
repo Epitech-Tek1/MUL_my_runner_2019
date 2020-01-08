@@ -5,7 +5,7 @@
 ** my_opposite_nbr
 */
 
-int my_opp_nbr(int nbr)
+int my_abs(int nbr)
 {
     return (nbr < 0) ? ((nbr * nbr) / nbr) : (-nbr);
 }

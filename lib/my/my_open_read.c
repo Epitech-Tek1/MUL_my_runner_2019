@@ -20,7 +20,7 @@ int my_open_read(char *filepath, char *str)
 
     if (fd == -1) {
         my_putstr("[ ERROR ] An error occurred while reading the file");
-        return (EXIT_FAILED);
+        return (EXIT_ERROR);
     }
     for (char c; read(fd, &c, 1) != _END_STR_; ++size) {
         if (c == _END_LINE_)

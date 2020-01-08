@@ -28,7 +28,7 @@ RM 					= rm -f
 
 INCLUDE 			= ./include
 
-REMOTE_INCLUDE 		= ../../include/
+REMOTE_INCLUDE 		= ../../include/main/my/
 
 INCLUDE_FILE		= my.h
 
@@ -37,7 +37,6 @@ LIB_OBJ 			= $(SRC:.c=.o)
 all:				$(LIB)
 					@$(CP) $(LIB) ../$(LIB)
 					@$(CP) $(INCLUDE)/$(INCLUDE_FILE) $(REMOTE_INCLUDE)
-					@$(RM) $(LIB_OBJ)
 					@$(call SUCCESS, "[ OK ] Libmy library has been copied.")
 					@$(call DONE, "[ DONE 100% ]")
 

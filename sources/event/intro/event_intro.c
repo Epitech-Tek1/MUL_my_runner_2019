@@ -9,6 +9,10 @@
 
 void event_intro(mario *mario)
 {
+    if (sfMouse_isButtonPressed(sfMouseLeft)) {
+        mario->scene = 1;
+        mario->const_event = 1;
+    }
     INTRO.evt.time = sfClock_getElapsedTime(INTRO.evt.clock);
     INTRO.evt.seconds = INTRO.evt.time.microseconds / 1000000.0;
     if (INTRO.evt.seconds > .08) {

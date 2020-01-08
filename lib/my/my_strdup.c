@@ -6,17 +6,12 @@
 */
 
 #include <stdlib.h>
+#include "include/my.h"
 
-char *my_strdup(char const *src)
+char *my_strdup(char *src)
 {
-    int i;
-    char *src_alloc = NULL;
+    char *dest = malloc(sizeof(char) * my_strlen(src) + 1);
 
-    for (i = 0; src[i] != '\0'; i++);
-    src_alloc = malloc((sizeof(char)) * i++);
-    if (src_alloc == NULL)
-        return (NULL);
-    for (i = 0; src[i] != '\0'; i++)
-        src_alloc[i] = src[i];
-    return (src_alloc);
+    free (dest);
+    return (dest = src);
 }

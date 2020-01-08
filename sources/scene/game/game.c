@@ -9,6 +9,5 @@
 
 void game(mario *mario)
 {
-    move(mario);
     game_display(mario);
 }

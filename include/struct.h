@@ -29,29 +29,18 @@ typedef struct
 {
     sfSprite *intro;
     sfSprite *menu;
-    sfSprite *pipe_game;
-    sfSprite *pipe_new;
-    sfSprite *pipe_gen;
-    sfSprite *pipe_op;
+    sfSprite *pipe_game, *pipe_new, *pipe_gen, *pipe_op;
     sfSprite *game;
     sfSprite *new;
     sfSprite *gen;
     sfSprite *op;
-    sfSprite *mg;
-    sfSprite *mg2;
-    sfSprite *back;
-    sfSprite *back2;
-    sfSprite *ground;
-    sfSprite *ground2;
+    sfSprite *mg, *mg2;
+    sfSprite *back, *back2;
+    sfSprite *ground, *ground2;
     sfSprite *mario;
-    sfSprite *quest;
-    sfSprite *quest2;
-    sfSprite *coin;
-    sfSprite *coin2;
-    sfSprite *coin3;
-    sfSprite *coin4;
-    sfSprite *coin5;
-    sfSprite *coin6;
+    sfSprite *quest, *quest2;
+    sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6;
+    sfSprite *goomba;
 } sprite;
 
 
@@ -61,25 +50,20 @@ typedef struct
 ////////////////////////////////////////////////////////////
 typedef struct
 {
-    sfTexture *intro;
-    sfTexture *intro2;
-    sfTexture *intro3;
+    sfTexture *intro, *intro2, *intro3;
     sfTexture *menu;
-    sfTexture *pipe_game;
-    sfTexture *pipe_new;
-    sfTexture *pipe_gen;
-    sfTexture *pipe_op;
+    sfTexture *pipe_game, *pipe_new, *pipe_gen, *pipe_op;
     sfTexture *game;
     sfTexture *new;
     sfTexture *gen;
     sfTexture *op;
-    sfTexture *mg;
-    sfTexture *mg2;
+    sfTexture *mg, *mg2;
     sfTexture *back;
     sfTexture *ground;
     sfTexture *mario;
     sfTexture *quest;
     sfTexture *coin;
+    sfTexture *goomba;
     sfIntRect rect;
 } texture;
 
@@ -115,9 +99,9 @@ typedef struct
 {
     sfClock *quest; sfTime quest_time; double quest_seconds;
     sfClock *coin; sfTime coin_time; double coin_seconds;
+    sfClock *goomba; sfTime goomba_time; double goomba_seconds;
     sfClock *colision; sfTime colision_time; double colision_seconds;
 } _clock;
-
 
 
 ////////////////////////////////////////////////////////////
@@ -178,6 +162,7 @@ typedef struct
     char **map;
     int scene;
     int const_event;
+    int score;
     _Bool jump;
 } mario;
 
