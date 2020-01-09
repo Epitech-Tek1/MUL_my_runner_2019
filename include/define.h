@@ -54,6 +54,19 @@
 #define MARIO_H sfSprite_getGlobalBounds(GAME.sprite.mario).height + + MARIO_T
 
 
+////////////////////////////////////////////////////////////
+/// CSFML defines
+///
+////////////////////////////////////////////////////////////
+#define RecGB sfRectangleShape_getGlobalBounds
+#define SGB sfSprite_getGlobalBounds
+#define SetPos sfSprite_setPosition
+#define smove sfSprite_move
+#define GetPos sfSprite_getPosition
+#define RecShapePos sfRectangleShape_setPosition
+#define DrawRecShape sfRenderWindow_drawRectangleShape
+
+
 
 #define cr_x coin_rect.left + coin_rect.width
 

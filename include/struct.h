@@ -67,6 +67,12 @@ typedef struct
     sfIntRect rect;
 } texture;
 
+
+typedef struct
+{
+    int speed_player;
+} speed;
+
 typedef struct
 {
     sfIntRect quest;
@@ -74,6 +80,7 @@ typedef struct
 
 typedef struct
 {
+    speed speed;
     sfVector2f player_pos;
     _Bool health;
 } player;
@@ -103,6 +110,17 @@ typedef struct
     sfClock *goomba; sfTime goomba_time; double goomba_seconds;
     sfClock *colision; sfTime colision_time; double colision_seconds;
 } _clock;
+
+typedef struct
+{
+    sfRectangleShape *mountain;
+    sfRectangleShape *mountain2;
+    sfRectangleShape *mountain3;
+    sfRectangleShape *mountain4;
+    sfRectangleShape *mountain5;
+    sfRectangleShape *mountain6;
+    sfRectangleShape *ground;
+} _colision;
 
 
 ////////////////////////////////////////////////////////////
@@ -144,6 +162,7 @@ typedef struct
     sprite sprite;
     texture texture;
     evt evt;
+    _colision _colision;
     _clock _clock;
     sfText *score;
     sfFont *font;
@@ -166,7 +185,7 @@ typedef struct
     int scene;
     int const_event;
     int score;
-    _Bool jump;
+    int jump;
 } mario;
 
 

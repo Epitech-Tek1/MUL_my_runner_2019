@@ -60,7 +60,19 @@ static void game_sprite_create(mario *mario)
     game_texture_create(mario);
 }
 
+static void shape_collision(mario *mario)
+{
+    GAME._colision.ground = sfRectangleShape_create();
+    GAME._colision.mountain = sfRectangleShape_create();
+    GAME._colision.mountain2 = sfRectangleShape_create();
+    GAME._colision.mountain3 = sfRectangleShape_create();
+    GAME._colision.mountain4 = sfRectangleShape_create();
+    GAME._colision.mountain5 = sfRectangleShape_create();
+    GAME._colision.mountain6 = sfRectangleShape_create();
+}
+
 void game_create(mario *mario)
 {
     game_sprite_create(mario);
+    shape_collision(mario);
 }

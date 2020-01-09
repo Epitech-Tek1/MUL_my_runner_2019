@@ -20,10 +20,22 @@ static void call_fct(mario *mario)
     goomba(mario, GAME.sprite.goomba);
 }
 
+static void disp(mario *mario)
+{
+    DrawRecShape(WINDOW.window, GAME._colision.ground, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain2, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain3, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain4, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain5, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
+}
+
 void game_display(mario *mario)
 {
     event_game(mario);
     call_fct(mario);
+    disp(mario);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);

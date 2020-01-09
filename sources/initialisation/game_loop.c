@@ -15,12 +15,13 @@ static void (* event_fct[])(mario *mario) = {
 
 static void event_run(mario *mario)
 {
-    mario->jump = 0;
+    event_mario(mario);
 }
 
 static void (* event_key_fct[])(mario *mario) = {
     event_run,
-    event_jump
+    event_jump,
+    event_fall
 };
 
 static void manage_event(mario *mario)

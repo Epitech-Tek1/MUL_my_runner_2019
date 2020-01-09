@@ -128,4 +128,10 @@ void move(mario *mario);
 
 void event_damage(mario *mario);
 
+void event_fall(mario *mario);
+
+void colision_mountain(mario *mario);
+
+void colision_coin(mario *mario);
+
 #endif /* !FUNCTION_H_ */

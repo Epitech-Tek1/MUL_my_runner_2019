@@ -18,7 +18,10 @@ EVENT			=	intro/event_intro.c								\
 					menu/event_start.c								\
 					game/event_game.c								\
 					game/event_key.c								\
-					game/event_damage.c
+					game/event_damage.c								\
+					game/colision_coin.c							\
+					game/colision_mountain.c						\
+					game/colision_ennemies.c
 
 
 ## ========================================================================== ##
