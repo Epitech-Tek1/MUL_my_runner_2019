@@ -17,7 +17,8 @@ EVENT			=	intro/event_intro.c								\
 					menu/hover_button.c								\
 					menu/event_start.c								\
 					game/event_game.c								\
-					game/event_key.c
+					game/event_key.c								\
+					game/event_damage.c
 
 
 ## ========================================================================== ##

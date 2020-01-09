@@ -126,4 +126,6 @@ void event_jump(mario *mario);
 
 void move(mario *mario);
 
+void event_damage(mario *mario);
+
 #endif /* !FUNCTION_H_ */

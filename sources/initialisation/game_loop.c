@@ -27,7 +27,14 @@ static void manage_event(mario *mario)
 {
     sfEvent event;
 
-
+    while (sfRenderWindow_pollEvent(WINDOW.window, &event)) {
+        if (sfMouse_isButtonPressed(sfMouseLeft))
+            event_fct[mario->const_event](mario);
+        if (sfKeyboard_isKeyPressed(sfKeySpace))
+            mario->jump = 1;
+        if (event.type == sfEvtClosed)
+            sfRenderWindow_close(WINDOW.window);
+    }
 }
 
 static void (* display_fct[])(mario *mario) = {
@@ -38,29 +45,14 @@ static void (* display_fct[])(mario *mario) = {
 
 int game_loop(mario *mario)
 {
-    sfEvent event;
-    sfText *score = sfText_create();
-    sfFont *font = sfFont_createFromFile("assets/fonts/Roboto-Black.ttf");
-    int i = 0;
-    char *my_score = my_strdup(my_itos(SCORE));
-
-    sfText_setPosition(score, (sfVector2f){1920 - 50, 20});
-    sfClock_restart(INTRO.evt.clock);
     while (sfRenderWindow_isOpen(WINDOW.window)) {
-        while (sfRenderWindow_pollEvent(WINDOW.window, &event))
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(WINDOW.window);
-        event_fct[mario->const_event](mario);
-        if (sfKeyboard_isKeyPressed(sfKeySpace))
-                mario->jump = 1;
         manage_event(mario);
         event_key_fct[mario->jump](mario);
         sfRenderWindow_setFramerateLimit(WINDOW.window, 60);
         sfRenderWindow_clear(WINDOW.window, sfBlack);
         display_fct[mario->scene](mario);
-        sfText_setFont(score, font);
-        sfText_setString(score, (SCORE == 0) ? "0" : my_itos(SCORE));
-        sfRenderWindow_drawText(mario->window.window, score, NULL);
+        sfText_setString(GAME.score, (SCORE == 0) ? "0" : my_itos(SCORE));
+        sfRenderWindow_drawText(mario->window.window, GAME.score, NULL);
         sfRenderWindow_display(WINDOW.window);
     }
     sfRenderWindow_destroy(WINDOW.window);

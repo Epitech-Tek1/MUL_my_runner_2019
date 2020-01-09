@@ -9,7 +9,7 @@
 
 char *my_strcat(char *dest, const char *src)
 {
-	char *tmp = malloc(sizeof(char) * (my_strlen(dest) + my_strlen(src) + 1));
+    char *tmp = malloc(sizeof(char) * (my_strlen(dest) + my_strlen(src) + 1));
     int i = my_strlen(dest);
 
     tmp = my_strcpy(tmp, dest);

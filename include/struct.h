@@ -75,6 +75,7 @@ typedef struct
 typedef struct
 {
     sfVector2f player_pos;
+    _Bool health;
 } player;
 
 
@@ -144,6 +145,8 @@ typedef struct
     texture texture;
     evt evt;
     _clock _clock;
+    sfText *score;
+    sfFont *font;
 } _game;
 
 

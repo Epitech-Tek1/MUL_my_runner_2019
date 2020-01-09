@@ -9,6 +9,6 @@ char *my_strcpy(char *dest, const char *src)
 {
     char *tmp = dest;
 
-    while((*dest++) = (*src++));
+    while ((*dest++) = (*src++));
     return (tmp);
 }

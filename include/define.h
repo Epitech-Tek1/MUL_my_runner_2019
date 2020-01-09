@@ -45,13 +45,36 @@
 #define MOUSE_HOVER_PIPE_GEN 1200 <= MOUSE_POS_X && 780 <= MOUSE_POS_Y && \
     950 >= MOUSE_POS_Y
 
-#define MARIO_L sfSpriteGetGlobalBounds(GAME.sprite.mario).left
+#define MARIO_L (sfSprite_getGlobalBounds(GAME.sprite.mario).left)
 
-#define MARIO_W sfSpriteGetGlobalBounds(GAME.sprite.mario).width + MARIO_L
+#define MARIO_W (sfSprite_getGlobalBounds(GAME.sprite.mario).width + MARIO_L)
 
-#define MARIO_T sfSpriteGetGlobalBounds(GAME.sprite.mario).top
+#define MARIO_T sfSprite_getGlobalBounds(GAME.sprite.mario).top
 
-#define MARIO_H sfSpriteGetGlobalBounds(GAME.sprite.mario).height + + MARIO_T
+#define MARIO_H sfSprite_getGlobalBounds(GAME.sprite.mario).height + + MARIO_T
+
+
+
+#define cr_x coin_rect.left + coin_rect.width
+
+#define cr_y coin_rect.top + coin_rect.height
+
+#define cr2_x coin_rect2.left + coin_rect2.width
+
+#define cr2_y coin_rect2.top + coin_rect2.height
+
+#define cr3_x coin_rect3.left + coin_rect3.width
+
+#define cr3_y coin_rect3.top + coin_rect3.height
+
+#define cr4_x coin_rect4.left + coin_rect4.width
+
+#define cr4_y coin_rect4.top + coin_rect4.height
+
+#define cr5_x coin_rect5.left + coin_rect5.width
+
+#define cr5_y coin_rect5.top + coin_rect5.height
+
 
 #define SCORE mario->score
 
@@ -85,9 +108,9 @@
 
 #define COIN "assets/game/objets/coin.png"
 
-#define TORTUE "assets/game/objets/tortue.png"
+#define TORTUE "assets/game/objets/goomba.png"
 
-#define GOOMBA "assets/game/objets/tortue.png"
+#define GOOMBA "assets/game/objets/goomba.png"
 
 
 //////////////////////////////

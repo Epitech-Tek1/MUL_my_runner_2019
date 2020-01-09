@@ -30,6 +30,8 @@ void initialisation_scene(mario *mario)
     mario->scene = 0;
     mario->const_event = 0;
     mario->jump = 0;
+    mario->score = 0;
+    mario->player.health = true;
     initialisation_clock(mario);
 }
 
@@ -37,16 +39,16 @@ int initialisation(mario *mario, int ac, char *filepath)
 {
     if (error_handling(ac) == 84)
         return (EXIT_ERROR);
-    WINDOW.mode.width = 1920;
-    WINDOW.mode.height = 1080;
-    WINDOW.mode.bitsPerPixel = 32;
-    mario->score = 0;
+    WINDOW.mode = (sfVideoMode){1920, 1080, 32};
+    GAME.score = sfText_create();
+    GAME.font = sfFont_createFromFile("assets/fonts/Roboto-Black.ttf");
+    sfText_setFont(GAME.score, GAME.font);
+    sfText_setPosition(GAME.score, (sfVector2f){1870, 20});
     WINDOW.window = sfRenderWindow_create(mario->window.mode,
     "Mario Runner", sfClose | sfDefaultStyle, NULL);
     if (!WINDOW.window)
         return (EXIT_ERROR);
     initialisation_scene(mario);
-    // mario->map = my_str_to_word_array(mario->map);
     menu_init(mario);
     game_init(mario);
     menu_init_transform(mario);
