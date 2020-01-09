@@ -30,6 +30,7 @@ INIT			=	basics.c										\
 					create_intro.c									\
 					create_menu.c									\
 					create_game.c									\
+					create_game2.c									\
 					destroy.c										\
 					game_loop.c										\
 					init_game_mod.c									\

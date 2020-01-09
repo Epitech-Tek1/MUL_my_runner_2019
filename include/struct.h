@@ -39,7 +39,8 @@ typedef struct
     sfSprite *ground, *ground2;
     sfSprite *mario;
     sfSprite *quest, *quest2;
-    sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6;
+    sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
+    *coin9, *coin10;
     sfSprite *goomba;
 } sprite;
 

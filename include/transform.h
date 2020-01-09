@@ -49,7 +49,8 @@ typedef struct
     sfVector2f ground, ground2;
     sfVector2f mario;
     sfVector2f quest, quest2;
-    sfVector2f coin, coin2, coin3, coin4, coin5, coin6;
+    sfVector2f coin, coin2, coin3, coin4, coin5, coin6, coin7, coin8, \
+    coin9, coin10;
     sfVector2f goomba;
 } position;
 

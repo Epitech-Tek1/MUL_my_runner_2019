@@ -23,7 +23,7 @@ static void paralax(mario *mario)
         SetPos(GAME.sprite.back, (sfVector2f){15000, 0});
 }
 
-static move_2(mario *mario)
+static void move_2(mario *mario)
 {
     sfRectangleShape_move(GAME._colision.mountain, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain2, (sfVector2f){-6, 0});
@@ -43,6 +43,10 @@ void move(mario *mario)
     smove(GAME.sprite.coin3, (sfVector2f){-6, 0});
     smove(GAME.sprite.coin4, (sfVector2f){-6, 0});
     smove(GAME.sprite.coin5, (sfVector2f){-6, 0});
+    smove(GAME.sprite.coin7, (sfVector2f){-6, 0});
+    smove(GAME.sprite.coin8, (sfVector2f){-6, 0});
+    smove(GAME.sprite.coin9, (sfVector2f){-6, 0});
+    smove(GAME.sprite.coin10, (sfVector2f){-6, 0});
     smove(GAME.sprite.quest, (sfVector2f){-6, 0});
     smove(GAME.sprite.quest2, (sfVector2f){-6, 0});
     smove(GAME.sprite.mg, (sfVector2f){-3, 0});
@@ -55,8 +59,8 @@ void move(mario *mario)
 
 void event_game(mario *mario)
 {
-    colision(mario);
     colision_mountain(mario);
     colision_coin(mario);
+    colision_ennemies(mario);
     move(mario);
 }

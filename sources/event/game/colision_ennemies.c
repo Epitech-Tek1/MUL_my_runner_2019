@@ -7,13 +7,14 @@
 
 #include "runner.h"
 
-static void colision_1(mario *mario)
+static void colision_2(mario *mario)
 {
 
 }
 
 static void colision_1(mario *mario)
 {
+    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect goomba_rect = SGB(GAME.sprite.goomba);
 
     if (sfFloatRect_intersects(&mario_rect, &goomba_rect, NULL))

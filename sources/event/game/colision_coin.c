@@ -7,12 +7,26 @@
 
 #include "runner.h"
 
-static void colision_1(mario *mario)
+static void colision_2(mario *mario)
 {
+    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
+    sfVector2f disp = {-100, 0};
+    sfFloatRect coin_rect7 = SGB(GAME.sprite.coin7);
+    sfFloatRect coin_rect8 = SGB(GAME.sprite.coin8);
+    sfFloatRect coin_rect9 = SGB(GAME.sprite.coin9);
+    sfFloatRect coin_rect10 = SGB(GAME.sprite.coin10);
 
+    if (sfFloatRect_contains(&mario_rect, (cr7_x / 1.7), (cr7_y / 1.7)))
+        mario->score++, SetPos(GAME.sprite.coin7, disp);
+    if (sfFloatRect_contains(&mario_rect, (cr8_x / 1.7), (cr8_y / 1.7)))
+        mario->score++, SetPos(GAME.sprite.coin8, disp);
+    if (sfFloatRect_contains(&mario_rect, (cr9_x / 1.7), (cr9_y / 1.7)))
+        mario->score++, SetPos(GAME.sprite.coin9, disp);
+    if (sfFloatRect_contains(&mario_rect, (cr10_x / 1.7), (cr10_y / 1.7)))
+        mario->score++, SetPos(GAME.sprite.coin10, disp);
 }
 
-static void colision_2(mario *mario)
+static void colision_1(mario *mario)
 {
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect coin_rect = SGB(GAME.sprite.coin);

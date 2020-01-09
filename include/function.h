@@ -134,4 +134,8 @@ void colision_mountain(mario *mario);
 
 void colision_coin(mario *mario);
 
+void colision_ennemies(mario *mario);
+
+void game_create2(mario *mario);
+
 #endif /* !FUNCTION_H_ */

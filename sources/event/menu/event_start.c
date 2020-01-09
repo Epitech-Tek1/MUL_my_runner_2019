@@ -12,7 +12,6 @@ void event_start(mario *mario)
     sfEvent event;
 
     if (event.type == sfEvtMouseButtonPressed && (MOUSE_HOVER_PIPE_START)) {
-        my_printf("erzfkhf\n");
         mario->scene = 2;
         mario->const_event = 2;
     }

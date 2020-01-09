@@ -88,6 +88,21 @@
 
 #define cr5_y coin_rect5.top + coin_rect5.height
 
+#define cr7_x coin_rect7.left + coin_rect7.width
+
+#define cr7_y coin_rect7.top + coin_rect7.height
+
+#define cr8_x coin_rect8.left + coin_rect8.width
+
+#define cr8_y coin_rect8.top + coin_rect8.height
+
+#define cr9_x coin_rect9.left + coin_rect9.width
+
+#define cr9_y coin_rect9.top + coin_rect9.height
+
+#define cr10_x coin_rect10.left + coin_rect10.width
+
+#define cr10_y coin_rect10.top + coin_rect10.height
 
 #define SCORE mario->score
 
