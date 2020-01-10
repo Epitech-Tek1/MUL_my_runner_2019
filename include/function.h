@@ -138,4 +138,6 @@ void colision_ennemies(mario *mario);
 
 void game_create2(mario *mario);
 
+void colision_flag(mario *mario);
+
 #endif /* !FUNCTION_H_ */

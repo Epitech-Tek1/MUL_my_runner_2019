@@ -27,6 +27,8 @@ static void assign_scale(mario *mario)
     sfSprite_setScale(GAME.sprite.coin9, (sfVector2f){.25, .25});
     sfSprite_setScale(GAME.sprite.coin10, (sfVector2f){.25, .25});
     sfSprite_setScale(GAME.sprite.goomba, (sfVector2f){.2, .2});
+    sfSprite_setScale(GAME.sprite.pipe, (sfVector2f){1, 1});
+    sfSprite_setScale(GAME.sprite.flag, (sfVector2f){.9, .9});
 }
 
 static void assign_pos_2(mario *mario)
@@ -55,13 +57,15 @@ static void assign_pos(mario *mario)
     SetPos(GAME.sprite.coin5, (sfVector2f){1610, 692});
     SetPos(GAME.sprite.coin6, (sfVector2f){1820, 23});
     SetPos(GAME.sprite.goomba, (sfVector2f){3400, 738});
+    SetPos(GAME.sprite.pipe, (sfVector2f){0, 0});
+    SetPos(GAME.sprite.flag, (sfVector2f){12000, 363});
     assign_pos_2(mario);
 }
 
-set_shape(mario *mario)
+static void set_shape(mario *mario)
 {
     RecShapePos(GAME._colision.ground, (sfVector2f){0, 794});
-    RecShapePos(GAME._colision.mountain, (sfVector2f){1615, 738});
+    RecShapePos(GAME._colision.mountain, (sfVector2f){1630, 738});
     RecShapePos(GAME._colision.mountain2, (sfVector2f){1615, 738});
     RecShapePos(GAME._colision.mountain3, (sfVector2f){2080, 663});
     RecShapePos(GAME._colision.mountain4, (sfVector2f){4338, 780});

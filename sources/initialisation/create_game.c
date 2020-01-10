@@ -74,6 +74,6 @@ static void shape_collision(mario *mario)
 void game_create(mario *mario)
 {
     game_sprite_create(mario);
-    shape_collision(mario);
     game_create2(mario);
+    shape_collision(mario);
 }

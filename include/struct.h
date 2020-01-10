@@ -29,7 +29,7 @@ typedef struct
 {
     sfSprite *intro;
     sfSprite *menu;
-    sfSprite *pipe_game, *pipe_new, *pipe_gen, *pipe_op;
+    sfSprite *pipe_game, *pipe_new, *pipe_gen, *pipe_op, *pipe;
     sfSprite *game;
     sfSprite *new;
     sfSprite *gen;
@@ -41,7 +41,9 @@ typedef struct
     sfSprite *quest, *quest2;
     sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
     *coin9, *coin10;
+    sfSprite *flag;
     sfSprite *goomba;
+    sfSprite *mario_clear;
 } sprite;
 
 
@@ -65,8 +67,30 @@ typedef struct
     sfTexture *quest;
     sfTexture *coin;
     sfTexture *goomba;
+    sfTexture *flag;
+    sfTexture *mario_clear;
     sfIntRect rect;
 } texture;
+
+typedef struct
+{
+    sfMusic *lvl;
+    sfMusic *jump;
+    sfMusic *death;
+    sfMusic *win;
+    sfMusic *loose;
+    sfMusic *menu;
+    sfMusic *coin;
+    sfMusic *coin1;
+    sfMusic *coin2;
+    sfMusic *coin3;
+    sfMusic *coin4;
+    sfMusic *coin5;
+    sfMusic *coin7;
+    sfMusic *coin8;
+    sfMusic *coin9;
+    sfMusic *coin10;
+} sounds;
 
 
 typedef struct
@@ -167,6 +191,7 @@ typedef struct
     _clock _clock;
     sfText *score;
     sfFont *font;
+    sounds  sounds;
 } _game;
 
 

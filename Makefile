@@ -21,7 +21,8 @@ EVENT			=	intro/event_intro.c								\
 					game/event_damage.c								\
 					game/colision_coin.c							\
 					game/colision_mountain.c						\
-					game/colision_ennemies.c
+					game/colision_ennemies.c						\
+					game/colision_flag.c
 
 
 ## ========================================================================== ##

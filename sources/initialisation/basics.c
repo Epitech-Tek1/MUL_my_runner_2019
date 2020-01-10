@@ -27,8 +27,8 @@ static int error_handling(int ac) {
 
 void initialisation_scene(mario *mario)
 {
-    mario->scene = 2;
-    mario->const_event = 2;
+    mario->scene = 0;
+    mario->const_event = 0;
     mario->jump = 0;
     mario->score = 0;
     mario->player.health = true;

@@ -38,6 +38,7 @@ static void disp(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin8, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin9, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin10, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.pipe, NULL);
 }
 
 void game_display(mario *mario)
@@ -58,6 +59,7 @@ void game_display(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.flag, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
     disp(mario);
 }

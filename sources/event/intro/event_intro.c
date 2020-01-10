@@ -12,6 +12,7 @@ void event_intro(mario *mario)
     if (sfMouse_isButtonPressed(sfMouseLeft)) {
         mario->scene = 1;
         mario->const_event = 1;
+        sfMusic_play(GAME.sounds.menu);
     }
     INTRO.evt.time = sfClock_getElapsedTime(INTRO.evt.clock);
     INTRO.evt.seconds = INTRO.evt.time.microseconds / 1000000.0;
@@ -29,5 +30,6 @@ void event_intro(mario *mario)
     INTRO.texture.rect.top == 2700) {
         mario->scene = 1;
         mario->const_event = 1;
+        sfMusic_play(GAME.sounds.menu);
     }
 }

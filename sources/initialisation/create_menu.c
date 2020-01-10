@@ -51,7 +51,13 @@ static void sprite_create(mario *mario)
     texture_create(mario);
 }
 
+static void create_music(mario *mario)
+{
+    GAME.sounds.menu = sfMusic_createFromFile("assets/game/sounds/menu.wav");
+}
+
 void sprite_menu_create(mario *mario)
 {
     sprite_create(mario);
+    create_music(mario);
 }

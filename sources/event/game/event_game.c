@@ -31,6 +31,8 @@ static void move_2(mario *mario)
     sfRectangleShape_move(GAME._colision.mountain4, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain5, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain6, (sfVector2f){-6, 0});
+    sfSprite_move(GAME.sprite.pipe, (sfVector2f){-6, 0});
+    sfSprite_move(GAME.sprite.flag, (sfVector2f){-6, 0});
 }
 
 void move(mario *mario)
@@ -62,5 +64,6 @@ void event_game(mario *mario)
     colision_mountain(mario);
     colision_coin(mario);
     colision_ennemies(mario);
+    colision_flag(mario);
     move(mario);
 }

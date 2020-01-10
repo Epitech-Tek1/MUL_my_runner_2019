@@ -19,7 +19,7 @@
 ////////////////////////////////////////////////////////////
 typedef struct
 {
-    sfVector2f pipe_game, pipe_new, pipe_gen, pipe_op;
+    sfVector2f pipe_game, pipe_new, pipe_gen, pipe_op, pipe;
     sfVector2f game;
     sfVector2f new;
     sfVector2f gen;
@@ -34,11 +34,12 @@ typedef struct
     sfVector2f quest, quest2;
     sfVector2f coin;
     sfVector2f goomba;
+    sfVector2f mario_clear;
 } scale;
 
 typedef struct
 {
-    sfVector2f pipe_game, pipe_new, pipe_gen, pipe_op;
+    sfVector2f pipe_game, pipe_new, pipe_gen, pipe_op, pipe;
     sfVector2f game;
     sfVector2f new;
     sfVector2f gen;
@@ -52,6 +53,8 @@ typedef struct
     sfVector2f coin, coin2, coin3, coin4, coin5, coin6, coin7, coin8, \
     coin9, coin10;
     sfVector2f goomba;
+    sfVector2f flag;
+    sfVector2f mario_clear;
 } position;
 
 typedef struct

@@ -14,5 +14,7 @@ void event_start(mario *mario)
     if (event.type == sfEvtMouseButtonPressed && (MOUSE_HOVER_PIPE_START)) {
         mario->scene = 2;
         mario->const_event = 2;
+        sfMusic_destroy(GAME.sounds.menu);
+        sfMusic_play(GAME.sounds.lvl);
     }
 }
