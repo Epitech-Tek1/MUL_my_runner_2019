@@ -124,7 +124,7 @@ void static_mario(mario *mario);
 
 void event_jump(mario *mario);
 
-void move(mario *mario);
+void move(mario *mario, char **s_arr);
 
 void event_damage(mario *mario);
 
@@ -138,6 +138,16 @@ void colision_ennemies(mario *mario);
 
 void game_create2(mario *mario);
 
-void colision_flag(mario *mario);
+void event_win(mario *mario);
+
+void game_init_transform_2(mario *mario);
+
+void event_loose(mario *mario);
+
+void reset_game(mario *mario);
+
+void initialisation_clock(mario *mario);
+
+void initialisation_scene(mario *mario);
 
 #endif /* !FUNCTION_H_ */

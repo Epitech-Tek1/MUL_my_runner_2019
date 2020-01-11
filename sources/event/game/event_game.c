@@ -7,6 +7,8 @@
 
 #include "runner.h"
 
+#define _ GAME.sprite
+
 static void paralax(mario *mario)
 {
     if (GetPos(GAME.sprite.mg).x == 0)
@@ -31,39 +33,42 @@ static void move_2(mario *mario)
     sfRectangleShape_move(GAME._colision.mountain4, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain5, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain6, (sfVector2f){-6, 0});
-    sfSprite_move(GAME.sprite.pipe, (sfVector2f){-6, 0});
-    sfSprite_move(GAME.sprite.flag, (sfVector2f){-6, 0});
 }
 
-void move(mario *mario)
+void move(mario *mario, char **s_arr)
 {
-    smove(GAME.sprite.ground, (sfVector2f){-6, 0});
     move_2(mario);
-    smove(GAME.sprite.ground2, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin2, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin3, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin4, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin5, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin7, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin8, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin9, (sfVector2f){-6, 0});
-    smove(GAME.sprite.coin10, (sfVector2f){-6, 0});
-    smove(GAME.sprite.quest, (sfVector2f){-6, 0});
-    smove(GAME.sprite.quest2, (sfVector2f){-6, 0});
+    for (int i = 0; s_arr[i]; ++i)
+        smove((sfSprite *)s_arr[i], (sfVector2f){-6, 0});
     smove(GAME.sprite.mg, (sfVector2f){-3, 0});
     smove(GAME.sprite.mg2, (sfVector2f){-3, 0});
-    smove(GAME.sprite.back, (sfVector2f){-1, 0});
-    smove(GAME.sprite.back2, (sfVector2f){-1, 0});
     smove(GAME.sprite.goomba, (sfVector2f){-6.7, 0});
     paralax(mario);
 }
 
+static void always_moved(mario *mario)
+{
+    smove(GAME.sprite.back, (sfVector2f){-1, 0});
+    smove(GAME.sprite.back2, (sfVector2f){-1, 0});
+}
+
 void event_game(mario *mario)
 {
+    char *sprite_array[29] = {(char *)_.coin, (char *)_.coin2,
+    (char *)_.coin3, (char *)_.coin4, (char *)_.coin5, (char *)_.coin7,
+    (char *)_.coin8, (char *)_.coin9, (char *)_.coin10, (char *)_.coin11,
+    (char *)_.coin12, (char *)_.coin13, (char *)_.coin14, (char *)_.coin15,
+    (char *)_.coin16, (char *)_.coin17, (char *)_.coin18, (char *)_.coin19,
+    (char *)_.coin20, (char *)_.coin21, (char *)_.coin22, (char *)_.coin23,
+    (char *)_.ground, (char *)_.ground2, (char *)_.quest, (char *)_.quest2,
+    (char *)_.pipe, (char *)_.flag};
+
     colision_mountain(mario);
     colision_coin(mario);
     colision_ennemies(mario);
-    colision_flag(mario);
-    move(mario);
+    always_moved(mario);
+    event_win(mario);
+    event_loose(mario);
+    if (mario->is_move == true)
+        move(mario, sprite_array);
 }

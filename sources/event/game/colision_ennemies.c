@@ -17,7 +17,7 @@ static void colision_1(mario *mario)
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect goomba_rect = SGB(GAME.sprite.goomba);
 
-    if (sfFloatRect_intersects(&mario_rect, &goomba_rect, NULL))
+    if (sfFloatRect_contains(&mario_rect, gr_x / 2, gr_y / 2))
         (event_damage(mario));
 }
 

@@ -7,66 +7,34 @@
 
 #include "runner.h"
 
-static void colision_3(mario *mario)
+#define _ GAME.sprite
+
+static void colision_1(mario *mario, sfFloatRect *r_arr, char **s_arr,
+sfFloatRect mario_rect)
 {
-    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
-    sfFloatRect coin_rect5 = SGB(GAME.sprite.coin5);
-    sfVector2f disp = {-100, 0};
-
-    if (sfFloatRect_contains(&mario_rect, (cr5_x / 1.7), (cr5_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin5, disp),
-        sfMusic_play(GAME.sounds.coin5);
-}
-
-static void colision_2(mario *mario)
-{
-    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
-    sfVector2f disp = {-100, 0};
-    sfFloatRect coin_rect7 = SGB(GAME.sprite.coin7);
-    sfFloatRect coin_rect8 = SGB(GAME.sprite.coin8);
-    sfFloatRect coin_rect9 = SGB(GAME.sprite.coin9);
-    sfFloatRect coin_rect10 = SGB(GAME.sprite.coin10);
-
-    if (sfFloatRect_contains(&mario_rect, (cr7_x / 1.7), (cr7_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin7, disp),
-        sfMusic_play(GAME.sounds.coin7);
-    if (sfFloatRect_contains(&mario_rect, (cr8_x / 1.7), (cr8_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin8, disp),
-        sfMusic_play(GAME.sounds.coin8);
-    if (sfFloatRect_contains(&mario_rect, (cr9_x / 1.7), (cr9_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin9, disp),
-        sfMusic_play(GAME.sounds.coin9);
-    if (sfFloatRect_contains(&mario_rect, (cr10_x / 1.7), (cr10_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin10, disp),
-        sfMusic_play(GAME.sounds.coin10);
-}
-
-static void colision_1(mario *mario)
-{
-    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
-    sfFloatRect coin_rect = SGB(GAME.sprite.coin);
-    sfFloatRect coin_rect2 = SGB(GAME.sprite.coin2);
-    sfFloatRect coin_rect3 = SGB(GAME.sprite.coin3);
-    sfFloatRect coin_rect4 = SGB(GAME.sprite.coin4);
-    sfVector2f disp = {-100, 0};
-
-    if (sfFloatRect_contains(&mario_rect, (cr_x / 1.7), (cr_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin, disp),
-        sfMusic_play(GAME.sounds.coin);
-    if (sfFloatRect_contains(&mario_rect, (cr2_x / 1.7), (cr2_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin2, disp),
-        sfMusic_play(GAME.sounds.coin2);
-    if (sfFloatRect_contains(&mario_rect, (cr3_x / 1.7), (cr3_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin3, disp),
-        sfMusic_play(GAME.sounds.coin3);
-    if (sfFloatRect_contains(&mario_rect, (cr4_x / 1.7), (cr4_y / 1.7)))
-        mario->score++, SetPos(GAME.sprite.coin4, disp),
-        sfMusic_play(GAME.sounds.coin4);
+    for (int i = 0; i != 23; ++i)
+        if (sfFloatRect_intersects(&mario_rect, &r_arr[i], NULL)) {
+            SetPos((sfSprite *)s_arr[i], (sfVector2f){20000, 0});
+            mario->score++;
+            sfMusic_play(GAME.sounds.coin);
+        }
 }
 
 void colision_coin(mario *mario)
 {
-    colision_1(mario);
-    colision_2(mario);
-    colision_3(mario);
+    sfFloatRect mario_rect = SGB(_.mario);
+    sfFloatRect rect_array[] = {SGB(_.coin), SGB(_.coin2),
+    SGB(_.coin3), SGB(_.coin4), SGB(_.coin5), SGB(_.coin7), SGB(_.coin8),
+    SGB(_.coin9), SGB(_.coin10), SGB(_.coin11), SGB(_.coin12),
+    SGB(_.coin13), SGB(_.coin14), SGB(_.coin15), SGB(_.coin16), SGB(_.coin17),
+    SGB(_.coin18), SGB(_.coin19), SGB(_.coin20), SGB(_.coin21), SGB(_.coin22),
+    SGB(_.coin23)};
+    char *sprite_array[] = {(char *)_.coin, (char *)_.coin2,
+    (char *)_.coin3, (char *)_.coin4, (char *)_.coin5, (char *)_.coin7,
+    (char *)_.coin8, (char *)_.coin9, (char *)_.coin10, (char *)_.coin11,
+    (char *)_.coin12, (char *)_.coin13, (char *)_.coin14, (char *)_.coin15,
+    (char *)_.coin16, (char *)_.coin17, (char *)_.coin18, (char *)_.coin19,
+    (char *)_.coin20, (char *)_.coin21, (char *)_.coin22, (char *)_.coin23};
+
+    colision_1(mario, rect_array, sprite_array, mario_rect);
 }

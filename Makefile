@@ -17,12 +17,14 @@ EVENT			=	intro/event_intro.c								\
 					menu/hover_button.c								\
 					menu/event_start.c								\
 					game/event_game.c								\
+					game/event_loose.c								\
+					game/event_win.c								\
 					game/event_key.c								\
 					game/event_damage.c								\
 					game/colision_coin.c							\
 					game/colision_mountain.c						\
 					game/colision_ennemies.c						\
-					game/colision_flag.c
+					game/reset_game.c
 
 
 ## ========================================================================== ##
@@ -59,6 +61,7 @@ TRANS			=	intro/intro_init_transform.c						\
 					menu/menu_init_transform.c							\
 					menu/menu_do_transform.c							\
 					game/game_init_transform.c							\
+					game/game_init_2.c
 
 
 ## ========================================================================== ##

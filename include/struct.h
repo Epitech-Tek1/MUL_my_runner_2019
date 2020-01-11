@@ -39,11 +39,14 @@ typedef struct
     sfSprite *ground, *ground2;
     sfSprite *mario;
     sfSprite *quest, *quest2;
-    sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
-    *coin9, *coin10;
     sfSprite *flag;
     sfSprite *goomba;
-    sfSprite *mario_clear;
+    sfSprite *end;
+    sfSprite *bowser;
+    sfSprite *winscreen;
+    sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
+    *coin9, *coin10, *coin11, *coin12, *coin13, *coin14, *coin15, *coin16,
+    *coin17, *coin18, *coin19, *coin20, *coin21, *coin22, *coin23;
 } sprite;
 
 
@@ -55,7 +58,7 @@ typedef struct
 {
     sfTexture *intro, *intro2, *intro3;
     sfTexture *menu;
-    sfTexture *pipe_game, *pipe_new, *pipe_gen, *pipe_op;
+    sfTexture *pipe_game, *pipe_new, *pipe_gen, *pipe_op, *pipe;
     sfTexture *game;
     sfTexture *new;
     sfTexture *gen;
@@ -68,7 +71,9 @@ typedef struct
     sfTexture *coin;
     sfTexture *goomba;
     sfTexture *flag;
-    sfTexture *mario_clear;
+    sfTexture *end;
+    sfTexture *bowser;
+    sfTexture *winScreen;
     sfIntRect rect;
 } texture;
 
@@ -80,16 +85,9 @@ typedef struct
     sfMusic *win;
     sfMusic *loose;
     sfMusic *menu;
-    sfMusic *coin;
-    sfMusic *coin1;
-    sfMusic *coin2;
-    sfMusic *coin3;
-    sfMusic *coin4;
-    sfMusic *coin5;
-    sfMusic *coin7;
-    sfMusic *coin8;
-    sfMusic *coin9;
-    sfMusic *coin10;
+    sfMusic *hit;
+    sfMusic *coin, *coin1, *coin2, *coin3, *coin4, *coin5, *coin7, *coin8,
+    *coin9, *coin10, *coin11, *coin12, *coin13, *coin14, *coin15, *coin16;
 } sounds;
 
 
@@ -130,6 +128,7 @@ typedef struct
 
 typedef struct
 {
+    sfClock *end_clock; sfTime end_time; double end_seconds;
     sfClock *quest; sfTime quest_time; double quest_seconds;
     sfClock *coin; sfTime coin_time; double coin_seconds;
     sfClock *goomba; sfTime goomba_time; double goomba_seconds;
@@ -187,6 +186,8 @@ typedef struct
     sprite sprite;
     texture texture;
     evt evt;
+    _Bool catch;
+    _Bool screen_win;
     _colision _colision;
     _clock _clock;
     sfText *score;
@@ -212,6 +213,8 @@ typedef struct
     int const_event;
     int score;
     int jump;
+    int is_move;
+    _Bool is_end;
 } mario;
 
 

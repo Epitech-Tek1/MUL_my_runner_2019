@@ -7,25 +7,6 @@
 
 #include "runner.h"
 
-void static_mario(mario *mario)
-{
-    static sfIntRect rect_static;
-
-    rect_static.height = 650;
-    rect_static.left = 1950;
-    rect_static.width = 600;
-    sfSprite_setTextureRect(GAME.sprite.mario, rect_static);
-    GAME.evt.time = sfClock_getElapsedTime(GAME.evt.clock);
-    GAME.evt.seconds = GAME.evt.time.microseconds / 1000000.0;
-    if (GAME.evt.seconds > .2) {
-        if (rect_static.left == (5850))
-            rect_static.left = 1950;
-        else
-            rect_static.left = 600000;
-        sfClock_restart(GAME.evt.clock);
-    }
-}
-
 void event_mario(mario *mario)
 {
     static sfIntRect rect;

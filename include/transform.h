@@ -34,7 +34,7 @@ typedef struct
     sfVector2f quest, quest2;
     sfVector2f coin;
     sfVector2f goomba;
-    sfVector2f mario_clear;
+    sfVector2f end;
 } scale;
 
 typedef struct
@@ -50,11 +50,13 @@ typedef struct
     sfVector2f ground, ground2;
     sfVector2f mario;
     sfVector2f quest, quest2;
-    sfVector2f coin, coin2, coin3, coin4, coin5, coin6, coin7, coin8, \
-    coin9, coin10;
+    sfVector2f coin, coin2, coin3, coin4, coin5, coin6, coin7, coin8,
+    coin9, coin10, coin11, coin12, coin13, coin14, coin15, coin16, coin17,
+    coin18, coin19, coin20, coin21, coin22, coin23;
     sfVector2f goomba;
     sfVector2f flag;
-    sfVector2f mario_clear;
+    sfVector2f end;
+    sfVector2f winscreen;
 } position;
 
 typedef struct

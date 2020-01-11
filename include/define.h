@@ -67,42 +67,10 @@
 #define DrawRecShape sfRenderWindow_drawRectangleShape
 
 
+#define gr_x goomba_rect.left + goomba_rect.width
 
-#define cr_x coin_rect.left + coin_rect.width
+#define gr_y goomba_rect.top + goomba_rect.height
 
-#define cr_y coin_rect.top + coin_rect.height
-
-#define cr2_x coin_rect2.left + coin_rect2.width
-
-#define cr2_y coin_rect2.top + coin_rect2.height
-
-#define cr3_x coin_rect3.left + coin_rect3.width
-
-#define cr3_y coin_rect3.top + coin_rect3.height
-
-#define cr4_x coin_rect4.left + coin_rect4.width
-
-#define cr4_y coin_rect4.top + coin_rect4.height
-
-#define cr5_x coin_rect5.left + coin_rect5.width
-
-#define cr5_y coin_rect5.top + coin_rect5.height
-
-#define cr7_x coin_rect7.left + coin_rect7.width
-
-#define cr7_y coin_rect7.top + coin_rect7.height
-
-#define cr8_x coin_rect8.left + coin_rect8.width
-
-#define cr8_y coin_rect8.top + coin_rect8.height
-
-#define cr9_x coin_rect9.left + coin_rect9.width
-
-#define cr9_y coin_rect9.top + coin_rect9.height
-
-#define cr10_x coin_rect10.left + coin_rect10.width
-
-#define cr10_y coin_rect10.top + coin_rect10.height
 
 #define SCORE mario->score
 

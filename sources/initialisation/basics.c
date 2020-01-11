@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void initialisation_clock(mario *mario)
+void initialisation_clock(mario *mario)
 {
     GAME._clock.quest = sfClock_create();
     GAME._clock.coin = sfClock_create();
@@ -31,7 +31,11 @@ void initialisation_scene(mario *mario)
     mario->const_event = 0;
     mario->jump = 0;
     mario->score = 0;
+    mario->is_move = 1;
+    mario->is_end = false;
     mario->player.health = true;
+    GAME.catch = true;
+    GAME.screen_win = false;
     initialisation_clock(mario);
 }
 
