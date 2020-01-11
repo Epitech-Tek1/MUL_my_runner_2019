@@ -86,4 +86,5 @@ void game_create2(mario *mario)
 {
     game_sprite_create(mario);
     create_music(mario);
+    game_create3(mario);
 }

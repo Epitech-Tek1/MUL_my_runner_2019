@@ -9,7 +9,8 @@
 
 void event_loose(mario *mario)
 {
-    if (sfSprite_getPosition(GAME.sprite.mario).x < -150) {
+    if (sfSprite_getPosition(GAME.sprite.mario).x < -130 ||
+    mario->player.health == false) {
         if (GAME.catch == true) {
             sfMusic_stop(GAME.sounds.lvl);
             sfMusic_play(GAME.sounds.death);

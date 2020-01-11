@@ -10,16 +10,9 @@
 void event_damage(mario *mario)
 {
     static int i = 0;
-    static _Bool try = true;
 
-    if (mario->player.health == false && i > 1000) {
-        sfRenderWindow_destroy(WINDOW.window);
-        free(mario);
-        exit(EXIT_SUCCESS);
-    }
-    if (try == true) {
-        sfMusic_play(GAME.sounds.hit);
-        try = false;
+    if (mario->player.health == false) {
+        event_loose(mario);
     }
     sfSprite_setScale(GAME.sprite.mario, (sfVector2f){.107,
     sfSprite_getScale(GAME.sprite.mario).y - .0015});

@@ -40,7 +40,7 @@ typedef struct
     sfSprite *mario;
     sfSprite *quest, *quest2;
     sfSprite *flag;
-    sfSprite *goomba;
+    sfSprite *goomba, *goomba2, *goomba3, *goomba4;
     sfSprite *end;
     sfSprite *bowser;
     sfSprite *winscreen;

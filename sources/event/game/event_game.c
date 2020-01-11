@@ -43,6 +43,9 @@ void move(mario *mario, char **s_arr)
     smove(GAME.sprite.mg, (sfVector2f){-3, 0});
     smove(GAME.sprite.mg2, (sfVector2f){-3, 0});
     smove(GAME.sprite.goomba, (sfVector2f){-6.7, 0});
+    smove(GAME.sprite.goomba2, (sfVector2f){-6.7, 0});
+    smove(GAME.sprite.goomba3, (sfVector2f){-6.7, 0});
+    smove(GAME.sprite.goomba4, (sfVector2f){-6.7, 0});
     paralax(mario);
 }
 

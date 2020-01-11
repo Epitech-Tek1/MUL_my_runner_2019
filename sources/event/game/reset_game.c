@@ -13,6 +13,7 @@ void reset_game(mario *mario)
     initialisation_scene(mario);
     mario->scene = 1;
     mario->const_event = 1;
+    mario->player.health = true;
     GAME._clock.end_seconds = (double)0;
     initialisation_clock(mario);
     sprite_menu_create(mario);

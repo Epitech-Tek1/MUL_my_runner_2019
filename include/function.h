@@ -150,4 +150,6 @@ void initialisation_clock(mario *mario);
 
 void initialisation_scene(mario *mario);
 
+void game_create3(mario *mario);
+
 #endif /* !FUNCTION_H_ */

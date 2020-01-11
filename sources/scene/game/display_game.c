@@ -27,7 +27,6 @@ static void call_fct(mario *mario)
     coin(mario, GAME.sprite.coin14);
     coin(mario, GAME.sprite.coin15);
     coin(mario, GAME.sprite.coin16);
-    goomba(mario, GAME.sprite.goomba);
 }
 
 static void call_fct_2(mario *mario)
@@ -39,6 +38,10 @@ static void call_fct_2(mario *mario)
     coin(mario, GAME.sprite.coin21);
     coin(mario, GAME.sprite.coin22);
     coin(mario, GAME.sprite.coin23);
+    goomba(mario, GAME.sprite.goomba);
+    goomba(mario, GAME.sprite.goomba2);
+    goomba(mario, GAME.sprite.goomba3);
+    goomba(mario, GAME.sprite.goomba4);
 }
 
 static void disp_2(mario *mario)
@@ -53,6 +56,9 @@ static void disp_2(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin22, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin23, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.bowser, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba2, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba3, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba4, NULL);
 }
 
 static void disp(mario *mario)

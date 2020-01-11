@@ -24,6 +24,9 @@ static void assign_scale(mario *mario)
     sfSprite_setScale(GAME.sprite.coin22, (sfVector2f){.25, .25});
     sfSprite_setScale(GAME.sprite.coin23, (sfVector2f){.25, .25});
     sfSprite_setScale(GAME.sprite.bowser, (sfVector2f){18, 18});
+    sfSprite_setScale(GAME.sprite.goomba2, (sfVector2f){.2, .2});
+    sfSprite_setScale(GAME.sprite.goomba3, (sfVector2f){.2, .2});
+    sfSprite_setScale(GAME.sprite.goomba4, (sfVector2f){.2, .2});
 }
 
 static void assign_pos(mario *mario)
@@ -43,6 +46,9 @@ static void assign_pos(mario *mario)
     SetPos(GAME.sprite.coin22, (sfVector2f){3100, 738});
     SetPos(GAME.sprite.coin23, (sfVector2f){3133, 738});
     SetPos(GAME.sprite.bowser, (sfVector2f){960, 540});
+    SetPos(GAME.sprite.goomba2, (sfVector2f){4862, 646});
+    SetPos(GAME.sprite.goomba3, (sfVector2f){5070, 646});
+    SetPos(GAME.sprite.goomba4, (sfVector2f){5290, 646});
 }
 
 void game_init_transform_2(mario *mario)
