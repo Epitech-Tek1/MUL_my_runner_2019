@@ -8,32 +8,26 @@
 #include "runner.h"
 
 #define _ GAME.sprite
+#define set_org_x r_arr[i].left + r_arr[i].width / 2
+#define set_prg_y r_arr[i].top + r_arr[i].height / 2
+#define clock GAME._clock.colisiong_seconds
 
-static void colision_2(mario *mario)
-{
-
-}
-
-static void colision_1(mario *mario, float *x, float *y)
+static void colision_1(mario *mario, sfFloatRect *r_arr)
 {
     sfFloatRect mario_rect = SGB(_.mario);
 
+    GAME._clock.colisiong_time = sfClock_getElapsedTime(GAME._clock.colisiong);
+    GAME._clock.colisiong_seconds = GAME._clock.colisiong_time.microseconds / T;
     for (int i = 0; i != 3; ++i)
-        if (sfFloatRect_contains(&mario_rect, x[i] / 2, y[i] / 2)) {
-            sfMusic_play(GAME.sounds.hit);
+        if (RECC(&mario_rect, set_org_x, set_prg_y) && clock >= .5) {
+            sfClock_restart(GAME._clock.colisiong);
             event_damage(mario);
         }
 }
 
 void colision_ennemies(mario *mario)
 {
-    float x[] = {SGB(_.goomba).left + SGB(_.goomba).width,
-    SGB(_.goomba2).left + SGB(_.goomba2).width,
-    SGB(_.goomba3).left + SGB(_.goomba3).width,
-    SGB(_.goomba4).left + SGB(_.goomba4).width};
-    float y[] = {SGB(_.goomba).top + SGB(_.goomba).height,
-    SGB(_.goomba2).top + SGB(_.goomba2).height,
-    SGB(_.goomba3).top + SGB(_.goomba3).height,
-    SGB(_.goomba4).top + SGB(_.goomba4).height};
-    colision_1(mario, x, y);
+    sfFloatRect rect_array[] = {SGB(_.goomba), SGB(_.goomba2), SGB(_.goomba3),
+    SGB(_.goomba4)};
+    colision_1(mario, rect_array);
 }

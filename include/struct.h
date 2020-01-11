@@ -88,6 +88,7 @@ typedef struct
     sfMusic *hit;
     sfMusic *coin, *coin1, *coin2, *coin3, *coin4, *coin5, *coin7, *coin8,
     *coin9, *coin10, *coin11, *coin12, *coin13, *coin14, *coin15, *coin16;
+    _Bool playe_loose;
 } sounds;
 
 
@@ -128,11 +129,13 @@ typedef struct
 
 typedef struct
 {
+    sfClock *hit_clock; sfTime hit_time; double hit_seconds;
     sfClock *end_clock; sfTime end_time; double end_seconds;
     sfClock *quest; sfTime quest_time; double quest_seconds;
     sfClock *coin; sfTime coin_time; double coin_seconds;
     sfClock *goomba; sfTime goomba_time; double goomba_seconds;
-    sfClock *colision; sfTime colision_time; double colision_seconds;
+    sfClock *colisiong; sfTime colisiong_time; double colisiong_seconds;
+    sfClock *loose; sfTime loose_time; double loose_seconds;
 } _clock;
 
 typedef struct
@@ -187,6 +190,7 @@ typedef struct
     texture texture;
     evt evt;
     _Bool catch;
+    _Bool try;
     _Bool screen_win;
     _colision _colision;
     _clock _clock;
@@ -215,6 +219,7 @@ typedef struct
     int jump;
     int is_move;
     _Bool is_end;
+    _Bool is_loose;
 } mario;
 
 

@@ -29,6 +29,7 @@
 ////////////////////////////////////////////////////////////
 #define EXIT_ERROR 84
 
+#define T 1000000.0
 
 #define GAME_PARAMS window *window, _menu *_menu, transform *transform
 
@@ -60,19 +61,24 @@
 ////////////////////////////////////////////////////////////
 #define RecGB sfRectangleShape_getGlobalBounds
 #define SGB sfSprite_getGlobalBounds
-#define SetPos sfSprite_setPosition
+#define GETS sfSprite_getScale
+#define GETP sfSprite_getPosition
+#define SETS sfSprite_setScale
+#define SETP sfSprite_setPosition
+#define RECC sfFloatRect_contains
 #define smove sfSprite_move
-#define GetPos sfSprite_getPosition
 #define RecShapePos sfRectangleShape_setPosition
 #define DrawRecShape sfRenderWindow_drawRectangleShape
 
+
+//////////////////////////////
+///      Rect defines      ///
+//////////////////////////////
 
 #define gr_x goomba_rect.left + goomba_rect.width
 
 #define gr_y goomba_rect.top + goomba_rect.height
 
-
-#define SCORE mario->score
 
 //////////////////////////////
 ///      Menu pictures     ///
@@ -122,5 +128,7 @@
 #define INTRO mario->_intro
 
 #define GAME mario->_game
+
+#define SCORE mario->score
 
 #endif /* !RUNNER_DEFINE_H_ */

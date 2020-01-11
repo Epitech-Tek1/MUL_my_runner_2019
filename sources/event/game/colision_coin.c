@@ -8,13 +8,16 @@
 #include "runner.h"
 
 #define _ GAME.sprite
+#define set_org_x r_arr[i].left + r_arr[i].width / 2
+#define set_prg_y r_arr[i].top + r_arr[i].height / 2
 
-static void colision_1(mario *mario, sfFloatRect *r_arr, char **s_arr,
-sfFloatRect mario_rect)
+static void colision_1(mario *mario, sfFloatRect *r_arr, char **s_arr)
 {
+    sfFloatRect mario_rect = SGB(_.mario);
+
     for (int i = 0; i != 23; ++i)
-        if (sfFloatRect_intersects(&mario_rect, &r_arr[i], NULL)) {
-            SetPos((sfSprite *)s_arr[i], (sfVector2f){20000, 0});
+        if (sfFloatRect_contains(&mario_rect, set_org_x, set_prg_y)) {
+            SETP((sfSprite *)s_arr[i], (sfVector2f){20000, 0});
             mario->score++;
             sfMusic_play(GAME.sounds.coin);
         }
@@ -22,7 +25,6 @@ sfFloatRect mario_rect)
 
 void colision_coin(mario *mario)
 {
-    sfFloatRect mario_rect = SGB(_.mario);
     sfFloatRect rect_array[] = {SGB(_.coin), SGB(_.coin2),
     SGB(_.coin3), SGB(_.coin4), SGB(_.coin5), SGB(_.coin7), SGB(_.coin8),
     SGB(_.coin9), SGB(_.coin10), SGB(_.coin11), SGB(_.coin12),
@@ -36,5 +38,5 @@ void colision_coin(mario *mario)
     (char *)_.coin16, (char *)_.coin17, (char *)_.coin18, (char *)_.coin19,
     (char *)_.coin20, (char *)_.coin21, (char *)_.coin22, (char *)_.coin23};
 
-    colision_1(mario, rect_array, sprite_array, mario_rect);
+    colision_1(mario, rect_array, sprite_array);
 }

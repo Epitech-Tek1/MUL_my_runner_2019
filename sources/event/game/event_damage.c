@@ -9,16 +9,11 @@
 
 void event_damage(mario *mario)
 {
-    static int i = 0;
-
+    sfMusic_play(GAME.sounds.hit);
     if (mario->player.health == false) {
+        mario->is_loose = true;
         event_loose(mario);
     }
-    sfSprite_setScale(GAME.sprite.mario, (sfVector2f){.107,
-    sfSprite_getScale(GAME.sprite.mario).y - .0015});
-    sfSprite_setPosition(GAME.sprite.mario, (sfVector2f){
-    sfSprite_getPosition(GAME.sprite.mario).x,
-    sfSprite_getPosition(GAME.sprite.mario).y + .9});
     mario->player.health = false;
-    ++i;
+    SETS(GAME.sprite.mario, (sfVector2f){.1, .1});
 }

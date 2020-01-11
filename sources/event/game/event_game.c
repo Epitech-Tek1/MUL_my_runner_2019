@@ -11,18 +11,18 @@
 
 static void paralax(mario *mario)
 {
-    if (GetPos(GAME.sprite.mg).x == 0)
-        SetPos(GAME.sprite.mg2, (sfVector2f){4080, -500});
-    if (GetPos(GAME.sprite.mg2).x == 0)
-        SetPos(GAME.sprite.mg, (sfVector2f){4080, -500});
-    if (GetPos(GAME.sprite.ground).x == 0)
-        SetPos(GAME.sprite.ground2, (sfVector2f){6000, -500});
-    if (GetPos(GAME.sprite.ground2).x == 0)
-        SetPos(GAME.sprite.ground, (sfVector2f){6000, -500});
-    if (GetPos(GAME.sprite.back).x == 0)
-        SetPos(GAME.sprite.back2, (sfVector2f){15000, 0});
-    if (GetPos(GAME.sprite.back2).x == 0)
-        SetPos(GAME.sprite.back, (sfVector2f){15000, 0});
+    if (GETP(GAME.sprite.mg).x == 0)
+        SETP(GAME.sprite.mg2, (sfVector2f){4080, -500});
+    if (GETP(GAME.sprite.mg2).x == 0)
+        SETP(GAME.sprite.mg, (sfVector2f){4080, -500});
+    if (GETP(GAME.sprite.ground).x == 0)
+        SETP(GAME.sprite.ground2, (sfVector2f){6000, -500});
+    if (GETP(GAME.sprite.ground2).x == 0)
+        SETP(GAME.sprite.ground, (sfVector2f){6000, -500});
+    if (GETP(GAME.sprite.back).x == 0)
+        SETP(GAME.sprite.back2, (sfVector2f){15000, 0});
+    if (GETP(GAME.sprite.back2).x == 0)
+        SETP(GAME.sprite.back, (sfVector2f){15000, 0});
 }
 
 static void move_2(mario *mario)
@@ -70,8 +70,9 @@ void event_game(mario *mario)
     colision_coin(mario);
     colision_ennemies(mario);
     always_moved(mario);
-    event_win(mario);
-    event_loose(mario);
+    if (mario->is_loose == true ||
+    GETP(GAME.sprite.mario).x < -80)
+        event_loose(mario);
     if (mario->is_move == true)
         move(mario, sprite_array);
 }

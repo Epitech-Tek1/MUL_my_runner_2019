@@ -17,9 +17,9 @@ static void colision_2(mario *mario)
     if (sfFloatRect_intersects(&mario_rect, &mount_rect4, NULL))
         smove(GAME.sprite.mario, (sfVector2f){0, -2.4});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect5, NULL))
-        mario->jump = false;
+        smove(GAME.sprite.mario, (sfVector2f){-6, 0});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect6, NULL))
-        SetPos(GAME.sprite.mario, (sfVector2f){
+        SETP(GAME.sprite.mario, (sfVector2f){
         sfSprite_getPosition(GAME.sprite.mario).x, mount_rect6.top -
         mario_rect.height});
     if (mario->jump == false && sfFloatRect_intersects(&mario_rect,
@@ -36,17 +36,17 @@ static void colision_1(mario *mario)
     sfFloatRect mount_rect3 = RecGB(GAME._colision.mountain3);
 
     if (sfFloatRect_intersects(&mario_rect, &ground, NULL))
-        SetPos(GAME.sprite.mario, (sfVector2f)
+        SETP(GAME.sprite.mario, (sfVector2f)
         {sfSprite_getPosition(GAME.sprite.mario).x, ground.top -
         mario_rect.height});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect, NULL))
-        SetPos(GAME.sprite.mario, (sfVector2f){
+        SETP(GAME.sprite.mario, (sfVector2f){
         sfSprite_getPosition(GAME.sprite.mario).x, mount_rect.top -
         mario_rect.height});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect2, NULL))
         smove(GAME.sprite.mario, (sfVector2f){-6, 0});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect3, NULL))
-        SetPos(GAME.sprite.mario, (sfVector2f){
+        SETP(GAME.sprite.mario, (sfVector2f){
         sfSprite_getPosition(GAME.sprite.mario).x, mount_rect3.top -
         mario_rect.height});
 }

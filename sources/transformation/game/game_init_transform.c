@@ -33,32 +33,32 @@ static void assign_scale(mario *mario)
 
 static void assign_pos_2(mario *mario)
 {
-    SetPos(GAME.sprite.coin7, (sfVector2f){2030, 700});
-    SetPos(GAME.sprite.coin8, (sfVector2f){2030, 664});
-    SetPos(GAME.sprite.coin9, (sfVector2f){2030, 628});
-    SetPos(GAME.sprite.coin10, (sfVector2f){2063, 628});
+    SETP(GAME.sprite.coin7, (sfVector2f){2030, 700});
+    SETP(GAME.sprite.coin8, (sfVector2f){2030, 664});
+    SETP(GAME.sprite.coin9, (sfVector2f){2030, 628});
+    SETP(GAME.sprite.coin10, (sfVector2f){2063, 628});
 }
 
 static void assign_pos(mario *mario)
 {
-    SetPos(GAME.sprite.mg, (sfVector2f){0, -500});
-    SetPos(GAME.sprite.mg2, (sfVector2f){4180, -500});
-    SetPos(GAME.sprite.back, (sfVector2f){0, -100});
-    SetPos(GAME.sprite.back2, (sfVector2f){15000, 0});
-    SetPos(GAME.sprite.ground, (sfVector2f){0, -500});
-    SetPos(GAME.sprite.ground2, (sfVector2f){6000, -500});
-    SetPos(GAME.sprite.mario, (sfVector2f){150, 710});
-    SetPos(GAME.sprite.quest, (sfVector2f){920, 620});
-    SetPos(GAME.sprite.quest2, (sfVector2f){960, 620});
-    SetPos(GAME.sprite.coin, (sfVector2f){1535, 760});
-    SetPos(GAME.sprite.coin2, (sfVector2f){1570, 760});
-    SetPos(GAME.sprite.coin3, (sfVector2f){1570, 727});
-    SetPos(GAME.sprite.coin4, (sfVector2f){1570, 692});
-    SetPos(GAME.sprite.coin5, (sfVector2f){1610, 692});
-    SetPos(GAME.sprite.coin6, (sfVector2f){1820, 23});
-    SetPos(GAME.sprite.goomba, (sfVector2f){3580, 738});
-    SetPos(GAME.sprite.pipe, (sfVector2f){3600, 740});
-    SetPos(GAME.sprite.flag, (sfVector2f){12000, 363});
+    SETP(GAME.sprite.mg, (sfVector2f){0, -500});
+    SETP(GAME.sprite.mg2, (sfVector2f){4180, -500});
+    SETP(GAME.sprite.back, (sfVector2f){0, -100});
+    SETP(GAME.sprite.back2, (sfVector2f){15000, 0});
+    SETP(GAME.sprite.ground, (sfVector2f){0, -500});
+    SETP(GAME.sprite.ground2, (sfVector2f){6000, -500});
+    SETP(GAME.sprite.mario, (sfVector2f){150, 710});
+    SETP(GAME.sprite.quest, (sfVector2f){920, 620});
+    SETP(GAME.sprite.quest2, (sfVector2f){960, 620});
+    SETP(GAME.sprite.coin, (sfVector2f){1535, 760});
+    SETP(GAME.sprite.coin2, (sfVector2f){1570, 760});
+    SETP(GAME.sprite.coin3, (sfVector2f){1570, 727});
+    SETP(GAME.sprite.coin4, (sfVector2f){1570, 692});
+    SETP(GAME.sprite.coin5, (sfVector2f){1610, 692});
+    SETP(GAME.sprite.coin6, (sfVector2f){1820, 23});
+    SETP(GAME.sprite.goomba, (sfVector2f){3580, 738});
+    SETP(GAME.sprite.pipe, (sfVector2f){3600, 740});
+    SETP(GAME.sprite.flag, (sfVector2f){12000, 363});
     assign_pos_2(mario);
 }
 
@@ -66,7 +66,7 @@ static void set_shape(mario *mario)
 {
     RecShapePos(GAME._colision.ground, (sfVector2f){0, 794});
     RecShapePos(GAME._colision.mountain, (sfVector2f){1630, 738});
-    RecShapePos(GAME._colision.mountain2, (sfVector2f){1615, 738});
+    RecShapePos(GAME._colision.mountain2, (sfVector2f){1615, 750});
     RecShapePos(GAME._colision.mountain3, (sfVector2f){2080, 663});
     RecShapePos(GAME._colision.mountain4, (sfVector2f){4338, 780});
     RecShapePos(GAME._colision.mountain5, (sfVector2f){2070, 680});
@@ -74,7 +74,7 @@ static void set_shape(mario *mario)
     sfRectangleShape_setSize(GAME._colision.ground, (sfVector2f){10000, 10});
     sfRectangleShape_setSize(GAME._colision.mountain, (sfVector2f){460, 10});
     sfRectangleShape_setSize(GAME._colision.mountain, (sfVector2f){460, 10});
-    sfRectangleShape_setSize(GAME._colision.mountain2, (sfVector2f){10, 55});
+    sfRectangleShape_setSize(GAME._colision.mountain2, (sfVector2f){10, 40});
     sfRectangleShape_setSize(GAME._colision.mountain3, (sfVector2f){460, 10});
     sfRectangleShape_setSize(GAME._colision.mountain4, (sfVector2f){10, 10});
     sfRectangleShape_setSize(GAME._colision.mountain5, (sfVector2f){10, 55});
