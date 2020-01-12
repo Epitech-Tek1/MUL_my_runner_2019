@@ -49,7 +49,6 @@ static void disp_sprite(mario_t *mario)
 
 void game_display(mario_t *mario)
 {
-    disp_sprite(mario);
     event_game(mario);
     call_fct_2(mario);
     DrawRecShape(WINDOW.window, GAME._colision.ground, NULL);
@@ -62,4 +61,5 @@ void game_display(mario_t *mario)
     DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_top, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_left, NULL);
+    disp_sprite(mario);
 }

@@ -97,7 +97,7 @@ UT_OBJ			=	$(UT_SRC:.c=.o)
 
 UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 
-all:			library $(BIN) run
+all:			library $(BIN)
 
 library:
 				@$(MAKE) -C ./lib/my/
