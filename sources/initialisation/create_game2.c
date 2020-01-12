@@ -9,9 +9,6 @@
 
 static void game_assembly(mario_t *mario)
 {
-    sfSprite_setTexture(GAME.sprite.coin7, GAME.texture.coin, sfFalse);
-    sfSprite_setTexture(GAME.sprite.coin8, GAME.texture.coin, sfFalse);
-    sfSprite_setTexture(GAME.sprite.coin9, GAME.texture.coin, sfFalse);
     sfSprite_setTexture(GAME.sprite.coin10, GAME.texture.coin, sfFalse);
     sfSprite_setTexture(GAME.sprite.coin11, GAME.texture.coin, sfFalse);
     sfSprite_setTexture(GAME.sprite.coin12, GAME.texture.coin, sfFalse);
@@ -47,9 +44,6 @@ static void game_texture_create(mario_t *mario)
 
 static void game_sprite_create(mario_t *mario)
 {
-    GAME.sprite.coin7 = sfSprite_create();
-    GAME.sprite.coin8 = sfSprite_create();
-    GAME.sprite.coin9 = sfSprite_create();
     GAME.sprite.coin10 = sfSprite_create();
     GAME.sprite.coin11 = sfSprite_create();
     GAME.sprite.coin12 = sfSprite_create();

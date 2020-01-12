@@ -36,6 +36,7 @@ typedef struct
     sfVector2f goomba, goomba2, goomba3, goomba4;
     sfVector2f end;
     sfVector2f champ;
+    sfVector2f flower, flower2, flower3, flower4, flower5, flower6;
 } scale;
 
 typedef struct
@@ -59,6 +60,7 @@ typedef struct
     sfVector2f end;
     sfVector2f winscreen;
     sfVector2f champ;
+    sfVector2f flower, flower2, flower3, flower4, flower5, flower6;
 } position;
 
 typedef struct

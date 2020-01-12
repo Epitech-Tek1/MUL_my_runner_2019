@@ -116,6 +116,7 @@
 
 #define GOOMBA "assets/game/objets/goomba.png"
 
+#define FLOWER "assets/game/objets/flower.png"
 
 //////////////////////////////
 ///         Struct         ///

@@ -61,5 +61,6 @@ void game_display(mario_t *mario)
     DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_top, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_left, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, _.flower, NULL);
     disp_sprite(mario);
 }

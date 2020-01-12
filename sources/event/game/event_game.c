@@ -13,9 +13,9 @@
 static void paralax(mario_t *mario)
 {
     if (GETP(GAME.sprite.mg).x == 0)
-        SETP(GAME.sprite.mg2, (sfVector2f){4080, -500});
+        SETP(GAME.sprite.mg2, (sfVector2f){6000, -500});
     if (GETP(GAME.sprite.mg2).x == 0)
-        SETP(GAME.sprite.mg, (sfVector2f){4080, -500});
+        SETP(GAME.sprite.mg, (sfVector2f){6000, -500});
     if (GETP(GAME.sprite.ground).x == 0)
         SETP(GAME.sprite.ground2, (sfVector2f){6000, -500});
     if (GETP(GAME.sprite.ground2).x == 0)
@@ -74,10 +74,8 @@ void event_game(mario_t *mario)
     colision_pipe(mario);
     colision_quest(mario);
     always_moved(mario);
-    if (mario->is_loose == true || GETP(GAME.sprite.mario).x < -80) {
-        mario->is_loose = true;
-        event_loose(mario);
-    }
+    if (mario->is_loose == true || GETP(GAME.sprite.mario).x < -80)
+        mario->is_loose = true, event_loose(mario);
     if (mario->is_move == true)
         move(mario, sprite_array);
 }

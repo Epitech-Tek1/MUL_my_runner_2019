@@ -42,7 +42,7 @@ static void assign_pos_2(mario_t *mario)
 static void assign_pos(mario_t *mario)
 {
     SETP(GAME.sprite.mg, (sfVector2f){0, -500});
-    SETP(GAME.sprite.mg2, (sfVector2f){4180, -500});
+    SETP(GAME.sprite.mg2, (sfVector2f){6000, -500});
     SETP(GAME.sprite.back, (sfVector2f){0, -100});
     SETP(GAME.sprite.back2, (sfVector2f){15000, 0});
     SETP(GAME.sprite.ground, (sfVector2f){0, -500});

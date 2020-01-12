@@ -48,6 +48,7 @@ typedef struct
     sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
     *coin9, *coin10, *coin11, *coin12, *coin13, *coin14, *coin15, *coin16,
     *coin17, *coin18, *coin19, *coin20, *coin21, *coin22, *coin23;
+    sfSprite *flower, *flower2, *flower3, *flower4, *flower5, *flower6;
 } sprite;
 
 
@@ -78,6 +79,7 @@ typedef struct
     sfTexture *champ;
     sfTexture *brocken;
     sfIntRect rect;
+    sfTexture *flower;
 } texture;
 
 typedef struct
