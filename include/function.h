@@ -160,4 +160,6 @@ void champ(mario_t *mario, sfSprite *sprite);
 
 void event_grow(mario_t *mario);
 
+void flower(mario_t *mario, sfSprite *sprite);
+
 #endif /* !FUNCTION_H_ */

@@ -142,6 +142,7 @@ typedef struct
     sfClock *colisiong; sfTime colisiong_time; double colisiong_seconds;
     sfClock *loose; sfTime loose_time; double loose_seconds;
     sfClock *champ; sfTime champ_time; double champ_seconds;
+    sfClock *flower; sfTime flower_time; double flower_seconds;
 } _clock;
 
 typedef struct

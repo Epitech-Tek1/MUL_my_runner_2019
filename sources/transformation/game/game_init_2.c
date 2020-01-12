@@ -58,7 +58,7 @@ void game_init_transform_2(mario_t *mario)
     sfSprite_setOrigin(GAME.sprite.bowser, (sfVector2f){
     sfSprite_getGlobalBounds(GAME.sprite.bowser).width / 2,
     sfSprite_getGlobalBounds(GAME.sprite.bowser).height / 2});
-    sfSprite_setScale(GAME.sprite.flower, (sfVector2f){1, 1});
+    sfSprite_setScale(GAME.sprite.flower, (sfVector2f){.35, .35});
     SETP(GAME.sprite.flower, (sfVector2f){900, 740});
     assign_scale(mario);
     assign_pos(mario);

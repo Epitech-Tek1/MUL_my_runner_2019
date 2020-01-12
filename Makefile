@@ -56,7 +56,8 @@ SCENE			=	intro/intro.c									\
 					game/gif_elements/quest.c						\
 					game/gif_elements/coin.c						\
 					game/gif_elements/goomba.c						\
-					game/gif_elements/champ.c
+					game/gif_elements/champ.c						\
+					game/gif_elements/flower.c
 
 
 ## ========================================================================== ##

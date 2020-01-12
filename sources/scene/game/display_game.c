@@ -12,7 +12,7 @@
 static void call_fct_2(mario_t *mario)
 {
     void (*array_fct[])(mario_t *mario, sfSprite *) = {
-        quest, champ, coin, goomba
+        quest, champ, coin, goomba, flower
     };
     char *arr[] = {(char *)_.quest, (char *)_.quest2, (char *)_.champ,
     (char *)_.coin10, (char *)_.coin11, (char *)_.coin12, (char *)_.coin13,
@@ -21,9 +21,9 @@ static void call_fct_2(mario_t *mario)
     (char *)_.coin22, (char *)_.coin23, (char *)_.coin2, (char *)_.coin3,
     (char *)_.coin4, (char *)_.coin5, (char *)_.coin6, (char *)_.coin7,
     (char *)_.coin8, (char *)_.coin9, (char *)_.coin, (char *)_.goomba3,
-    (char *)_.goomba4, (char *)_.goomba, NULL};
+    (char *)_.goomba4, (char *)_.goomba, (char *)_.flower, NULL};
     int nbr_fct[] = {0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-    2, 2, 2, 2, 2, 2, 3, 3, 3};
+    2, 2, 2, 2, 2, 2, 3, 3, 3, 4};
 
     for (int i = 0; arr[i]; ++i)
         array_fct[nbr_fct[i]](mario, (sfSprite *)arr[i]);
@@ -61,6 +61,6 @@ void game_display(mario_t *mario)
     DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_top, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_left, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, _.flower, NULL);
     disp_sprite(mario);
+    sfRenderWindow_drawSprite(WINDOW.window, _.flower, NULL);
 }

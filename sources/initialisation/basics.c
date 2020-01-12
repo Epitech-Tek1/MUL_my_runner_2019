@@ -18,6 +18,7 @@ void initialisation_clock(mario_t *mario)
     GAME._clock.colisiong = sfClock_create();
     GAME._clock.loose = sfClock_create();
     GAME._clock.champ = sfClock_create();
+    GAME._clock.flower = sfClock_create();
     mario->clock = sfClock_create();
 }
 
