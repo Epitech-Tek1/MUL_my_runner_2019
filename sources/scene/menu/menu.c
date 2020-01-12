@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void menu(mario *mario)
+void menu(mario_t *mario)
 {
     menu_do_transform(mario);
     menu_display(mario);

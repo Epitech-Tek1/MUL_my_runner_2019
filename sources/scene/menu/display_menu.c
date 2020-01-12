@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void menu_display(mario *mario)
+void menu_display(mario_t *mario)
 {
     sfRenderWindow_drawSprite(WINDOW.window, MENU.sprite.menu, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, MENU.sprite.pipe_game, NULL);

@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void colision_pipe(mario *mario)
+void colision_pipe(mario_t *mario)
 {
     sfFloatRect mario_rect = GETGB(GAME.sprite.mario);
     sfFloatRect pipe_top = RecGB(GAME._colision.pipe_top);

@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void game_assembly(mario *mario)
+static void game_assembly(mario_t *mario)
 {
     sfSprite_setTexture(GAME.sprite.mg, GAME.texture.mg, sfFalse);
     sfSprite_setTexture(GAME.sprite.mg2, GAME.texture.mg, sfFalse);
@@ -27,7 +27,7 @@ static void game_assembly(mario *mario)
     sfSprite_setTexture(GAME.sprite.coin6, GAME.texture.coin, sfFalse);
 }
 
-static void game_texture_create(mario *mario)
+static void game_texture_create(mario_t *mario)
 {
     GAME.texture.mg = sfTexture_createFromFile(MID_GROUND, NULL);
     GAME.texture.back = sfTexture_createFromFile(BACK, NULL);
@@ -39,7 +39,7 @@ static void game_texture_create(mario *mario)
     game_assembly(mario);
 }
 
-static void game_sprite_create(mario *mario)
+static void game_sprite_create(mario_t *mario)
 {
     GAME.sprite.mg = sfSprite_create();
     GAME.sprite.mg2 = sfSprite_create();
@@ -60,7 +60,7 @@ static void game_sprite_create(mario *mario)
     game_texture_create(mario);
 }
 
-static void shape_collision(mario *mario)
+static void shape_collision(mario_t *mario)
 {
     GAME._colision.ground = sfRectangleShape_create();
     GAME._colision.mountain = sfRectangleShape_create();
@@ -74,7 +74,7 @@ static void shape_collision(mario *mario)
     GAME._colision.pipe_top = sfRectangleShape_create();
 }
 
-void game_create(mario *mario)
+void game_create(mario_t *mario)
 {
     game_sprite_create(mario);
     game_create2(mario);

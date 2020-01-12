@@ -12,7 +12,7 @@
 #define set_prg_y r_arr[i].top + r_arr[i].height / 2
 #define clock GAME._clock.colisiong_seconds
 
-static void colision_1(mario *mario, sfFloatRect *r_arr)
+static void colision_1(mario_t *mario, sfFloatRect *r_arr)
 {
     sfFloatRect mario_rect = SGB(_.mario);
 
@@ -25,7 +25,7 @@ static void colision_1(mario *mario, sfFloatRect *r_arr)
         }
 }
 
-void colision_ennemies(mario *mario)
+void colision_ennemies(mario_t *mario)
 {
     sfFloatRect rect_array[] = {SGB(_.goomba), SGB(_.goomba3),
     SGB(_.goomba4)};

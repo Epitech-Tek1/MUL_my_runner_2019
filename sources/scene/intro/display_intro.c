@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void intro_display(mario *mario)
+void intro_display(mario_t *mario)
 {
     event_intro(mario);
     sfRenderWindow_drawSprite(WINDOW.window, INTRO.sprite.intro, NULL);

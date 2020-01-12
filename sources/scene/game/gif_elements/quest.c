@@ -7,19 +7,15 @@
 
 #include "runner.h"
 
-void quest(mario *mario, sfSprite *sprite)
+void quest(mario_t *mario, sfSprite *sprite)
 {
-    static sfIntRect rect;
+    static sfIntRect rect = {0, 0, 240, 240};
 
-    rect.height = 240;
-    rect.width = 240;
     sfSprite_setTextureRect(sprite, rect);
     GAME._clock.quest_time = sfClock_getElapsedTime(GAME._clock.quest);
-    GAME._clock.quest_seconds = GAME._clock.quest_time.microseconds / 1000000.0;
-    if (GAME._clock.quest_seconds > .2) {
-        rect.left += 240;
-        if (rect.left == 960)
-            rect.left = 0;
+    GAME._clock.quest_seconds = GAME._clock.quest_time.microseconds / T;
+    if (GAME._clock.quest_seconds > .4) {
+        rect.left += (rect.left == 720) ? -720 : 240;
         sfClock_restart(GAME._clock.quest);
     }
 }

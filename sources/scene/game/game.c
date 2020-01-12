@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void game(mario *mario)
+void game(mario_t *mario)
 {
     game_display(mario);
 }

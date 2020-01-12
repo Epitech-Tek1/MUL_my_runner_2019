@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-_Bool destroy_menu(mario *mario)
+_Bool destroy_menu(mario_t *mario)
 {
     sfSprite_destroy(MENU.sprite.game);
     sfSprite_destroy(MENU.sprite.gen);

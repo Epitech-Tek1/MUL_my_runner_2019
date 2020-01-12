@@ -207,7 +207,7 @@ typedef struct
 } _game;
 
 
-typedef struct
+typedef struct mario_s
 {
     window window;
     _menu _menu;
@@ -230,7 +230,7 @@ typedef struct
     _Bool is_up;
     _Bool stop_up;
     _Bool appear;
-} mario;
+} mario_t;
 
 
 #endif /* !STRUCT_H_ */

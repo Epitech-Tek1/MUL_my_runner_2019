@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void event_intro(mario *mario)
+void event_intro(mario_t *mario)
 {
     if (sfMouse_isButtonPressed(sfMouseLeft)) {
         mario->scene = 1;

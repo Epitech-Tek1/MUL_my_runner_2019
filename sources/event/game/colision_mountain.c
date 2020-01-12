@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void colision_2(mario *mario)
+static void colision_2(mario_t *mario)
 {
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect mount_rect4 = RecGB(GAME._colision.mountain4);
@@ -35,7 +35,7 @@ static void colision_2(mario *mario)
         mario->jump = 2;
 }
 
-static void colision_1(mario *mario)
+static void colision_1(mario_t *mario)
 {
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect ground = RecGB(GAME._colision.ground);
@@ -59,7 +59,7 @@ static void colision_1(mario *mario)
         mario_rect.height});
 }
 
-void colision_mountain(mario *mario)
+void colision_mountain(mario_t *mario)
 {
     colision_1(mario);
     colision_2(mario);

@@ -14,7 +14,7 @@
 
 #include "runner.h"
 
-static void intro_assembly(mario *mario)
+static void intro_assembly(mario_t *mario)
 {
     INTRO.texture.rect.height = 540;
     INTRO.texture.rect.left = 0;
@@ -25,19 +25,19 @@ static void intro_assembly(mario *mario)
     sfSprite_setTextureRect(INTRO.sprite.intro, INTRO.texture.rect);
 }
 
-static void intro_texture_create(mario *mario)
+static void intro_texture_create(mario_t *mario)
 {
     INTRO.texture.intro = sfTexture_createFromFile(INTRO_VID, NULL);
     intro_assembly(mario);
 }
 
-static void intro_sprite_create(mario *mario)
+static void intro_sprite_create(mario_t *mario)
 {
     INTRO.sprite.intro = sfSprite_create();
     intro_texture_create(mario);
 }
 
-void intro_create(mario *mario)
+void intro_create(mario_t *mario)
 {
     intro_sprite_create(mario);
     intro_do_transform(mario);

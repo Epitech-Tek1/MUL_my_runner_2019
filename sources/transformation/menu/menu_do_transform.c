@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void sprite_set_rotate(mario *mario)
+static void sprite_set_rotate(mario_t *mario)
 {
     sfSprite_setRotation(MENU.sprite.pipe_game, 180);
     sfSprite_setRotation(MENU.sprite.pipe_new, 180);
@@ -15,7 +15,7 @@ static void sprite_set_rotate(mario *mario)
     sfSprite_setRotation(MENU.sprite.pipe_op, 180);
 }
 
-static void sprite_set_position(mario *mario)
+static void sprite_set_position(mario_t *mario)
 {
     sfSprite_setPosition(MENU.sprite.pipe_game, TRANS.position.pipe_game);
     sfSprite_setPosition(MENU.sprite.pipe_new, TRANS.position.pipe_new);
@@ -25,7 +25,7 @@ static void sprite_set_position(mario *mario)
     sfSprite_setPosition(MENU.sprite.gen, TRANS.position.gen);
 }
 
-static void sprite_set_scale(mario *mario)
+static void sprite_set_scale(mario_t *mario)
 {
     sfSprite_setScale(MENU.sprite.pipe_game, TRANS.scale.pipe_game);
     sfSprite_setScale(MENU.sprite.pipe_new, TRANS.scale.pipe_new);
@@ -35,7 +35,7 @@ static void sprite_set_scale(mario *mario)
     sfSprite_setScale(MENU.sprite.gen, TRANS.scale.gen);
 }
 
-void menu_do_transform(mario *mario)
+void menu_do_transform(mario_t *mario)
 {
     sprite_set_scale(mario);
     sprite_set_position(mario);

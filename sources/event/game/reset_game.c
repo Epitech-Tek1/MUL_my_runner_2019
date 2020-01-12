@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void reset_game(mario *mario)
+void reset_game(mario_t *mario)
 {
     sfSprite_destroy(GAME.sprite.bowser);
     initialisation_scene(mario);

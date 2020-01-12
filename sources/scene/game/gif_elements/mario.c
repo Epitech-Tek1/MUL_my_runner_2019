@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void event_mario(mario *mario)
+void event_mario(mario_t *mario)
 {
     static sfIntRect rect;
 

@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void assign_scale(mario *mario)
+static void assign_scale(mario_t *mario)
 {
     sfSprite_setScale(GAME.sprite.end, (sfVector2f){1.5, 1.5});
     sfSprite_setScale(GAME.sprite.coin11, (sfVector2f){.25, .25});
@@ -30,7 +30,7 @@ static void assign_scale(mario *mario)
     sfSprite_setScale(GAME.sprite.champ, (sfVector2f){.15, .15});
 }
 
-static void assign_pos(mario *mario)
+static void assign_pos(mario_t *mario)
 {
     SETP(GAME.sprite.end, (sfVector2f){600, 200});
     SETP(GAME.sprite.coin11, (sfVector2f){2096, 628});
@@ -53,7 +53,7 @@ static void assign_pos(mario *mario)
     SETP(GAME.sprite.champ, (sfVector2f){960, 590});
 }
 
-void game_init_transform_2(mario *mario)
+void game_init_transform_2(mario_t *mario)
 {
     sfSprite_setOrigin(GAME.sprite.bowser, (sfVector2f){
     sfSprite_getGlobalBounds(GAME.sprite.bowser).width / 2,

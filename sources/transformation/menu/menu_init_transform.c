@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void set_scale(mario *mario)
+static void set_scale(mario_t *mario)
 {
     TRANS.scale.game.x = .45;
     TRANS.scale.game.y = .45;
@@ -17,7 +17,7 @@ static void set_scale(mario *mario)
     TRANS.scale.gen.y = .45;
 }
 
-static void set_position(mario *mario)
+static void set_position(mario_t *mario)
 {
     TRANS.position.pipe_game.x = 1920;
     TRANS.position.pipe_game.y = 350;
@@ -33,7 +33,7 @@ static void set_position(mario *mario)
     TRANS.position.gen.y = 830;
 }
 
-void menu_init_transform(mario *mario)
+void menu_init_transform(mario_t *mario)
 {
     set_scale(mario);
     set_position(mario);

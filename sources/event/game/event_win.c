@@ -7,12 +7,12 @@
 
 #include "runner.h"
 
-static void colision_1(mario *mario)
+static void colision_1(mario_t *mario)
 {
 
 }
 
-void event_win(mario *mario)
+void event_win(mario_t *mario)
 {
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect flag_rect = SGB(GAME.sprite.flag);

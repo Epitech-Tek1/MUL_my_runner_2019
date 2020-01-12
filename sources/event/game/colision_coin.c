@@ -11,7 +11,7 @@
 #define set_org_x r_arr[i].left + r_arr[i].width / 2
 #define set_prg_y r_arr[i].top + r_arr[i].height / 2
 
-static void colision_1(mario *mario, sfFloatRect *r_arr, char **s_arr)
+static void colision_1(mario_t *mario, sfFloatRect *r_arr, char **s_arr)
 {
     sfFloatRect mario_rect = SGB(_.mario);
 
@@ -23,7 +23,7 @@ static void colision_1(mario *mario, sfFloatRect *r_arr, char **s_arr)
         }
 }
 
-void colision_coin(mario *mario)
+void colision_coin(mario_t *mario)
 {
     sfFloatRect rect_array[] = {SGB(_.coin), SGB(_.coin2),
     SGB(_.coin3), SGB(_.coin4), SGB(_.coin5), SGB(_.coin7), SGB(_.coin8),

@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void event_start(mario *mario)
+void event_start(mario_t *mario)
 {
     sfEvent event;
 

@@ -7,89 +7,50 @@
 
 #include "runner.h"
 
-static void call_fct(mario *mario)
+#define _ GAME.sprite
+
+static void call_fct_2(mario_t *mario)
 {
-    quest(mario, GAME.sprite.quest);
-    quest(mario, GAME.sprite.quest2);
-    coin(mario, GAME.sprite.coin);
-    coin(mario, GAME.sprite.coin2);
-    coin(mario, GAME.sprite.coin3);
-    coin(mario, GAME.sprite.coin4);
-    coin(mario, GAME.sprite.coin5);
-    coin(mario, GAME.sprite.coin6);
-    coin(mario, GAME.sprite.coin7);
-    coin(mario, GAME.sprite.coin8);
-    coin(mario, GAME.sprite.coin9);
-    coin(mario, GAME.sprite.coin10);
-    coin(mario, GAME.sprite.coin11);
-    coin(mario, GAME.sprite.coin12);
-    coin(mario, GAME.sprite.coin13);
-    coin(mario, GAME.sprite.coin14);
-    coin(mario, GAME.sprite.coin15);
-    coin(mario, GAME.sprite.coin16);
+    void (*array_fct[])(mario_t *mario, sfSprite *) = {
+        quest, champ, coin, goomba
+    };
+    char *arr[] = {(char *)_.quest, (char *)_.quest2, (char *)_.champ,
+    (char *)_.coin10, (char *)_.coin11, (char *)_.coin12, (char *)_.coin13,
+    (char *)_.coin14, (char *)_.coin15, (char *)_.coin16, (char *)_.coin17,
+    (char *)_.coin18, (char *)_.coin19, (char *)_.coin20, (char *)_.coin21,
+    (char *)_.coin22, (char *)_.coin23, (char *)_.coin2, (char *)_.coin3,
+    (char *)_.coin4, (char *)_.coin5, (char *)_.coin6, (char *)_.coin7,
+    (char *)_.coin8, (char *)_.coin9, (char *)_.coin, (char *)_.goomba3,
+    (char *)_.goomba4, (char *)_.goomba, NULL};
+    int nbr_fct[] = {0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+    2, 2, 2, 2, 2, 2, 3, 3, 3};
+
+    for (int i = 0; arr[i]; ++i)
+        array_fct[nbr_fct[i]](mario, (sfSprite *)arr[i]);
 }
 
-static void call_fct_2(mario *mario)
+static void disp_sprite(mario_t *mario)
 {
-    coin(mario, GAME.sprite.coin17);
-    coin(mario, GAME.sprite.coin18);
-    coin(mario, GAME.sprite.coin19);
-    coin(mario, GAME.sprite.coin20);
-    coin(mario, GAME.sprite.coin21);
-    coin(mario, GAME.sprite.coin22);
-    coin(mario, GAME.sprite.coin23);
-    champ(mario, GAME.sprite.champ);
-    goomba(mario, GAME.sprite.goomba);
-    goomba(mario, GAME.sprite.goomba2);
-    goomba(mario, GAME.sprite.goomba3);
-    goomba(mario, GAME.sprite.goomba4);
+    char *arr[] = {(char *)_.back, (char *)_.back2, (char *)_.mg, (char *)_.mg2,
+    (char *)_.ground, (char *)_.ground2, (char *)_.quest, (char *)_.quest2,
+    (char *)_.coin10, (char *)_.coin11, (char *)_.coin12, (char *)_.coin13,
+    (char *)_.coin14, (char *)_.coin15, (char *)_.coin16, (char *)_.coin17,
+    (char *)_.coin18, (char *)_.coin19, (char *)_.coin20, (char *)_.coin21,
+    (char *)_.coin22, (char *)_.coin23, (char *)_.coin2, (char *)_.coin3,
+    (char *)_.coin4, (char *)_.coin5, (char *)_.coin6, (char *)_.coin7,
+    (char *)_.coin8, (char *)_.coin9, (char *)_.coin, (char *)_.flag,
+    (char *)_.goomba3, (char *)_.goomba4, (char *)_.goomba, (char *)_.pipe,
+    (char *)_.mario, NULL};
+
+    for (int i = 0; arr[i]; i++)
+        sfRenderWindow_drawSprite(WINDOW.window, (sfSprite *)arr[i], NULL);
+
 }
 
-static void disp_2(mario *mario)
+void game_display(mario_t *mario)
 {
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin15, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin16, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin17, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin18, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin19, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin20, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin21, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin22, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin23, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.bowser, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba3, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba4, NULL);
-}
-
-static void disp(mario *mario)
-{
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest2, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin2, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin3, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin4, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin5, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin6, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin7, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin8, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin9, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin10, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin11, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin12, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin13, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin14, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.pipe, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.flag, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
-    disp_2(mario);
-}
-
-void game_display(mario *mario)
-{
+    disp_sprite(mario);
     event_game(mario);
-    call_fct(mario);
     call_fct_2(mario);
     DrawRecShape(WINDOW.window, GAME._colision.ground, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.mountain, NULL);
@@ -101,11 +62,4 @@ void game_display(mario *mario)
     DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_top, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.pipe_left, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back2, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg2, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground2, NULL);
-    disp(mario);
 }

@@ -7,24 +7,24 @@
 
 #include "runner.h"
 
-static void (* event_fct[])(mario *mario) = {
+static void (* event_fct[])(mario_t *mario) = {
     event_intro,
     event_start,
     event_game
 };
 
-static void event_run(mario *mario)
+static void event_run(mario_t *mario)
 {
     event_mario(mario);
 }
 
-static void (* event_key_fct[])(mario *mario) = {
+static void (* event_key_fct[])(mario_t *mario) = {
     event_run,
     event_jump,
     event_fall
 };
 
-static void manage_event(mario *mario)
+static void manage_event(mario_t *mario)
 {
     sfEvent event;
 
@@ -38,13 +38,13 @@ static void manage_event(mario *mario)
     }
 }
 
-static void (* display_fct[])(mario *mario) = {
+static void (* display_fct[])(mario_t *mario) = {
     intro,
     menu,
     game
 };
 
-int game_loop(mario *mario)
+int game_loop(mario_t *mario)
 {
     while (sfRenderWindow_isOpen(WINDOW.window)) {
         manage_event(mario);

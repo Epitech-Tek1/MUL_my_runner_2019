@@ -7,13 +7,13 @@
 
 #include "runner.h"
 
-void event_fall(mario *mario)
+void event_fall(mario_t *mario)
 {
     event_mario(mario);
     sfSprite_move(GAME.sprite.mario, (sfVector2f){0, 9});
 }
 
-void event_jump(mario *mario)
+void event_jump(mario_t *mario)
 {
     static int jump = -15;
 

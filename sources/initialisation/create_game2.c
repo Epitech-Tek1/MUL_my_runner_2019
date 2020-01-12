@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void game_assembly(mario *mario)
+static void game_assembly(mario_t *mario)
 {
     sfSprite_setTexture(GAME.sprite.coin7, GAME.texture.coin, sfFalse);
     sfSprite_setTexture(GAME.sprite.coin8, GAME.texture.coin, sfFalse);
@@ -30,7 +30,7 @@ static void game_assembly(mario *mario)
     sfSprite_setTexture(GAME.sprite.flag, GAME.texture.flag, sfFalse);
 }
 
-static void game_texture_create(mario *mario)
+static void game_texture_create(mario_t *mario)
 {
     GAME.texture.flag = sfTexture_createFromFile("assets/game/flag.png", NULL);
     GAME.texture.end = sfTexture_createFromFile("assets/game/end.png", NULL);
@@ -45,7 +45,7 @@ static void game_texture_create(mario *mario)
     sfSprite_setTexture(GAME.sprite.winscreen, GAME.texture.winScreen, sfFalse);
 }
 
-static void game_sprite_create(mario *mario)
+static void game_sprite_create(mario_t *mario)
 {
     GAME.sprite.coin7 = sfSprite_create();
     GAME.sprite.coin8 = sfSprite_create();
@@ -72,7 +72,7 @@ static void game_sprite_create(mario *mario)
     game_texture_create(mario);
 }
 
-static void create_music(mario *mario)
+static void create_music(mario_t *mario)
 {
     GAME.sounds.lvl = sfMusic_createFromFile("assets/game/sounds/LvlMusic.wav");
     GAME.sounds.jump = sfMusic_createFromFile("assets/game/sounds/jump.wav");
@@ -82,7 +82,7 @@ static void create_music(mario *mario)
     GAME.sounds.hit = sfMusic_createFromFile("assets/game/sounds/damage.wav");
 }
 
-void game_create2(mario *mario)
+void game_create2(mario_t *mario)
 {
     game_sprite_create(mario);
     create_music(mario);

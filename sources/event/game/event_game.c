@@ -10,7 +10,7 @@
 #define _ GAME.sprite
 #define __ GAME._colision
 
-static void paralax(mario *mario)
+static void paralax(mario_t *mario)
 {
     if (GETP(GAME.sprite.mg).x == 0)
         SETP(GAME.sprite.mg2, (sfVector2f){4080, -500});
@@ -26,7 +26,7 @@ static void paralax(mario *mario)
         SETP(GAME.sprite.back, (sfVector2f){15000, 0});
 }
 
-static void move_2(mario *mario)
+static void move_2(mario_t *mario)
 {
     sfRectangleShape_move(GAME._colision.mountain, (sfVector2f){-6, 0});
     sfRectangleShape_move(GAME._colision.mountain2, (sfVector2f){-6, 0});
@@ -36,7 +36,7 @@ static void move_2(mario *mario)
     sfRectangleShape_move(GAME._colision.mountain6, (sfVector2f){-6, 0});
 }
 
-void move(mario *mario, char **s_arr)
+void move(mario_t *mario, char **s_arr)
 {
     move_2(mario);
     for (int i = 0; s_arr[i]; ++i)
@@ -50,20 +50,20 @@ void move(mario *mario, char **s_arr)
     paralax(mario);
 }
 
-static void always_moved(mario *mario)
+static void always_moved(mario_t *mario)
 {
     smove(GAME.sprite.back, (sfVector2f){-1, 0});
     smove(GAME.sprite.back2, (sfVector2f){-1, 0});
 }
 
-void event_game(mario *mario)
+void event_game(mario_t *mario)
 {
     char *sprite_array[] = {(char *)_.coin, (char *)_.coin2, (char *)_.coin3,
     (char *)_.coin4, (char *)_.coin5, (char *)_.coin7, (char *)_.coin8,
     (char *)_.coin9, (char *)_.coin10, (char *)_.coin11, (char *)_.coin12,
     (char *)_.coin13, (char *)_.coin14, (char *)_.coin15, (char *)_.coin16,
     (char *)_.coin17, (char *)_.coin18, (char *)_.coin19, (char *)_.coin20,
-    (char *)_.coin21, (char *)_.coin22, (char *)_.coin23,(char *)_.ground,
+    (char *)_.coin21, (char *)_.coin22, (char *)_.coin23, (char *)_.ground,
     (char *)_.ground2, (char *)_.quest, (char *)_.quest2, (char *)_.pipe,
     (char *)_.flag, (char *)__.pipe_top, (char *)__.pipe_left, (char *)__.ground
     , (char *)__.mountstop, (char *)_.champ, '\0'};

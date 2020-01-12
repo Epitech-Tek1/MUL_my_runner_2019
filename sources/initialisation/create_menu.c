@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void assembly(mario *mario)
+static void assembly(mario_t *mario)
 {
     sfSprite_setTexture(MENU.sprite.menu, MENU.texture.menu, sfTrue);
     sfSprite_setTexture(MENU.sprite.pipe_game, MENU.texture.pipe_game,
@@ -23,7 +23,7 @@ static void assembly(mario *mario)
     sfSprite_setTexture(MENU.sprite.op, MENU.texture.op, sfTrue);
 }
 
-static void texture_create(mario *mario)
+static void texture_create(mario_t *mario)
 {
     MENU.texture.menu = sfTexture_createFromFile(MINIATURE, NULL);
     MENU.texture.pipe_game = sfTexture_createFromFile(PIPE, NULL);
@@ -37,7 +37,7 @@ static void texture_create(mario *mario)
     assembly(mario);
 }
 
-static void sprite_create(mario *mario)
+static void sprite_create(mario_t *mario)
 {
     MENU.sprite.menu = sfSprite_create();
     MENU.sprite.pipe_game = sfSprite_create();
@@ -51,12 +51,12 @@ static void sprite_create(mario *mario)
     texture_create(mario);
 }
 
-static void create_music(mario *mario)
+static void create_music(mario_t *mario)
 {
     GAME.sounds.menu = sfMusic_createFromFile("assets/game/sounds/menu.wav");
 }
 
-void sprite_menu_create(mario *mario)
+void sprite_menu_create(mario_t *mario)
 {
     sprite_create(mario);
     create_music(mario);

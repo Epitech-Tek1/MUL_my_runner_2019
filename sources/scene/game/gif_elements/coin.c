@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void coin(mario *mario, sfSprite *sprite)
+void coin(mario_t *mario, sfSprite *sprite)
 {
     static sfIntRect rect;
 

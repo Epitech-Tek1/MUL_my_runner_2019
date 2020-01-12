@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[])
 {
-    mario *mario = malloc(sizeof(mario) * 1000000);
+    mario_t *mario = malloc(sizeof(mario) * 1000000);
 
     if (!mario)
         return (EXIT_ERROR);

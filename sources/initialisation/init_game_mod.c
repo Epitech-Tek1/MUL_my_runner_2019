@@ -7,17 +7,17 @@
 
 #include "runner.h"
 
-void intro_init(mario *mario)
+void intro_init(mario_t *mario)
 {
     intro_create(mario);
 }
 
-void menu_init(mario *mario)
+void menu_init(mario_t *mario)
 {
     sprite_menu_create(mario);
 }
 
-void game_init(mario *mario)
+void game_init(mario_t *mario)
 {
     game_create(mario);
 }

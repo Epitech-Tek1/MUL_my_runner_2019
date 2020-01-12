@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-static void assign_scale(mario *mario)
+static void assign_scale(mario_t *mario)
 {
     sfSprite_setScale(GAME.sprite.ground, (sfVector2f){1.5, 1.5});
     sfSprite_setScale(GAME.sprite.ground2, (sfVector2f){1.5, 1.5});
@@ -31,7 +31,7 @@ static void assign_scale(mario *mario)
     sfSprite_setScale(GAME.sprite.flag, (sfVector2f){.9, .9});
 }
 
-static void assign_pos_2(mario *mario)
+static void assign_pos_2(mario_t *mario)
 {
     SETP(GAME.sprite.coin7, (sfVector2f){2030, 700});
     SETP(GAME.sprite.coin8, (sfVector2f){2030, 664});
@@ -39,7 +39,7 @@ static void assign_pos_2(mario *mario)
     SETP(GAME.sprite.coin10, (sfVector2f){2063, 628});
 }
 
-static void assign_pos(mario *mario)
+static void assign_pos(mario_t *mario)
 {
     SETP(GAME.sprite.mg, (sfVector2f){0, -500});
     SETP(GAME.sprite.mg2, (sfVector2f){4180, -500});
@@ -62,7 +62,7 @@ static void assign_pos(mario *mario)
     assign_pos_2(mario);
 }
 
-static void set_shape(mario *mario)
+static void set_shape(mario_t *mario)
 {
     RecShapePos(GAME._colision.ground, (sfVector2f){0, 794});
     RecShapePos(GAME._colision.mountain, (sfVector2f){1630, 738});
@@ -86,7 +86,7 @@ static void set_shape(mario *mario)
     sfRectangleShape_setSize(GAME._colision.pipe_left, (sfVector2f){10, 65});
 }
 
-void game_init_transform(mario *mario)
+void game_init_transform(mario_t *mario)
 {
     sfRectangleShape_setFillColor(GAME._colision.ground, sfBlack);
     sfRectangleShape_setFillColor(GAME._colision.mountain, sfRed);

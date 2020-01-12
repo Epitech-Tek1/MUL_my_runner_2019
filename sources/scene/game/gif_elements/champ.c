@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void champ(mario *mario, sfSprite *sprite)
+void champ(mario_t *mario, sfSprite *sprite)
 {
     static sfIntRect rect;
 

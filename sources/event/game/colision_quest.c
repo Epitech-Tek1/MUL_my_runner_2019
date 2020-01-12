@@ -9,14 +9,13 @@
 
 #define _ GAME.sprite
 
-static void appear_champ(mario *mario)
+static void appear_champ(mario_t *mario)
 {
     sfFloatRect mario_rect = GETGB(GAME.sprite.mario);
     sfFloatRect champ_rect = GETGB(GAME.sprite.champ);
+    static int jump = -15;
 
     if (mario->appear == true) {
-        static int jump = -15;
-
         if (jump < 14) {
             jump += 1;
             sfSprite_move(GAME.sprite.champ, (sfVector2f){6, jump});
@@ -24,11 +23,14 @@ static void appear_champ(mario *mario)
         if (jump == 14)
             sfSprite_move(GAME.sprite.champ, (sfVector2f){6, jump});
     }
-    if (RECI(&mario_rect, &champ_rect, NULL))
+    if (RECI(&mario_rect, &champ_rect, NULL)) {
+        mario->player.health = true;
         mario->appear = false;
+        event_grow(mario);
+    }
 }
 
-static void colision_quest_champ(mario *mario)
+static void colision_quest_champ(mario_t *mario)
 {
     sfFloatRect mario_rect = GETGB(GAME.sprite.mario);
     sfFloatRect quest2 = GETGB(GAME.sprite.quest2);
@@ -41,7 +43,7 @@ static void colision_quest_champ(mario *mario)
     }
 }
 
-void colision_quest(mario *mario)
+void colision_quest(mario_t *mario)
 {
     sfFloatRect mario_rect = GETGB(GAME.sprite.mario);
     sfFloatRect quest = GETGB(GAME.sprite.quest);

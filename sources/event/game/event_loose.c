@@ -9,7 +9,7 @@
 
 #define clock GAME._clock.loose_seconds
 
-void event_loose(mario *mario)
+void event_loose(mario_t *mario)
 {
     if (GAME.sounds.playe_loose == false) {
         sfMusic_stop(GAME.sounds.lvl);

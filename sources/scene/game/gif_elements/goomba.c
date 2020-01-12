@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void goomba(mario *mario, sfSprite *sprite)
+void goomba(mario_t *mario, sfSprite *sprite)
 {
     static sfIntRect rect;
 

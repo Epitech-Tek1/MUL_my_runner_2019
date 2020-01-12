@@ -7,25 +7,25 @@
 
 #include "runner.h"
 
-static void start_game(mario *mario)
+static void start_game(mario_t *mario)
 {
     TRANS.scale.pipe_game.x = 1.4;
     TRANS.scale.pipe_game.y = .4;
 }
 
-static void new_game(mario *mario)
+static void new_game(mario_t *mario)
 {
     TRANS.scale.pipe_new.x = 1.4;
     TRANS.scale.pipe_new.y = .4;
 }
 
-static void generic(mario *mario)
+static void generic(mario_t *mario)
 {
     TRANS.scale.pipe_gen.x = 1.4;
     TRANS.scale.pipe_gen.y = .4;
 }
 
-void mouse_hover(mario *mario)
+void mouse_hover(mario_t *mario)
 {
     if (MOUSE_HOVER_PIPE_START)
         (start_game(mario));

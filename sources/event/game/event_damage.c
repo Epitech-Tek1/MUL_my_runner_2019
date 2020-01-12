@@ -7,7 +7,7 @@
 
 #include "runner.h"
 
-void event_damage(mario *mario)
+void event_damage(mario_t *mario)
 {
     sfMusic_play(GAME.sounds.hit);
     if (mario->player.health == false) {
