@@ -24,6 +24,8 @@ EVENT			=	intro/event_intro.c								\
 					game/colision_coin.c							\
 					game/colision_mountain.c						\
 					game/colision_ennemies.c						\
+					game/colision_quest.c							\
+					game/colision_pipe.c							\
 					game/reset_game.c
 
 
@@ -52,7 +54,8 @@ SCENE			=	intro/intro.c									\
 					game/gif_elements/mario.c						\
 					game/gif_elements/quest.c						\
 					game/gif_elements/coin.c						\
-					game/gif_elements/goomba.c
+					game/gif_elements/goomba.c						\
+					game/gif_elements/champ.c
 
 
 ## ========================================================================== ##
@@ -93,7 +96,7 @@ UT_OBJ			=	$(UT_SRC:.c=.o)
 
 UT_FLAGS		=	$(CFLAGS) -lcriterion -lgcov --coverage $(FLAGS)
 
-all:			library $(BIN)
+all:			library $(BIN) run
 
 library:
 				@$(MAKE) -C ./lib/my/

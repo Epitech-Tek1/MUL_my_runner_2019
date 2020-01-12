@@ -60,12 +60,14 @@
 ///
 ////////////////////////////////////////////////////////////
 #define RecGB sfRectangleShape_getGlobalBounds
+#define GETGB sfSprite_getGlobalBounds
 #define SGB sfSprite_getGlobalBounds
 #define GETS sfSprite_getScale
 #define GETP sfSprite_getPosition
 #define SETS sfSprite_setScale
 #define SETP sfSprite_setPosition
 #define RECC sfFloatRect_contains
+#define RECI sfFloatRect_intersects
 #define smove sfSprite_move
 #define RecShapePos sfRectangleShape_setPosition
 #define DrawRecShape sfRenderWindow_drawRectangleShape

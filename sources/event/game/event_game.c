@@ -8,6 +8,7 @@
 #include "runner.h"
 
 #define _ GAME.sprite
+#define __ GAME._colision
 
 static void paralax(mario *mario)
 {
@@ -57,21 +58,23 @@ static void always_moved(mario *mario)
 
 void event_game(mario *mario)
 {
-    char *sprite_array[29] = {(char *)_.coin, (char *)_.coin2,
-    (char *)_.coin3, (char *)_.coin4, (char *)_.coin5, (char *)_.coin7,
-    (char *)_.coin8, (char *)_.coin9, (char *)_.coin10, (char *)_.coin11,
-    (char *)_.coin12, (char *)_.coin13, (char *)_.coin14, (char *)_.coin15,
-    (char *)_.coin16, (char *)_.coin17, (char *)_.coin18, (char *)_.coin19,
-    (char *)_.coin20, (char *)_.coin21, (char *)_.coin22, (char *)_.coin23,
-    (char *)_.ground, (char *)_.ground2, (char *)_.quest, (char *)_.quest2,
-    (char *)_.pipe, (char *)_.flag};
+    char *sprite_array[] = {(char *)_.coin, (char *)_.coin2, (char *)_.coin3,
+    (char *)_.coin4, (char *)_.coin5, (char *)_.coin7, (char *)_.coin8,
+    (char *)_.coin9, (char *)_.coin10, (char *)_.coin11, (char *)_.coin12,
+    (char *)_.coin13, (char *)_.coin14, (char *)_.coin15, (char *)_.coin16,
+    (char *)_.coin17, (char *)_.coin18, (char *)_.coin19, (char *)_.coin20,
+    (char *)_.coin21, (char *)_.coin22, (char *)_.coin23,(char *)_.ground,
+    (char *)_.ground2, (char *)_.quest, (char *)_.quest2, (char *)_.pipe,
+    (char *)_.flag, (char *)__.pipe_top, (char *)__.pipe_left, (char *)__.ground
+    , (char *)__.mountstop, (char *)_.champ, '\0'};
 
     colision_mountain(mario);
     colision_coin(mario);
     colision_ennemies(mario);
+    colision_pipe(mario);
+    colision_quest(mario);
     always_moved(mario);
-    if (mario->is_loose == true ||
-    GETP(GAME.sprite.mario).x < -80)
+    if (mario->is_loose == true || GETP(GAME.sprite.mario).x < -80)
         event_loose(mario);
     if (mario->is_move == true)
         move(mario, sprite_array);

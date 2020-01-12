@@ -27,7 +27,7 @@ static void colision_1(mario *mario, sfFloatRect *r_arr)
 
 void colision_ennemies(mario *mario)
 {
-    sfFloatRect rect_array[] = {SGB(_.goomba), SGB(_.goomba2), SGB(_.goomba3),
+    sfFloatRect rect_array[] = {SGB(_.goomba), SGB(_.goomba3),
     SGB(_.goomba4)};
     colision_1(mario, rect_array);
 }

@@ -152,4 +152,10 @@ void initialisation_scene(mario *mario);
 
 void game_create3(mario *mario);
 
+void colision_pipe(mario *mario);
+
+void colision_quest(mario *mario);
+
+void champ(mario *mario, sfSprite *sprite);
+
 #endif /* !FUNCTION_H_ */

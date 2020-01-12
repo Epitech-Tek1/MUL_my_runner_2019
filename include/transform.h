@@ -35,6 +35,7 @@ typedef struct
     sfVector2f coin;
     sfVector2f goomba, goomba2, goomba3, goomba4;
     sfVector2f end;
+    sfVector2f champ;
 } scale;
 
 typedef struct
@@ -57,6 +58,7 @@ typedef struct
     sfVector2f flag;
     sfVector2f end;
     sfVector2f winscreen;
+    sfVector2f champ;
 } position;
 
 typedef struct

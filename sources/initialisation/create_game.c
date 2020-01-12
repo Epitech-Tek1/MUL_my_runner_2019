@@ -67,8 +67,11 @@ static void shape_collision(mario *mario)
     GAME._colision.mountain2 = sfRectangleShape_create();
     GAME._colision.mountain3 = sfRectangleShape_create();
     GAME._colision.mountain4 = sfRectangleShape_create();
+    GAME._colision.mountstop = sfRectangleShape_create();
     GAME._colision.mountain5 = sfRectangleShape_create();
     GAME._colision.mountain6 = sfRectangleShape_create();
+    GAME._colision.pipe_left = sfRectangleShape_create();
+    GAME._colision.pipe_top = sfRectangleShape_create();
 }
 
 void game_create(mario *mario)

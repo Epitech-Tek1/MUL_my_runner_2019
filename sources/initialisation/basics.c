@@ -17,6 +17,7 @@ void initialisation_clock(mario *mario)
     GAME.evt._game_time.clock = sfClock_create();
     GAME._clock.colisiong = sfClock_create();
     GAME._clock.loose = sfClock_create();
+    GAME._clock.champ = sfClock_create();
     mario->clock = sfClock_create();
 }
 
@@ -35,7 +36,10 @@ void initialisation_scene(mario *mario)
     mario->is_move = 1;
     mario->is_end = false;
     mario->is_loose = false;
-    mario->player.health = true;
+    mario->appear = false;
+    mario->is_up = false;
+    mario->stop_up = false;
+    mario->player.health = false;
     GAME.catch = true;
     GAME.screen_win = false;
     initialisation_clock(mario);

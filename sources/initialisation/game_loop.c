@@ -27,8 +27,6 @@ static void (* event_key_fct[])(mario *mario) = {
 static void manage_event(mario *mario)
 {
     sfEvent event;
-    sfFloatRect mario_rect = SGB(GAME.sprite.mario);
-    sfFloatRect flag_rect = SGB(GAME.sprite.flag);
 
     while (sfRenderWindow_pollEvent(WINDOW.window, &event)) {
         if (sfMouse_isButtonPressed(sfMouseLeft))
@@ -55,6 +53,8 @@ int game_loop(mario *mario)
         sfRenderWindow_clear(WINDOW.window, sfBlack);
         display_fct[mario->scene](mario);
         sfText_setString(GAME.score, (SCORE == 0) ? "0" : my_itos(SCORE));
+        if (mario->appear == true)
+            sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.champ, NULL);
         if (mario->scene == 2)
             sfRenderWindow_drawText(mario->window.window, GAME.score, NULL);
         if (mario->is_loose == true)

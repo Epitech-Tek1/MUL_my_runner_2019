@@ -11,7 +11,7 @@ static void assign_scale(mario *mario)
 {
     sfSprite_setScale(GAME.sprite.ground, (sfVector2f){1.5, 1.5});
     sfSprite_setScale(GAME.sprite.ground2, (sfVector2f){1.5, 1.5});
-    sfSprite_setScale(GAME.sprite.mario, (sfVector2f){.13, .13});
+    sfSprite_setScale(GAME.sprite.mario, (sfVector2f){.1, .1});
     sfSprite_setScale(GAME.sprite.mg, (sfVector2f){1.5, 1.5});
     sfSprite_setScale(GAME.sprite.mg2, (sfVector2f){1.5, 1.5});
     sfSprite_setScale(GAME.sprite.quest, (sfVector2f){.17, .17});
@@ -68,17 +68,22 @@ static void set_shape(mario *mario)
     RecShapePos(GAME._colision.mountain, (sfVector2f){1630, 738});
     RecShapePos(GAME._colision.mountain2, (sfVector2f){1615, 750});
     RecShapePos(GAME._colision.mountain3, (sfVector2f){2080, 663});
-    RecShapePos(GAME._colision.mountain4, (sfVector2f){4338, 780});
+    RecShapePos(GAME._colision.mountain4, (sfVector2f){4365, 820});
     RecShapePos(GAME._colision.mountain5, (sfVector2f){2070, 680});
+    RecShapePos(GAME._colision.mountstop, (sfVector2f){4500, 703});
     RecShapePos(GAME._colision.mountain6, (sfVector2f){2565, 738});
-    sfRectangleShape_setSize(GAME._colision.ground, (sfVector2f){10000, 10});
-    sfRectangleShape_setSize(GAME._colision.mountain, (sfVector2f){460, 10});
+    RecShapePos(GAME._colision.pipe_top, (sfVector2f){3615, 740});
+    RecShapePos(GAME._colision.pipe_left, (sfVector2f){3610, 750});
+    sfRectangleShape_setSize(GAME._colision.ground, (sfVector2f){12000, 10});
     sfRectangleShape_setSize(GAME._colision.mountain, (sfVector2f){460, 10});
     sfRectangleShape_setSize(GAME._colision.mountain2, (sfVector2f){10, 40});
     sfRectangleShape_setSize(GAME._colision.mountain3, (sfVector2f){460, 10});
-    sfRectangleShape_setSize(GAME._colision.mountain4, (sfVector2f){10, 10});
+    sfRectangleShape_setSize(GAME._colision.mountain4, (sfVector2f){1, -100});
+    sfRectangleShape_setSize(GAME._colision.mountstop, (sfVector2f){490, 10});
     sfRectangleShape_setSize(GAME._colision.mountain5, (sfVector2f){10, 55});
-    sfRectangleShape_setSize(GAME._colision.mountain6, (sfVector2f){230, 10});
+    sfRectangleShape_setSize(GAME._colision.mountain6, (sfVector2f){225, 10});
+    sfRectangleShape_setSize(GAME._colision.pipe_top, (sfVector2f){65, 10});
+    sfRectangleShape_setSize(GAME._colision.pipe_left, (sfVector2f){10, 65});
 }
 
 void game_init_transform(mario *mario)
@@ -90,6 +95,9 @@ void game_init_transform(mario *mario)
     sfRectangleShape_setFillColor(GAME._colision.mountain4, sfBlue);
     sfRectangleShape_setFillColor(GAME._colision.mountain5, sfGreen);
     sfRectangleShape_setFillColor(GAME._colision.mountain6, sfRed);
+    sfRectangleShape_setFillColor(GAME._colision.pipe_top, sfRed);
+    sfRectangleShape_setFillColor(GAME._colision.pipe_left, sfGreen);
+    sfRectangleShape_setFillColor(GAME._colision.mountstop, sfRed);
     assign_scale(mario);
     assign_pos(mario);
     set_shape(mario);

@@ -13,9 +13,17 @@ static void colision_2(mario *mario)
     sfFloatRect mount_rect4 = RecGB(GAME._colision.mountain4);
     sfFloatRect mount_rect5 = RecGB(GAME._colision.mountain5);
     sfFloatRect mount_rect6 = RecGB(GAME._colision.mountain6);
+    sfFloatRect mount_rectstop = RecGB(GAME._colision.mountstop);
 
     if (sfFloatRect_intersects(&mario_rect, &mount_rect4, NULL))
-        smove(GAME.sprite.mario, (sfVector2f){0, -2.4});
+        mario->is_up = true;
+    if (sfFloatRect_intersects(&mario_rect, &mount_rectstop, NULL)) {
+        SETP(GAME.sprite.mario, (sfVector2f){GETP(GAME.sprite.mario).x,
+        mount_rectstop.top - mario_rect.height});
+        mario->is_up = false;
+    }
+    if (mario->is_up == true)
+        smove(GAME.sprite.mario, (sfVector2f){0, -12});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect5, NULL))
         smove(GAME.sprite.mario, (sfVector2f){-6, 0});
     if (sfFloatRect_intersects(&mario_rect, &mount_rect6, NULL))

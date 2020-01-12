@@ -44,6 +44,7 @@ typedef struct
     sfSprite *end;
     sfSprite *bowser;
     sfSprite *winscreen;
+    sfSprite *champ;
     sfSprite *coin, *coin2, *coin3, *coin4, *coin5, *coin6, *coin7, *coin8,
     *coin9, *coin10, *coin11, *coin12, *coin13, *coin14, *coin15, *coin16,
     *coin17, *coin18, *coin19, *coin20, *coin21, *coin22, *coin23;
@@ -74,6 +75,8 @@ typedef struct
     sfTexture *end;
     sfTexture *bowser;
     sfTexture *winScreen;
+    sfTexture *champ;
+    sfTexture *brocken;
     sfIntRect rect;
 } texture;
 
@@ -136,6 +139,7 @@ typedef struct
     sfClock *goomba; sfTime goomba_time; double goomba_seconds;
     sfClock *colisiong; sfTime colisiong_time; double colisiong_seconds;
     sfClock *loose; sfTime loose_time; double loose_seconds;
+    sfClock *champ; sfTime champ_time; double champ_seconds;
 } _clock;
 
 typedef struct
@@ -146,7 +150,10 @@ typedef struct
     sfRectangleShape *mountain4;
     sfRectangleShape *mountain5;
     sfRectangleShape *mountain6;
+    sfRectangleShape *mountstop;
     sfRectangleShape *ground;
+    sfRectangleShape *pipe_top;
+    sfRectangleShape *pipe_left;
 } _colision;
 
 
@@ -220,6 +227,9 @@ typedef struct
     int is_move;
     _Bool is_end;
     _Bool is_loose;
+    _Bool is_up;
+    _Bool stop_up;
+    _Bool appear;
 } mario;
 
 

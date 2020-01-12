@@ -38,6 +38,7 @@ static void call_fct_2(mario *mario)
     coin(mario, GAME.sprite.coin21);
     coin(mario, GAME.sprite.coin22);
     coin(mario, GAME.sprite.coin23);
+    champ(mario, GAME.sprite.champ);
     goomba(mario, GAME.sprite.goomba);
     goomba(mario, GAME.sprite.goomba2);
     goomba(mario, GAME.sprite.goomba3);
@@ -56,13 +57,13 @@ static void disp_2(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin22, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin23, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.bowser, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba3, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba4, NULL);
 }
 
 static void disp(mario *mario)
 {
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.quest2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin, NULL);
@@ -80,6 +81,8 @@ static void disp(mario *mario)
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin13, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.coin14, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.pipe, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.flag, NULL);
+    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
     disp_2(mario);
 }
 
@@ -93,16 +96,16 @@ void game_display(mario *mario)
     DrawRecShape(WINDOW.window, GAME._colision.mountain2, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.mountain3, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.mountain4, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.mountstop, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.mountain5, NULL);
     DrawRecShape(WINDOW.window, GAME._colision.mountain6, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.pipe_top, NULL);
+    DrawRecShape(WINDOW.window, GAME._colision.pipe_left, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.back2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mg2, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground, NULL);
     sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.ground2, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.goomba, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.flag, NULL);
-    sfRenderWindow_drawSprite(WINDOW.window, GAME.sprite.mario, NULL);
     disp(mario);
 }

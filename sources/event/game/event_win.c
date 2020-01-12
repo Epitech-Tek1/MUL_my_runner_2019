@@ -16,5 +16,4 @@ void event_win(mario *mario)
 {
     sfFloatRect mario_rect = SGB(GAME.sprite.mario);
     sfFloatRect flag_rect = SGB(GAME.sprite.flag);
-
 }
