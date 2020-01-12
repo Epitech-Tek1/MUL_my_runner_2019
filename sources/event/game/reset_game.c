@@ -19,7 +19,7 @@ void reset_game(mario_t *mario)
     mario->is_end = false;
     mario->is_loose = false;
     GAME.sounds.playe_loose = false;
-    mario->player.health = true;
+    mario->player.health = false;
     GAME.catch = true;
     GAME.screen_win = false;
     GAME._clock.end_seconds = (double)0;

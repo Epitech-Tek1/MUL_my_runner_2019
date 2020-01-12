@@ -74,8 +74,10 @@ void event_game(mario_t *mario)
     colision_pipe(mario);
     colision_quest(mario);
     always_moved(mario);
-    if (mario->is_loose == true || GETP(GAME.sprite.mario).x < -80)
+    if (mario->is_loose == true || GETP(GAME.sprite.mario).x < -80) {
+        mario->is_loose = true;
         event_loose(mario);
+    }
     if (mario->is_move == true)
         move(mario, sprite_array);
 }
